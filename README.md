@@ -1,6 +1,6 @@
 # 🍔 McDonald's App
 
-Welcome to the **McDonald's App**! This app is designed for **two types of users** — **clients** and **employees** — each benefiting from unique features tailored to their needs. Enjoy easy ordering, exclusive deals, points-based rewards, and much more, right at your fingertips.
+Welcome to the **McDonald's App**! Enjoy easy ordering, exclusive deals, points-based rewards, and much more, one click away.
 
 ---
 
@@ -8,7 +8,7 @@ Welcome to the **McDonald's App**! This app is designed for **two types of users
 
 ### For All Users
 
-- **Online Orders**: Seamlessly place orders through the app for convenient pickup or delivery.
+- **Online Orders**: Place orders through the app for convenient pickup or delivery.
 - **Add In-Store Orders**: Link in-store orders to your account to earn deals and points, just like online orders.
 - **Points & Rewards**: Earn points with every order, and use them toward future purchases to unlock great deals and discounts.
 - **Menus & Combos**: Customize your main items into full menus or combos, with all your favorite add-ons and sides.
@@ -49,11 +49,4 @@ Employees have a unique role in the app, benefiting from client features and als
 
 ---
 
-## Tech Stack
-
-- **Frontend**: Flutter / React Native
-- **Backend**: Node.js / Express
-- **Database**: MongoDB / Firebase
-
----
 
