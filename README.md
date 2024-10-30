@@ -28,6 +28,12 @@ Employees have a unique role in the app, benefiting from client features and als
 - Employee-exclusive deals and offers
 - Access to personalized rewards based on in-store activity
 
+### 📋 Managers
+Managers are responsible for overseeing employees and the location they work at. Their role includes:
+- **Managing Employees**: View and manage the employees assigned to their specific location.
+- **Location Insights**: Access location-specific reports and sales insights to optimize store operations.
+- **Exclusive Manager Deals**: Access exclusive manager benefits, rewards, and offers for their location.
+
 ---
 
 ## How It Works
@@ -48,5 +54,7 @@ Employees have a unique role in the app, benefiting from client features and als
 - **Customizable Menus**: Turn any main item into a meal combo for the perfect order.
 
 ---
+![Image](https://github.com/user-attachments/assets/10bae1de-8f7d-47d0-a1c0-ee875a6702fb)
+
 
 
