@@ -1,23 +1,19 @@
 package Model;
 
-import Model.Offer;
-import Model.Order;
-import java.util.List;
-import java.util.ArrayList;
-
-public abstract class User {
+public abstract class User implements HasId {
     private int points;
+    private int userID;
+    private String email;
+    private String name;
+
     Offer offers;
     Order order;
 
-    public User(String phoneNumber, String name) {
-        this.phoneNumber = phoneNumber;
+    public User(String email, String name, int userID) {
+        this.email = email;
         this.name = name;
+        this.userID = userID;
     }
-
-    private String phoneNumber;
-    private String name;
-
 
     public int getPoints() {
         return points;
@@ -27,11 +23,25 @@ public abstract class User {
         this.points = points;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID){ this.userID = userID; }
+
 }

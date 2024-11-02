@@ -6,7 +6,11 @@ import Model.User;
 public class Employee extends User{
     Manager manager;
 
-    public Employee(String phoneNumber, String name) {
-        super(phoneNumber, name);
+    public Employee(String email, String name, int id) {
+        super(email, name, id);
+    }
+
+    public Integer getId() {
+        return this.getUserID();
     }
 }
