@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd759d47-1b46-4f93-b473-aa3997e4c010" name="Changes" comment="first commit on laptop">
-      <change afterPath="$PROJECT_DIR$/src/Model/HasId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/FileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/IRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/InMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
-    </list>
-    <list id="4ced8565-55fe-461e-bfb5-aed8e2e9666d" name="Changes by dellg3" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
-    </list>
+    <list default="true" id="dd759d47-1b46-4f93-b473-aa3997e4c010" name="Changes" comment="added repo and service (code with me)" />
+    <list id="4ced8565-55fe-461e-bfb5-aed8e2e9666d" name="Changes by dellg3" comment="Changes by dellg3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,18 +43,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Model/User.java">
-      <ranges>
-        <range start1="2" end1="8" start2="2" end2="3" changelist="dd759d47-1b46-4f93-b473-aa3997e4c010" />
-        <range start1="9" end1="18" start2="4" end2="6" changelist="dd759d47-1b46-4f93-b473-aa3997e4c010" />
-        <range start1="20" end1="20" start2="8" end2="16" changelist="4ced8565-55fe-461e-bfb5-aed8e2e9666d" />
-        <range start1="29" end1="31" start2="25" end2="27" changelist="dd759d47-1b46-4f93-b473-aa3997e4c010" />
-        <range start1="33" end1="35" start2="29" end2="31" changelist="dd759d47-1b46-4f93-b473-aa3997e4c010" />
-        <range start1="36" end1="36" start2="32" end2="43" changelist="dd759d47-1b46-4f93-b473-aa3997e4c010" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -130,8 +103,17 @@
       <workItem from="1730491547194" duration="766000" />
       <workItem from="1730571785594" duration="38000" />
       <workItem from="1730571825601" duration="1114000" />
-      <workItem from="1730572952956" duration="4258000" />
+      <workItem from="1730572952956" duration="4836000" />
     </task>
+    <task id="LOCAL-00001" summary="added repo and service (code with me)">
+      <option name="closed" value="true" />
+      <created>1730577769563</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730577769563</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,5 +141,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added repo and service (code with me)" />
+    <MESSAGE value="Changes by dellg3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by dellg3" />
   </component>
 </project>
