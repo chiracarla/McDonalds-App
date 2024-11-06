@@ -56,6 +56,6 @@ Managers are responsible for overseeing employees and the location they work at.
 ---
 ![Network](https://github.com/user-attachments/assets/ca0a6458-137e-4761-abeb-8dd247cd97d3)
 
-![image](https://github.com/user-attachments/assets/d5afedd6-929c-4808-9406-868ced725330)
+![image](https://github.com/user-attachments/assets/ae75151f-96ab-46d2-9917-70cc6722cb07)
 
 
