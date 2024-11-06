@@ -1,4 +1,4 @@
-![Network](https://github.com/user-attachments/assets/3d2a64f2-871b-476c-b384-466d6b896b00)# 🍔 McDonald's App
+# 🍔 McDonald's App
 
 Welcome to the **McDonald's App**! Enjoy easy ordering, exclusive deals, points-based rewards, and much more, one click away.
 
