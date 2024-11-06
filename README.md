@@ -1,4 +1,4 @@
-# 🍔 McDonald's App
+![Network](https://github.com/user-attachments/assets/3d2a64f2-871b-476c-b384-466d6b896b00)# 🍔 McDonald's App
 
 Welcome to the **McDonald's App**! Enjoy easy ordering, exclusive deals, points-based rewards, and much more, one click away.
 
@@ -54,7 +54,7 @@ Managers are responsible for overseeing employees and the location they work at.
 - **Customizable Menus**: Turn any main item into a meal combo for the perfect order.
 
 ---
-![image](https://github.com/user-attachments/assets/bb41a332-73a2-43a4-a57f-a5af66265f85)
+![Network](https://github.com/user-attachments/assets/ca0a6458-137e-4761-abeb-8dd247cd97d3)
 
 
 
