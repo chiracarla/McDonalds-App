@@ -54,7 +54,7 @@ Managers are responsible for overseeing employees and the location they work at.
 - **Customizable Menus**: Turn any main item into a meal combo for the perfect order.
 
 ---
-![Image](https://github.com/user-attachments/assets/10bae1de-8f7d-47d0-a1c0-ee875a6702fb)
+![image](https://github.com/user-attachments/assets/5b0cbb5a-5687-40d9-a221-fe895d24222b)
 
 
 
