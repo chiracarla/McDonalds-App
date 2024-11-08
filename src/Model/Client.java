@@ -3,8 +3,8 @@ package Model;
 import Model.User;
 
 public class Client extends User {
-    public Client(String email, String name, int id) {
-        super(email, name, id);
+    public Client(String email, String name, int id, String password) {
+        super(email, name, id, password);
     }
 
     @Override

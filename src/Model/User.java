@@ -5,14 +5,15 @@ public abstract class User implements HasId {
     private int userID;
     private String email;
     private String name;
-
+    private String password;
     Offer offers;
     Order order;
 
-    public User(String email, String name, int userID) {
+    public User(String email, String name, int userID, String password) {
         this.email = email;
         this.name = name;
         this.userID = userID;
+        this.password = password;
     }
 
     public int getPoints() {
@@ -43,5 +44,14 @@ public abstract class User implements HasId {
     }
 
     public void setUserID(int userID){ this.userID = userID; }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }
