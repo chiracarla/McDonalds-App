@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="first time running it with success!">
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Enums/Allergens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Enums/DishSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Enums/DrinkVolume.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -98,11 +106,24 @@
       <updated>1730206042843</updated>
       <workItem from="1730206043912" duration="2000" />
       <workItem from="1731071194164" duration="41000" />
-      <workItem from="1731096711379" duration="6156000" />
+      <workItem from="1731096711379" duration="11658000" />
     </task>
+    <task id="LOCAL-00001" summary="first time running it with success!">
+      <option name="closed" value="true" />
+      <created>1731103546891</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731103546891</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first time running it with success!" />
+    <option name="LAST_COMMIT_MESSAGE" value="first time running it with success!" />
   </component>
 </project>

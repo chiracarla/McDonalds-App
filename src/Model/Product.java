@@ -1,9 +1,16 @@
 package Model;
 
-public class Product {
+public abstract class Product implements HasId{
 
     private String productName;
     private int productPrice;
+
+    public Product(String productName, int productPrice, int pointsPrice) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.pointsPrice = pointsPrice;
+    }
+
     private int pointsPrice;
 
     public String getProductName() {

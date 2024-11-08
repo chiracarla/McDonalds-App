@@ -1,12 +1,22 @@
+package Service;
+
 import Repository.*;
 import Model.*;
+
+import java.util.List;
 import java.util.Optional;
 
-public class Service {
+public class UserService {
     private final IRepository<User> userRepo;
+    private final IRepository<Client> clientRepo;
+    private final IRepository<Manager> managerRepo;
+    private final IRepository<Employee> employeeRepo;
 
-    public Service(IRepository<User> userRepo) {
+    public UserService(IRepository<User> userRepo, IRepository<Client> clientRepo, IRepository<Manager> managerRepo, IRepository<Employee> employeeRepo) {
         this.userRepo = userRepo;
+        this.clientRepo = clientRepo;
+        this.managerRepo = managerRepo;
+        this.employeeRepo = employeeRepo;
     }
 
     public void sign_up_client(String email, String name, String password) {
@@ -22,6 +32,7 @@ public class Service {
         int newUserID = generateNewUserId();
         User newUser = new Client(email, name, newUserID, password);
         userRepo.create(newUser);
+        clientRepo.create((Client) newUser);
         System.out.println("Client signed up successfully!");
     }
 
@@ -38,6 +49,7 @@ public class Service {
         int newUserID = generateNewUserId();
         User newUser = new Manager(email, name, newUserID, password, rank);
         userRepo.create(newUser);
+        managerRepo.create((Manager) newUser);
         System.out.println("Manager signed up successfully!");
     }
 
@@ -54,6 +66,7 @@ public class Service {
         int newUserID = generateNewUserId();
         User newUser = new Employee(email, name, newUserID, password, manager);
         userRepo.create(newUser);
+        employeeRepo.create((Employee) newUser);
         System.out.println("Client signed up successfully!");
     }
 
@@ -90,7 +103,6 @@ public class Service {
         }
     }
 
-
     public void delete_account(String email, String password) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
@@ -105,6 +117,19 @@ public class Service {
         }
     }
 
+    public List<Client> getAllClients() {
+        return clientRepo.getAll();
+    }
+
+    public List<Manager> getAllManagers(){
+        return managerRepo.getAll();
+    }
+
+    public List<Employee> getAllEmployees() {
+        return employeeRepo.getAll();
+    }
+
 }
 // update account
 // make order in-store/online
+//complex function-- email sending API

@@ -6,7 +6,7 @@ import Model.Location;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements HasId {
     private List<Product> products;
     private int totalPrice;
     private Location location;
@@ -53,4 +53,8 @@ public class Order {
         this.orderID = orderID;
     }
 
+    @Override
+    public Integer getId() {
+        return 0;
+    }
 }
