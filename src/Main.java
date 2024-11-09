@@ -27,7 +27,7 @@ public class Main {
         IRepository<Desserts> dessertRepo = new InMemoryRepository<>();
         IRepository<Location> locationRepo = new InMemoryRepository<>();
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
-        UserController userController = new UserController(userService);
+        UserController userController = new UserController(userService); //mai simplu: apelat mai putine clase
 
         OrderService orderService = new OrderService(orderRepo, locationRepo);
         OrderController orderController = new OrderController(orderService);
@@ -35,17 +35,17 @@ public class Main {
         ProductService productService = new ProductService(productRepo, mainDRepo, sideDRepo, dessertRepo, drinkRepo);
         ProductController productController = new ProductController(productService);
         Manager manager1 = userController.sign_Up_Manager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
-//        controller.sign_Up_Client("chira.carla@gmail.com", "Chira Carla", "5678");
-//
-//        controller.sign_In("klara.orban@yahoo.com", "1234");
+        userController.sign_Up_Client("chira.carla@gmail.com", "Chira Carla", "5678");
+
+        userController.sign_In("klara.orban@yahoo.com", "1234");
         Client client1 = userController.sign_Up_Client("example.name@yahoo.com", "Example Client", "1234");
         userController.showAllManagers();
 
         Location loc1 = orderController.createLocation(Locations.Bucuresti, manager1);
 
         List<Product> productList = new ArrayList<>();
-        MainDish mainDish1 = productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
-        productList.add(mainDish1);
-//        orderController.createOrder(client1, loc1, productList);
+        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
+        productList.add(productController.getProduct("Hamburger"));
+        orderController.createOrder(client1, loc1, productList);
     }
 }

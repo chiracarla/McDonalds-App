@@ -15,7 +15,7 @@ public class OrderController {
 
     public void createOrder(Client user, Location location, List<Product> products) {
         orderService.createOrder(user, location, products);
-    }
+    }//ar tb cu user input
 
     public Location createLocation(Locations location, Manager manager) {
 

@@ -15,7 +15,7 @@ public class UserController {
     public Client sign_Up_Client(String email, String name, String password) {
         userService.sign_up_client(email, name, password);
         return null;
-    }
+    } //dc nu void?
 
     public Manager sign_Up_Manager(String email, String name, String password, String rank) {
         userService.sign_up_manager(email, name, password, rank);
@@ -28,7 +28,7 @@ public class UserController {
 
     public void sign_In(String email, String password) {
         userService.sign_in(email, password);
-    }
+    } //nu se potriveste cu conventiile
 
     public void delete_Account(String email, String password) {
         userService.delete_account(email, password);

@@ -71,7 +71,7 @@ public class UserService {
     }
 
 
-        private int generateNewUserId() {
+    private int generateNewUserId() {
         return userRepo.getAll().stream()
                 .mapToInt(User::getUserID)
                 .max()

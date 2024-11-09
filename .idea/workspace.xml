@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="extended and created OrderController">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="little corrections">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,10 @@
     &quot;accountId&quot;: &quot;f5afb1c5-7211-4307-8e45-4f1701262e46&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -70,6 +74,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="McDonalds App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="McDonalds App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="McDonalds App" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731109382110</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="little corrections">
+      <option name="closed" value="true" />
+      <created>1731152573595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731152573595</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +151,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first time running it with success!" />
     <MESSAGE value="extended and created OrderController" />
-    <option name="LAST_COMMIT_MESSAGE" value="extended and created OrderController" />
+    <MESSAGE value="little corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="little corrections" />
   </component>
 </project>

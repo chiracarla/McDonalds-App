@@ -23,7 +23,7 @@ public class OrderService {
         orderRepo.create(order);
 
         System.out.println("Order placed! Total price: " + totalPrice);
-    }
+    }//question
 
     private int calculateTotalPrice(List<Product> products) {
         int totalPrice = 0;
@@ -31,7 +31,7 @@ public class OrderService {
             totalPrice += product.getProductPrice();
         }
         return totalPrice;
-    }
+    } //+met de adaugat oferte
 
     private int generateNewOrderID() {
         return orderRepo.getAll().stream()
@@ -44,5 +44,5 @@ public class OrderService {
         locationRepo.create(loc);
 
         System.out.println("New location placed! Location: " + loc);
-    }
+    } //question
 }
