@@ -2,10 +2,17 @@ package Model;
 
 import java.util.List;
 import Model.Product;
-public class Offer {
+public class Offer implements HasId{
     private int originalPrice;
     private int newPrice;
-    List<Product> products;
+    List<Product> products;//unele cu locatii specifice maybe optional<>
+
+    public Offer(int originalPrice, int newPrice, List<Product> products) {
+        this.originalPrice = originalPrice;
+        this.newPrice = newPrice;
+        this.products = products;
+    }
+
     public int getOriginalPrice() {
         return originalPrice;
     }
@@ -25,4 +32,11 @@ public class Offer {
     public void setNewPrice(int newPrice) {
         this.newPrice = newPrice;
     }
+
+    @Override
+    public Integer getId() {
+        return 0;
+    }
+
+
 }

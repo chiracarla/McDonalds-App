@@ -1,7 +1,7 @@
 package Model;
 
 public abstract class Product implements HasId{
-
+    private int id;
     private String productName;
     private int productPrice;
 
@@ -38,4 +38,11 @@ public abstract class Product implements HasId{
         this.pointsPrice = pointsPrice;
     }
 
+    public int getProdId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

@@ -51,7 +51,7 @@ public class ProductService {
         System.out.println("Dessert created: " + productName + " with price: " + productPrice + ", allergens: " + allergens);
     }
 
-    public void create_drink(String productName, int productPrice, DrinkVolume volume){
+    public void create_drink(String productName, int productPrice, DrinkVolume volume) {
         Drinks drinks = new Drinks(productName, productPrice, volume);
 
         drinkRepo.create((Drinks) drinks);

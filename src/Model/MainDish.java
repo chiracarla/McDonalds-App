@@ -30,7 +30,7 @@ public class MainDish extends Product{
 
     @Override
     public Integer getId() {
-        return 0;
+        return this.getProdId();
     }
 
     @Override
