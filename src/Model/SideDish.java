@@ -22,10 +22,10 @@ public class SideDish extends Product{
     @Override
     public Integer getId() {
         return 0;
-    }
+    } //tb id
 
     @Override
     public int calc_points() {
-        return (int) (calc_points() * 0.5);
+        return (int) (this.getProductPrice() * 0.5);
     }
 }

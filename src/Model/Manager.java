@@ -7,6 +7,7 @@ public class Manager extends User {
 
     public Manager(String email, String name, int id, String password, String rank) {
         super(email, name, id, password);
+        this.rank = rank;
     }
 
     @Override

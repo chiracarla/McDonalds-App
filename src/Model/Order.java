@@ -12,14 +12,13 @@ public class Order implements HasId {
     private Location location;
     private User user;
     private int orderID;
-    public Order() {
-        //poate reusim sa facem id ul cu identity?
-    }
+
     public Order(List<Product> products, Location location, User user, int orderID) {
         this.products = products;
         this.location = location;
         this.user = user;
         this.orderID = orderID;
+        // + metoda de calculat pretul
     }
     public List<Product> getProducts() {
         return products;
@@ -30,7 +29,6 @@ public class Order implements HasId {
     public int getTotalPrice() {
         return totalPrice;
     }
-    // + metoda de calculat pretul
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }

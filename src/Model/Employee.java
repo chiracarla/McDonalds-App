@@ -8,6 +8,7 @@ public class Employee extends User{
 
     public Employee(String email, String name, int id, String password, Manager manager) {
         super(email, name, id, password);
+        this.manager = manager;
     }
 
     public Integer getId() {

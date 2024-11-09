@@ -45,7 +45,6 @@ public abstract class User implements HasId {
 
     public void setUserID(int userID){ this.userID = userID; }
 
-
     public String getPassword() {
         return password;
     }

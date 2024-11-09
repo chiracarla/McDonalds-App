@@ -35,6 +35,6 @@ public class MainDish extends Product{
 
     @Override
     public int calc_points() {
-        return (int) (calc_points() * 0.7);
+        return (int) (this.getProductPrice() * 0.7);
     }
 }
