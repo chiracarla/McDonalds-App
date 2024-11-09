@@ -1,9 +1,7 @@
 package Controller;
 
-import Model.Location;
-import Model.Order;
-import Model.Product;
-import Model.User;
+import Enums.Locations;
+import Model.*;
 import Service.OrderService;
 
 import java.util.List;
@@ -15,8 +13,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    public void createOrder(User user, Location location, List<Product> products) {
+    public void createOrder(Client user, Location location, List<Product> products) {
         orderService.createOrder(user, location, products);
     }
 
+    public Location createLocation(Locations location, Manager manager) {
+
+        orderService.create_location(location, manager);
+        return null;
+    }
 }

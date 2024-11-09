@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="first time running it with success!">
-      <change afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/Allergens.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/DishSize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/DrinkVolume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="extended and created OrderController">
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Enums/Locations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +57,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Project_uni/sem3/Statistics/lab2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/Statistics/lab2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -106,7 +104,8 @@
       <updated>1730206042843</updated>
       <workItem from="1730206043912" duration="2000" />
       <workItem from="1731071194164" duration="41000" />
-      <workItem from="1731096711379" duration="11658000" />
+      <workItem from="1731096711379" duration="11948000" />
+      <workItem from="1731145336897" duration="5095000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -116,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731103546891</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="extended and created OrderController">
+      <option name="closed" value="true" />
+      <created>1731109382110</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731109382110</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first time running it with success!" />
-    <option name="LAST_COMMIT_MESSAGE" value="first time running it with success!" />
+    <MESSAGE value="extended and created OrderController" />
+    <option name="LAST_COMMIT_MESSAGE" value="extended and created OrderController" />
   </component>
 </project>

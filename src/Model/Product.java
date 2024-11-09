@@ -5,11 +5,12 @@ public abstract class Product implements HasId{
     private String productName;
     private int productPrice;
 
-    public Product(String productName, int productPrice, int pointsPrice) {
+    public Product(String productName, int productPrice) {
         this.productName = productName;
         this.productPrice = productPrice;
-        this.pointsPrice = pointsPrice;
     }
+
+    public abstract int calc_points();
 
     private int pointsPrice;
 

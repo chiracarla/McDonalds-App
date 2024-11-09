@@ -6,8 +6,8 @@ public class Drinks extends Product {
 
     private DrinkVolume volume;
 
-    public Drinks(String productName, int productPrice, int pointsPrice, DrinkVolume volume) {
-        super(productName, productPrice, pointsPrice);
+    public Drinks(String productName, int productPrice, DrinkVolume volume) {
+        super(productName, productPrice);
         this.volume = volume;
     }
 
@@ -22,5 +22,10 @@ public class Drinks extends Product {
     @Override
     public Integer getId() {
         return 0;
+    }
+
+    @Override
+    public int calc_points() {
+        return (int) (calc_points() * 0.3);
     }
 }

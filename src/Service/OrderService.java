@@ -1,5 +1,6 @@
 package Service;
 
+import Enums.Locations;
 import Model.*;
 import Repository.IRepository;
 
@@ -7,20 +8,14 @@ import java.util.List;
 
 public class OrderService {
     private final IRepository<Order> orderRepo;  // Repository for orders
-    private final IRepository<MainDish> mainDishRepo;
-    private final IRepository<SideDish> sideDishRepo;
-    private final IRepository<Desserts> dessertRepo;
-    private final IRepository<Drinks> drinkRepo;
+    private final IRepository<Location> locationRepo;
 
-    public OrderService(IRepository<Order> orderRepo, IRepository<MainDish> mainDishRepo, IRepository<SideDish> sideDishRepo, IRepository<Desserts> dessertRepo, IRepository<Drinks> drinkRepo) {
+    public OrderService(IRepository<Order> orderRepo, IRepository<Location> locationRepo) {
         this.orderRepo = orderRepo;
-        this.mainDishRepo = mainDishRepo;
-        this.sideDishRepo = sideDishRepo;
-        this.dessertRepo = dessertRepo;
-        this.drinkRepo = drinkRepo;
+        this.locationRepo = locationRepo;
     }
 
-    public void createOrder(User user, Location location, List<Product> products) {
+    public void createOrder(Client user, Location location, List<Product> products) {
         int orderID = generateNewOrderID();
         Order order = new Order(products, location, user, orderID);
         int totalPrice = calculateTotalPrice(products);
@@ -42,5 +37,12 @@ public class OrderService {
         return orderRepo.getAll().stream()
                 .mapToInt(Order::getOrderID)
                 .max().orElse(0)+1;
+    }
+
+    public void create_location(Locations location, Manager manager) {
+        Location loc = new Location(location, manager);
+        locationRepo.create(loc);
+
+        System.out.println("New location placed! Location: " + loc);
     }
 }

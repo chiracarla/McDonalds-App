@@ -12,12 +12,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    public void sign_Up_Client(String email, String name, String password) {
+    public Client sign_Up_Client(String email, String name, String password) {
         userService.sign_up_client(email, name, password);
+        return null;
     }
 
-    public void sign_Up_Manager(String email, String name, String password, String rank) {
+    public Manager sign_Up_Manager(String email, String name, String password, String rank) {
         userService.sign_up_manager(email, name, password, rank);
+        return null;
     }
 
     public void sign_Up_Employee(String email, String name, String password, Manager manager) {
