@@ -18,7 +18,6 @@ public class Order implements HasId {
         this.location = location;
         this.user = user;
         this.orderID = orderID;
-        // + metoda de calculat pretul
     }
     public List<Product> getProducts() {
         return products;

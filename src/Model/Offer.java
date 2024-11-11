@@ -5,7 +5,7 @@ import Model.Product;
 public class Offer implements HasId{
     private int originalPrice;
     private int newPrice;
-    List<Product> products;//unele cu locatii specifice maybe optional<>
+    List<Product> products;//TODO: unele cu locatii specifice maybe optional<>
 
     public Offer(int originalPrice, int newPrice, List<Product> products) {
         this.originalPrice = originalPrice;

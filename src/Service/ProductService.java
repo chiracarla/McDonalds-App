@@ -22,10 +22,9 @@ public class ProductService {
         this.dessertRepo = dessertRepo;
         this.drinkRepo = drinkRepo;
     }
-//astea nu vrem oare sa le punem la products? + nu putem instantia clase abstracte nush care ar fi tho
-    //maii tb cv si la offers
-    public void create_main_dish(String productName, int productPrice, int calories, DishSize size) {
-        Product mainDish = new MainDish(productName, productPrice, calories, size);
+    //TODO: parca trebuia o clasa abstracta
+    public void create_main_dish(String productName, int productPrice, int calories, DishSize size, int id) {
+        Product mainDish = new MainDish(productName, productPrice, calories, size, id);
 
         mainDishRepo.create((MainDish) mainDish);
         productRepo.create((Product) mainDish);
@@ -33,8 +32,8 @@ public class ProductService {
         System.out.println("Main Dish created: " + productName + " with price: " + productPrice + ", calories: " + calories + ", size: " + size);
     }
 
-    public void create_side_dish(String productName, int productPrice, DishSize size){
-        Product sideDish = new SideDish(productName, productPrice, size);
+    public void create_side_dish(String productName, int productPrice, DishSize size , int id){
+        Product sideDish = new SideDish(productName, productPrice, size, id);
 
         sideDishRepo.create((SideDish) sideDish);
         productRepo.create((Product) sideDish);
@@ -42,8 +41,8 @@ public class ProductService {
         System.out.println("Side Dish created: " + productName + " with price: " + productPrice + ", size: " + size);
     }
 
-    public void create_dessert(String productName, int productPrice, Allergens allergens){
-        Desserts desserts = new Desserts(productName, productPrice, allergens);
+    public void create_dessert(String productName, int productPrice, Allergens allergens, int id){
+        Desserts desserts = new Desserts(productName, productPrice, allergens, id);
 
         dessertRepo.create((Desserts) desserts);
         productRepo.create((Product) desserts);
@@ -51,8 +50,8 @@ public class ProductService {
         System.out.println("Dessert created: " + productName + " with price: " + productPrice + ", allergens: " + allergens);
     }
 
-    public void create_drink(String productName, int productPrice, DrinkVolume volume) {
-        Drinks drinks = new Drinks(productName, productPrice, volume);
+    public void create_drink(String productName, int productPrice, DrinkVolume volume, int id) {
+        Drinks drinks = new Drinks(productName, productPrice, volume, id);
 
         drinkRepo.create((Drinks) drinks);
         productRepo.create((Product) drinks);

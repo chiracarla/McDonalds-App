@@ -1,12 +1,15 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class User implements HasId {
     private int points;
     private int userID;
     private String email;
     private String name;
     private String password;
-    Offer offers;
+    List<Offer> offers;
     Order order;
 
     public User(String email, String name, int userID, String password) {
@@ -14,6 +17,7 @@ public abstract class User implements HasId {
         this.name = name;
         this.userID = userID;
         this.password = password;
+        offers = new ArrayList<>();
     }
 
     public int getPoints() {
@@ -51,6 +55,23 @@ public abstract class User implements HasId {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void addOffer(Offer offer) {
+        offers.add(offer);
+    }
+
+    public void removeOffer(Offer offer) {
+        offers.remove(offer);
+    }
+
+    public void addPoints(int points) {
+        this.points += points;
+    }
+
+    public int subtractPoints(int points) {
+        this.points -= points;
+        return this.points - points;
     }
 
 }

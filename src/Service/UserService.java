@@ -130,6 +130,7 @@ public class UserService {
     }
 
 }
+//TODO:
 // update account
 // make order in-store/online
-//complex function-- email sending API
+// complex function-- email sending API

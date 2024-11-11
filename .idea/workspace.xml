@@ -4,12 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="fixed problems">
-      <change afterPath="$PROJECT_DIR$/src/Controller/OfferController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="added ids to products + offer controller + service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/HasId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HasId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,21 +66,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/Statistics/lab2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Project_uni/sem3/Statistics/lab2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -147,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731192777580</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added ids to products + offer controller + service">
+      <option name="closed" value="true" />
+      <created>1731195279650</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731195279650</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +180,7 @@
     <MESSAGE value="extended and created OrderController" />
     <MESSAGE value="little corrections" />
     <MESSAGE value="fixed problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed problems" />
+    <MESSAGE value="added ids to products + offer controller + service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ids to products + offer controller + service" />
   </component>
 </project>

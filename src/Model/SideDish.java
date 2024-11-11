@@ -6,8 +6,8 @@ public class SideDish extends Product{
 
     private DishSize size;
 
-    public SideDish(String productName, int productPrice, DishSize size) {
-        super(productName, productPrice);
+    public SideDish(String productName, int productPrice, DishSize size, int id) {
+        super(productName, productPrice, id);
         this.size = size;
     }
 
@@ -23,9 +23,9 @@ public class SideDish extends Product{
     public Integer getId() {
         return this.getProdId();
     }
-
-    @Override
-    public int calc_points() {
-        return (int) (this.getProductPrice() * 0.5);
-    }
+//
+//    @Override
+//    public int calc_points() {
+//        return (int) (this.getProductPrice() * 0.5);
+//    }
 }

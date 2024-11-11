@@ -6,8 +6,8 @@ public class Desserts extends Product{
 
     private Allergens allergens;
 
-    public Desserts(String productName, int productPrice, Allergens allergens) {
-        super(productName, productPrice);
+    public Desserts(String productName, int productPrice, Allergens allergens, int id) {
+        super(productName, productPrice, id);
         this.allergens = allergens;
     }
 
@@ -24,8 +24,8 @@ public class Desserts extends Product{
         return this.getProdId();
     }
 
-    @Override
-    public int calc_points() {
-        return (int) (this.getProductPrice()*0.5);
-    }
+//    @Override
+//    public int calc_points() {
+//        return (int) (this.getProductPrice()*0.5);
+//    }
 }

@@ -6,8 +6,8 @@ public class MainDish extends Product{
     private int calories;
     public DishSize size; //small, medium, large, Xlarge
 
-    public MainDish(String productName, int productPrice, int calories, DishSize size) {
-        super(productName, productPrice);
+    public MainDish(String productName, int productPrice, int calories, DishSize size, int id) {
+        super(productName, productPrice, id);
         this.calories = calories;
         this.size = size;
     }
@@ -33,8 +33,12 @@ public class MainDish extends Product{
         return this.getProdId();
     }
 
-    @Override
-    public int calc_points() {
-        return (int) (this.getProductPrice() * 0.7);
-    }
+//    @Override
+//    public int calc_points() {
+//        return (int) (this.getProductPrice() * 0.7);
+//    }
 }
+//TODO:
+// cumpar de: 30 lei
+// primesc: 10 p
+// pot sa cumpar de: 15 / 20 lei

@@ -12,8 +12,8 @@ public class OfferController {
         this.offerService = offerService;
     }
 
-    public void add(int originalPrice, int newPrice, List<Product> products) {
-        offerService.addOffer(originalPrice, newPrice, products);
-    }
+    public void add( int newPrice, List<Product> products) {
+        offerService.addOffer( newPrice, products);
+    }//TODO: user input
 
 }

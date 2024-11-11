@@ -5,6 +5,7 @@ import Model.*;
 import Repository.IRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class OrderService {
     private final IRepository<Order> orderRepo;  // Repository for orders
@@ -15,15 +16,26 @@ public class OrderService {
         this.locationRepo = locationRepo;
     }
 
-    public void createOrder(Client user, Location location, List<Product> products) {
+//client poate sa fie oricare dintre useri
+    public void createOrder(Client user, Location location, List<Product> products, Optional<Offer> offer) {
         int orderID = generateNewOrderID();
+        int dif = 0;
         Order order = new Order(products, location, user, orderID);
-        int totalPrice = calculateTotalPrice(products);
+        if(offer.isPresent()) {
+            user.removeOffer(offer.get());
+            for (Product prod: offer.get().getProducts()) {
+                dif += prod.getProductPrice();
+            }
+            dif = dif - offer.get().getNewPrice();
+        }
+        int totalPrice = calculateTotalPrice(products) - dif;
+        user.addPoints(totalPrice/3);
         order.setTotalPrice(totalPrice);
         orderRepo.create(order);
 
         System.out.println("Order placed! Total price: " + totalPrice);
-    }//question
+    }
+    //TODO:optiune de pay cu puncte
 
     private int calculateTotalPrice(List<Product> products) {
         int totalPrice = 0;
@@ -31,7 +43,7 @@ public class OrderService {
             totalPrice += product.getProductPrice();
         }
         return totalPrice;
-    } //+met de adaugat oferte
+    }
 
     private int generateNewOrderID() {
         return orderRepo.getAll().stream()
@@ -44,5 +56,5 @@ public class OrderService {
         locationRepo.create(loc);
 
         System.out.println("New location placed! Location: " + loc);
-    } //question
+    }
 }
