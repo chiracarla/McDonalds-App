@@ -13,11 +13,10 @@ import Service.ProductService;
 import Service.UserService;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class Main {
+public class ConsoleApp {
     public static void main(String[] args) {
         IRepository<User> userRepo = new InMemoryRepository<>();
         IRepository<Client> clientRepo = new InMemoryRepository<>();
@@ -63,5 +62,7 @@ public class Main {
         System.out.println(offerService.getOffer(0));
         userService.getAllClients().get(0).addOffer(offerService.getOffer(0));
         orderController.createOrder(userService.getAllClients().get(0), loc1, productList, Optional.of(offerService.getOffer(0)), false);
+
+        orderController.analyzeMostOrdered();
     }
 }

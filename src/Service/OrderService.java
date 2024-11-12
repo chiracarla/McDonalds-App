@@ -4,7 +4,9 @@ import Enums.Locations;
 import Model.*;
 import Repository.IRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class OrderService {
@@ -81,5 +83,37 @@ public class OrderService {
         locationRepo.create(loc);
 
         System.out.println("New location placed! Location: " + loc);
+    }
+
+    //this function analyzes the most ordered product and gives out how likely it was to get ordered
+    public void analyze_most_ordered() {
+        List<Order> orders = orderRepo.getAll();
+        Map<Product, Integer> productCount = new HashMap<>();
+
+        for (Order order : orders) {
+            for (Product product : order.getProducts()) {
+                productCount.put(product, productCount.getOrDefault(product, 0) + 1);
+            }
+        }
+
+        Product mostOrderedProduct = null;
+        int maxCount = 0;
+        int totalProducts = 0;
+
+        for (Map.Entry<Product, Integer> entry : productCount.entrySet()) {
+            totalProducts += entry.getValue();
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mostOrderedProduct = entry.getKey();
+            }
+        }
+
+        if (mostOrderedProduct != null) {
+            double percentage = (double) maxCount / totalProducts * 100;
+            System.out.println("\nMost ordered product: " + mostOrderedProduct.getProductName());
+            System.out.println("Percentage of orders: " + String.format("%.2f", percentage) + "%");
+        } else {
+            System.out.println("No orders found.");
+        }
     }
 }

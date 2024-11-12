@@ -24,4 +24,8 @@ public class OrderController {
         orderService.create_location(location, manager);
         return null;
     }
+
+    public void analyzeMostOrdered(){
+        orderService.analyze_most_ordered();
+    }
 }
