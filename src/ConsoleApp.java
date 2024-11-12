@@ -3,6 +3,7 @@ import Controller.OrderController;
 import Controller.ProductController;
 import Controller.UserController;
 import Enums.DishSize;
+import Enums.DrinkVolume;
 import Enums.Locations;
 import Model.*;
 import Repository.IRepository;
@@ -45,16 +46,26 @@ public class ConsoleApp {
         userController.sign_Up_Client("chira.carla@gmail.com", "Chira Carla", "5678");
 
         userController.sign_In("klara.orban@yahoo.com", "1234");
-        userController.sign_Up_Client("example.name@yahoo.com", "Example Client", "1234");
+        userController.sign_Up_Client("james.night@yahoo.com", "James Night", "1234");
         userController.showAllManagers();
 
         Location loc1 = orderController.createLocation(Locations.Bucuresti, userService.getAllManagers().get(0));
 
         productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM, 1);
         productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM, 2);
+        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE, 3);
+
+        productController.createSideDish("French Fries", 5, DishSize.MEDIUM, 6);
+        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM, 7);
+
+        productController.createDrink("Sprite", 3, DrinkVolume._300ML, 9);
+        productController.createDrink("Lipton", 3, DrinkVolume._200ML,7);
+
+
         List<Product> productList = new ArrayList<>();
         productList.add(productController.getProduct("Hamburger"));
         productList.add(productController.getProduct("Cheeseburger"));
+        productList.add(productController.getProduct("French Fries"));
 //        productRepo.getAll().forEach(System.out::println);
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));

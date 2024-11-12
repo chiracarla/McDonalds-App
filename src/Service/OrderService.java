@@ -111,7 +111,7 @@ public class OrderService {
         if (mostOrderedProduct != null) {
             double percentage = (double) maxCount / totalProducts * 100;
             System.out.println("\nMost ordered product: " + mostOrderedProduct.getProductName());
-            System.out.println("Percentage of orders: " + String.format("%.2f", percentage) + "%");
+            System.out.println("Percentage out of orders: " + String.format("%.2f", percentage) + "%");
         } else {
             System.out.println("No orders found.");
         }
