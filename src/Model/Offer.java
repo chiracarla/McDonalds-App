@@ -34,6 +34,15 @@ public class Offer implements HasId{
     }
 
     @Override
+    public String toString() {
+        return "Offer{" +
+                "originalPrice=" + originalPrice +
+                ", newPrice=" + newPrice +
+                ", products=" + products +
+                '}';
+    }
+
+    @Override
     public Integer getId() {
         return 0;
     }

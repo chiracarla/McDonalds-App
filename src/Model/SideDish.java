@@ -28,4 +28,11 @@ public class SideDish extends Product{
 //    public int calc_points() {
 //        return (int) (this.getProductPrice() * 0.5);
 //    }
+
+    @Override
+    public String toString() {
+        return "SideDish{" +
+                "size=" + size +
+                '}';
+    }
 }

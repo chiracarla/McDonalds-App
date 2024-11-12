@@ -62,6 +62,6 @@ public class Main {
         offerController.add(3, offerList);
         System.out.println(offerService.getOffer(0));
         userService.getAllClients().get(0).addOffer(offerService.getOffer(0));
-        orderController.createOrder(userService.getAllClients().get(0), loc1, productList, Optional.of(offerService.getOffer(0)));
+        orderController.createOrder(userService.getAllClients().get(0), loc1, productList, Optional.of(offerService.getOffer(0)), false);
     }
 }

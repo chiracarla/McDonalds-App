@@ -14,8 +14,8 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    public void createOrder(Client user, Location location, List<Product> products, Optional<Offer> offer) {
-        orderService.createOrder(user, location, products, offer);
+    public void createOrder(Client user, Location location, List<Product> products, Optional<Offer> offer, boolean payWithPoints) {
+        orderService.createOrder(user, location, products, offer, payWithPoints);
     }
     //TODO: ar tb cu user input
 

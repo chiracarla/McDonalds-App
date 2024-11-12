@@ -33,7 +33,15 @@ public class MainDish extends Product{
         return this.getProdId();
     }
 
-//    @Override
+    @Override
+    public String toString() {
+        return "MainDish{" +
+                "calories=" + calories +
+                ", size=" + size +
+                '}';
+    }
+
+    //    @Override
 //    public int calc_points() {
 //        return (int) (this.getProductPrice() * 0.7);
 //    }
@@ -41,4 +49,4 @@ public class MainDish extends Product{
 //TODO:
 // cumpar de: 30 lei
 // primesc: 10 p
-// pot sa cumpar de: 15 / 20 lei
+// pot sa cumpar de: 15 lei

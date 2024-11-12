@@ -11,6 +11,13 @@ public class Employee extends User{
         this.manager = manager;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "manager=" + manager +
+                '}';
+    }
+
     public Integer getId() {
         return this.getUserID();
     }

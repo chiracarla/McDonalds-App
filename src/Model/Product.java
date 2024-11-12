@@ -48,4 +48,13 @@ public abstract class Product implements HasId{
     public void setId(int id) {
         this.productId = id;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                '}';
+    }
 }

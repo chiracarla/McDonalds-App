@@ -28,6 +28,14 @@ public class Location implements HasId {
     }
 
     @Override
+    public String toString() {
+        return "Location{" +
+                "storeLocation=" + storeLocation +
+                ", storeManager=" + storeManager +
+                '}';
+    }
+
+    @Override
     public Integer getId() {
         return 0;
     }//TODO: tb id

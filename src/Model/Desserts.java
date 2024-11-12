@@ -24,7 +24,14 @@ public class Desserts extends Product{
         return this.getProdId();
     }
 
-//    @Override
+    @Override
+    public String toString() {
+        return "Desserts{" +
+                "allergens=" + allergens +
+                '}';
+    }
+
+    //    @Override
 //    public int calc_points() {
 //        return (int) (this.getProductPrice()*0.5);
 //    }

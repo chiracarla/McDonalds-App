@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Order implements HasId {
     private List<Product> products;
-    private int totalPrice;
+    private double totalPrice;
     private Location location;
     private User user;
     private int orderID;
@@ -25,10 +25,10 @@ public class Order implements HasId {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
     public Location getLocation() {

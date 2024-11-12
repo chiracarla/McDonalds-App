@@ -10,7 +10,6 @@ public abstract class User implements HasId {
     private String name;
     private String password;
     List<Offer> offers;
-    Order order;
 
     public User(String email, String name, int userID, String password) {
         this.email = email;
@@ -72,6 +71,18 @@ public abstract class User implements HasId {
     public int subtractPoints(int points) {
         this.points -= points;
         return this.points - points;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "points=" + points +
+                ", userID=" + userID +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", offers=" + offers +
+                '}';
     }
 
 }

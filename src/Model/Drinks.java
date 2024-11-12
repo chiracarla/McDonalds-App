@@ -23,7 +23,15 @@ public class Drinks extends Product {
     public Integer getId() {
         return this.getProdId();
     }
-//
+
+    @Override
+    public String toString() {
+        return "Drinks{" +
+                "volume=" + volume +
+                '}';
+    }
+
+    //
 //    @Override
 //    public int calc_points() {
 //        return (int) (this.getProductPrice() * 0.3);
