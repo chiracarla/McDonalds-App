@@ -6,12 +6,24 @@ import Model.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ *The {@code UserService} class provides various services related to user actions
+ * in the application. This includes user authentication, retrieval, and management
+ * of user information and roles.
+ */
 public class UserService {
     private final IRepository<User> userRepo;
     private final IRepository<Client> clientRepo;
     private final IRepository<Manager> managerRepo;
     private final IRepository<Employee> employeeRepo;
 
+    /**
+     * uses repositories to acces the information
+     * @param userRepo
+     * @param clientRepo
+     * @param managerRepo
+     * @param employeeRepo
+     */
     public UserService(IRepository<User> userRepo, IRepository<Client> clientRepo, IRepository<Manager> managerRepo, IRepository<Employee> employeeRepo) {
         this.userRepo = userRepo;
         this.clientRepo = clientRepo;
@@ -19,7 +31,13 @@ public class UserService {
         this.employeeRepo = employeeRepo;
     }
 
-    public void sign_up_client(String email, String name, String password) {
+    /**
+     * creates a client account using the following information
+     * @param email
+     * @param name
+     * @param password
+     */
+    public void signUpClient(String email, String name, String password) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
                 .findFirst();
@@ -36,7 +54,14 @@ public class UserService {
         System.out.println("Client signed up successfully!");
     }
 
-    public void sign_up_manager(String email, String name, String password, String rank) {
+    /**
+     * creates an employee account using the following information
+     * @param email
+     * @param name
+     * @param password
+     * @param rank
+     */
+    public void signUpManager(String email, String name, String password, String rank) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
                 .findFirst();
@@ -53,7 +78,14 @@ public class UserService {
         System.out.println("Manager signed up successfully!");
     }
 
-    public void sign_up_employee(String email, String name, String password, Manager manager) {
+    /**
+     * creates a manager account using the following information
+     * @param email
+     * @param name
+     * @param password
+     * @param manager
+     */
+    public void signUpEmployee(String email, String name, String password, Manager manager) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
                 .findFirst();
@@ -70,7 +102,10 @@ public class UserService {
         System.out.println("Client signed up successfully!");
     }
 
-
+    /**
+     *
+     * @return
+     */
     private int generateNewUserId() {
         return userRepo.getAll().stream()
                 .mapToInt(User::getUserID)
@@ -78,7 +113,15 @@ public class UserService {
                 .orElse(0) + 1;
         }
 
-    public void sign_in(String email, String password) {
+    /**
+     * Signs in a user based on their email and password. If successful,
+     * it identifies the user type (Client, Employee, Manager) and displays
+     * a message indicating the type. If the email or password is incorrect,
+     * an error message is displayed.
+     * @param email
+     * @param password
+     */
+    public void signIn(String email, String password) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email) && user.getPassword().equals(password)) // Check for email and password
                 .findFirst();
@@ -103,7 +146,12 @@ public class UserService {
         }
     }
 
-    public void delete_account(String email, String password) {
+    /**
+     * deletes any account if the email and password match
+     * @param email
+     * @param password
+     */
+    public void deleteAccount(String email, String password) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
                 .findFirst();
@@ -117,14 +165,26 @@ public class UserService {
         }
     }
 
+    /**
+     * provides a list of all clients signed up
+     * @return
+     */
     public List<Client> getAllClients() {
         return clientRepo.getAll();
     }
 
+    /**
+     * provides a list of all managers signed up
+     * @return
+     */
     public List<Manager> getAllManagers(){
         return managerRepo.getAll();
     }
 
+    /**
+     * provides a list of all employees signed up
+     * @return
+     */
     public List<Employee> getAllEmployees() {
         return employeeRepo.getAll();
     }

@@ -1,11 +1,19 @@
 package Model;
 
 import Enums.DrinkVolume;
-
+/**
+ *Represents the drinks of the system
+ **/
 public class Drinks extends Product {
 
     private DrinkVolume volume;
-
+    /**
+     * Constructs a Drinks with the specified name, price, ID, and alcoholic status.
+     *
+     * @param productName the name of the drink
+     * @param productPrice the price of the drink
+     * @param id the ID of the drink
+     */
     public Drinks(String productName, int productPrice, DrinkVolume volume, int id) {
         super(productName, productPrice,id);
         this.volume = volume;

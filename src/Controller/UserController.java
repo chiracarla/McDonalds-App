@@ -5,35 +5,77 @@ import Service.UserService;
 
 import java.util.List;
 
+/**
+ * Controller for the user
+ */
 public class UserController {
     private final UserService userService;
 
+    /**
+     * Constructs the controller linked to service
+     * @param userService
+     */
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
+    /**
+     * Signs up a client
+     * @param email
+     * @param name
+     * @param password
+     * @return
+     */
     public Client sign_Up_Client(String email, String name, String password) {
-        userService.sign_up_client(email, name, password);
+        userService.signUpClient(email, name, password);
         return null;
     } //dc nu void?
 
+    /**
+     * signs up a manager
+     * @param email
+     * @param name
+     * @param password
+     * @param rank
+     * @return
+     */
     public Manager sign_Up_Manager(String email, String name, String password, String rank) {
-        userService.sign_up_manager(email, name, password, rank);
+        userService.signUpManager(email, name, password, rank);
         return null;
     }
 
+    /**
+     * signs up an employee
+     * @param email
+     * @param name
+     * @param password
+     * @param manager
+     */
     public void sign_Up_Employee(String email, String name, String password, Manager manager) {
-        userService.sign_up_employee(email, name, password, manager);
+        userService.signUpEmployee(email, name, password, manager);
     }
 
+    /**
+     * sign in->linked to the service
+     * @param email
+     * @param password
+     */
     public void sign_In(String email, String password) {
-        userService.sign_in(email, password);
+        userService.signIn(email, password);
     } //nu se potriveste cu conventiile
 
+    /**
+     * Allows the signed in user to delete the account
+     * @param email
+     * @param password
+     */
     public void delete_Account(String email, String password) {
-        userService.delete_account(email, password);
+        userService.deleteAccount(email, password);
     }
 
+    /**
+     * Shows all clinets
+     */
     public void showAllClients() {
         List<Client> clients = userService.getAllClients();
         if (clients.isEmpty()) {

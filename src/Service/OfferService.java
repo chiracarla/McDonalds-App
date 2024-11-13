@@ -5,13 +5,23 @@ import Repository.IRepository;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class OfferService {
-    private final IRepository<Offer> offerRepository;///???????
+    private final IRepository<Offer> offerRepository;
 
+    /**
+     * @param repository
+     */
     public OfferService(IRepository repository) {
         this.offerRepository = repository;
     }
 
+    /**
+     * @param newPrice
+     * @param products
+     */
     public void addOffer( int newPrice, List<Product> products) {
         int price = 0;
         for (Product product : products) {
@@ -21,13 +31,20 @@ public class OfferService {
         offerRepository.create(offer);
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public Offer getOffer(int id) {
         return offerRepository.read(id);
     }
-    //TODO:doar manageri sa adauge oferte si odar manageri sa aprobe sign up la employee
 
+    /**
+     * @param id
+     */
     public void deleteOffer(int id) {
         offerRepository.delete(id);
-    }//a expirat termenul
+    }
+//a expirat termenul
 
 }

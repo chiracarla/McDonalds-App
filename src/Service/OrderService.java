@@ -7,15 +7,30 @@ import Repository.IRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ *
+ */
 public class OrderService {
     private final IRepository<Order> orderRepo;  // Repository for orders
     private final IRepository<Location> locationRepo;
 
+    /**
+     *
+     * @param orderRepo
+     * @param locationRepo
+     */
     public OrderService(IRepository<Order> orderRepo, IRepository<Location> locationRepo) {
         this.orderRepo = orderRepo;
         this.locationRepo = locationRepo;
     }
 
+    /**
+     * @param user
+     * @param location
+     * @param products
+     * @param offer
+     * @param payWithPoints
+     */
     public void createOrder(Client user, Location location, List<Product> products, Optional<Offer> offer, boolean payWithPoints) {
         int orderID = generateNewOrderID();
         double dif = 0;
@@ -38,6 +53,13 @@ public class OrderService {
         System.out.println("Order placed! Total price: " + totalPrice);
     }
 
+    /**
+     * @param user
+     * @param location
+     * @param products
+     * @param offer
+     * @param payWithPoints
+     */
     public void createOrderEmployee(Employee user, Location location, List<Product> products, Optional<Offer> offer, boolean payWithPoints) {
         int orderID = generateNewOrderID();
         int dif = 0;
@@ -62,6 +84,10 @@ public class OrderService {
         System.out.println("Order placed! Total price: " + totalPrice);
     }
 
+    /**
+     * @param products
+     * @return
+     */
     private int calculateTotalPrice(List<Product> products) {
         int totalPrice = 0;
         for (Product product : products) {
@@ -70,12 +96,20 @@ public class OrderService {
         return totalPrice;
     }
 
+    /**
+     *
+     * @return
+     */
     private int generateNewOrderID() {
         return orderRepo.getAll().stream()
                 .mapToInt(Order::getOrderID)
                 .max().orElse(0)+1;
     }
 
+    /**
+     * @param location
+     * @param manager
+     */
     public void create_location(Locations location, Manager manager) {
         Location loc = new Location(location, manager);
         locationRepo.create(loc);

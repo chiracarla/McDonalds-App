@@ -2,9 +2,19 @@ package Model;
 
 import Model.User;
 
+/**
+ * Represents managers in the system
+ */
 public class Manager extends User {
     private String rank;
-
+    /**
+     * Constructs a Manager with the specified email, name, user ID, and password.
+     *
+     * @param email the email of the manager
+     * @param name the name of the manager
+     * @param id the ID of the manager
+     * @param password the password of the manager
+     */
     public Manager(String email, String name, int id, String password, String rank) {
         super(email, name, id, password);
         this.rank = rank;

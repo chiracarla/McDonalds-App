@@ -8,6 +8,9 @@ import Repository.IRepository;
 
 import java.util.Optional;
 
+/**
+ *
+ */
 public class ProductService {
     private final IRepository<Product> productRepo;;
     private final IRepository<MainDish> mainDishRepo;
@@ -15,6 +18,14 @@ public class ProductService {
     private final IRepository<Desserts> dessertRepo;
     private final IRepository<Drinks> drinkRepo;
 
+    /**
+     *
+     * @param productRepo
+     * @param mainDishRepo
+     * @param sideDishRepo
+     * @param dessertRepo
+     * @param drinkRepo
+     */
     public ProductService(IRepository<Product> productRepo, IRepository<MainDish> mainDishRepo, IRepository<SideDish> sideDishRepo, IRepository<Desserts> dessertRepo, IRepository<Drinks> drinkRepo) {
         this.productRepo = productRepo;
         this.mainDishRepo = mainDishRepo;
@@ -23,7 +34,16 @@ public class ProductService {
         this.drinkRepo = drinkRepo;
     }
     //TODO: parca trebuia o clasa abstracta
-    public void create_main_dish(String productName, int productPrice, int calories, DishSize size, int id) {
+
+    /**
+     *
+     * @param productName
+     * @param productPrice
+     * @param calories
+     * @param size
+     * @param id
+     */
+    public void createMainDish(String productName, int productPrice, int calories, DishSize size, int id) {
         Product mainDish = new MainDish(productName, productPrice, calories, size, id);
 
         mainDishRepo.create((MainDish) mainDish);
@@ -32,7 +52,14 @@ public class ProductService {
         System.out.println("Main Dish created: " + productName + " with price: " + productPrice + ", calories: " + calories + ", size: " + size);
     }
 
-    public void create_side_dish(String productName, int productPrice, DishSize size , int id){
+    /**
+     *
+     * @param productName
+     * @param productPrice
+     * @param size
+     * @param id
+     */
+    public void createSideDish(String productName, int productPrice, DishSize size , int id){
         Product sideDish = new SideDish(productName, productPrice, size, id);
 
         sideDishRepo.create((SideDish) sideDish);
@@ -41,7 +68,14 @@ public class ProductService {
         System.out.println("Side Dish created: " + productName + " with price: " + productPrice + ", size: " + size);
     }
 
-    public void create_dessert(String productName, int productPrice, Allergens allergens, int id){
+    /**
+     *
+     * @param productName
+     * @param productPrice
+     * @param allergens
+     * @param id
+     */
+    public void createDessert(String productName, int productPrice, Allergens allergens, int id){
         Desserts desserts = new Desserts(productName, productPrice, allergens, id);
 
         dessertRepo.create((Desserts) desserts);
@@ -50,7 +84,14 @@ public class ProductService {
         System.out.println("Dessert created: " + productName + " with price: " + productPrice + ", allergens: " + allergens);
     }
 
-    public void create_drink(String productName, int productPrice, DrinkVolume volume, int id) {
+    /**
+     *
+     * @param productName
+     * @param productPrice
+     * @param volume
+     * @param id
+     */
+    public void createDrink(String productName, int productPrice, DrinkVolume volume, int id) {
         Drinks drinks = new Drinks(productName, productPrice, volume, id);
 
         drinkRepo.create((Drinks) drinks);
@@ -59,6 +100,11 @@ public class ProductService {
         System.out.println("Drink created: " + productName + " with price: " + productPrice + ", volume: " + volume);
     }
 
+    /**
+     *
+     * @param productName
+     * @return
+     */
     public Product getProduct(String productName){
         Optional<Product> existingProduct = productRepo.getAll().stream()
                 .filter(product -> product.getProductName().equals(productName))

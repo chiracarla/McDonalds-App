@@ -5,6 +5,9 @@ import Service.OfferService;
 
 import java.util.List;
 
+/**
+ * Controller for the offers
+ */
 public class OfferController {
     private OfferService offerService;
 
@@ -12,6 +15,11 @@ public class OfferController {
         this.offerService = offerService;
     }
 
+    /**
+     * Contructs the controller with the specified service addOffer
+     * @param newPrice
+     * @param products
+     */
     public void add( int newPrice, List<Product> products) {
         offerService.addOffer( newPrice, products);
     }//TODO: user input

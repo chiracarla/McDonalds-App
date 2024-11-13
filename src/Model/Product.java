@@ -1,5 +1,9 @@
 package Model;
 
+/**
+ * Represents a product in the system
+ * Products are anything food related
+ */
 public abstract class Product implements HasId{
     private int productId;
     private String productName;
@@ -7,6 +11,13 @@ public abstract class Product implements HasId{
     //TODO
     //stock? atunci va tb sa fie la fiec locatie diferit-maybe not
     //poate fiecare locatie sa inceapa cu o lista de stock la fiec produs?
+    /**
+     * Constructs a Product with the specified name, price, and ID.
+     *
+     * @param productName the name of the product
+     * @param productPrice the price of the product
+     * @param id the ID of the product
+     */
     public Product(String productName, int productPrice, int id) {
         this.productName = productName;
         this.productPrice = productPrice;

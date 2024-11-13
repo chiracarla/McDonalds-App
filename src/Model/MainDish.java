@@ -2,10 +2,21 @@ package Model;
 
 import Enums.DishSize;
 
+/**
+ * Represents the main dish
+ * Main dishes are usually the bigger portion of food in the order
+ */
 public class MainDish extends Product{
     private int calories;
     public DishSize size; //small, medium, large, Xlarge
-
+    /**
+     * Constructs a MainDish with the specified name, price, ID, and size.
+     *
+     * @param productName the name of the main dish
+     * @param productPrice the price of the main dish
+     * @param id the ID of the main dish
+     * @param size the size of the main dish
+     */
     public MainDish(String productName, int productPrice, int calories, DishSize size, int id) {
         super(productName, productPrice, id);
         this.calories = calories;

@@ -4,15 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="added ids to products + offer controller + service">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="toString methods, pay with points option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
+    </list>
+    <list id="220ab710-e9bb-4bfa-9b2e-0679960c9923" name="Changes by dellg3" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OfferController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/Allergens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/Allergens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/DishSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/DishSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/DrinkVolume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/DrinkVolume.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/Locations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/HasId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HasId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Offer.java" afterDir="false" />
@@ -20,7 +33,8 @@
       <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/InMemoryRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +63,12 @@
     &quot;assignee&quot;: &quot;Klaraaorban&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Klaraaorban/McDonalds-App.git&quot;,
-    &quot;accountId&quot;: &quot;f5afb1c5-7211-4307-8e45-4f1701262e46&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Klaraaorban/McDonalds-App.git",
+    "accountId": "d82f137d-78eb-4a1a-992a-e3367c88c5c3"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -71,6 +85,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JavaScript Debug.Product.html.executor": "Run",
+    "JavaScript Debug.UserController.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -92,21 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="McDonalds App" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="McDonalds App" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="UserController.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/McDonalds App/doc/Controller/UserController.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.UserController.html" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -114,8 +121,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -131,6 +138,7 @@
       <workItem from="1731071194164" duration="41000" />
       <workItem from="1731096711379" duration="11948000" />
       <workItem from="1731145336897" duration="5095000" />
+      <workItem from="1731492677159" duration="883000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -172,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731195279650</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="toString methods, pay with points option">
+      <option name="closed" value="true" />
+      <created>1731439472229</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731439472229</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +200,7 @@
     <MESSAGE value="little corrections" />
     <MESSAGE value="fixed problems" />
     <MESSAGE value="added ids to products + offer controller + service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ids to products + offer controller + service" />
+    <MESSAGE value="toString methods, pay with points option" />
+    <option name="LAST_COMMIT_MESSAGE" value="toString methods, pay with points option" />
   </component>
 </project>

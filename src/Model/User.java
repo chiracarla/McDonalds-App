@@ -10,7 +10,14 @@ public abstract class User implements HasId {
     private String name;
     private String password;
     List<Offer> offers;
-
+    /**
+     * Constructs a User with the specified email, name, user ID, and password.
+     *
+     * @param email the email of the user
+     * @param name the name of the user
+     * @param userID the ID of the user
+     * @param password the password of the user
+     */
     public User(String email, String name, int userID, String password) {
         this.email = email;
         this.name = name;
@@ -18,23 +25,42 @@ public abstract class User implements HasId {
         this.password = password;
         offers = new ArrayList<>();
     }
-
+    /**
+     * Gets the points of the user.
+     *
+     * @return the points of the user
+     */
     public int getPoints() {
         return points;
     }
-
+    /**
+     * Sets the points of the user.
+     *
+     * @param points the points to set
+     */
     public void setPoints(int points) {
         this.points = points;
     }
-
+    /**
+     * Gets the email of the user.
+     *
+     * @return the email of the user
+     */
     public String getEmail() {
         return email;
     }
-
+    /**
+     * Sets the email of the user.
+     *
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-
+    /**
+     *Other kind of Getters and Setters used for the User
+     *
+     */
     public String getName() {
         return name;
     }
@@ -72,7 +98,11 @@ public abstract class User implements HasId {
         this.points -= points;
         return this.points - points;
     }
-
+    /**
+     * Returns a string representation of the user.
+     *
+     * @return a string representation of the user
+     */
     @Override
     public String toString() {
         return "User{" +
