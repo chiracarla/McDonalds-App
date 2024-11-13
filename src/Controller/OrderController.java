@@ -46,4 +46,7 @@ public class OrderController {
         return null;
     }
 
+    public void analyzeMostOrdered(){
+        orderService.analyze_most_ordered();
+    }
 }
