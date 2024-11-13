@@ -42,11 +42,11 @@ public class OrderController {
      */
     public Location createLocation(Locations location, Manager manager) {
 
-        orderService.create_location(location, manager);
+        orderService.createLocation(location, manager);
         return null;
     }
 
     public void analyzeMostOrdered(){
-        orderService.analyze_most_ordered();
+        orderService.analyzeMostOrdered();
     }
 }

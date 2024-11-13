@@ -31,4 +31,5 @@ public class Manager extends User {
     public Integer getId() {
         return this.getUserID();
     }
+
 }

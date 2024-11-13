@@ -112,7 +112,7 @@ public class OrderService {
      * @param location
      * @param manager
      */
-    public void create_location(Locations location, Manager manager) {
+    public void createLocation(Locations location, Manager manager) {
         Location loc = new Location(location, manager);
         locationRepo.create(loc);
 
@@ -120,7 +120,7 @@ public class OrderService {
     }
 
     //this function analyzes the most ordered product and gives out how likely it was to get ordered
-    public void analyze_most_ordered() {
+    public void analyzeMostOrdered() {
         List<Order> orders = orderRepo.getAll();
         Map<Product, Integer> productCount = new HashMap<>();
 

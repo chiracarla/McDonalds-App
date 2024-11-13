@@ -42,11 +42,11 @@ public class TestConsole {
 
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
-        userController.sign_Up_Manager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
-        userController.sign_Up_Client("chira.carla@gmail.com", "Chira Carla", "5678");
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
+        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
 
-        userController.sign_In("klara.orban@yahoo.com", "1234");
-        userController.sign_Up_Client("james.night@yahoo.com", "James Night", "1234");
+        userController.signIn("klara.orban@yahoo.com", "1234");
+        userController.signUpClient("james.night@yahoo.com", "James Night", "1234");
         userController.showAllManagers();
 
         Location loc1 = orderController.createLocation(Locations.Bucuresti, userService.getAllManagers().get(0));

@@ -44,9 +44,27 @@ public class ConsoleApp {
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
 
+        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM, 1);
+        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM, 2);
+        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE, 3);
+
+        productController.createSideDish("French Fries", 5, DishSize.MEDIUM, 6);
+        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM, 7);
+
+        productController.createDrink("Sprite", 3, DrinkVolume._300ML, 9);
+        productController.createDrink("Lipton", 3, DrinkVolume._200ML,7);
+        List<Product> offerList = new ArrayList<>();
+        offerList.add(productController.getProduct("Cheeseburger"));
+        offerController.add(3, offerList);
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
+        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+
+
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-
+        int signedInID;
+        String signedInEmail;
+        String userType;
         while (running) {
             System.out.println("Select an option:");
             System.out.println("1. Sign Up Manager");
@@ -58,6 +76,7 @@ public class ConsoleApp {
             System.out.println("7. Create Side Dish");
             System.out.println("8. Create Drink");
             System.out.println("9. Analyze Most Ordered");
+            System.out.println("10. Place Order");
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
@@ -67,29 +86,32 @@ public class ConsoleApp {
                 case 1:
                     System.out.println("Enter email:");
                     String managerEmail = scanner.nextLine();
+                    signedInEmail = managerEmail;
                     System.out.println("Enter name:");
                     String managerName = scanner.nextLine();
                     System.out.println("Enter password:");
                     String managerPassword = scanner.nextLine();
                     System.out.println("Enter role:");
                     String managerRole = scanner.nextLine();
-                    userController.sign_Up_Manager(managerEmail, managerName, managerPassword, managerRole);
+                    userController.signUpManager(managerEmail, managerName, managerPassword, managerRole);
                     break;
                 case 2:
                     System.out.println("Enter email:");
                     String clientEmail = scanner.nextLine();
+                    signedInEmail = clientEmail;
                     System.out.println("Enter name:");
                     String clientName = scanner.nextLine();
                     System.out.println("Enter password:");
                     String clientPassword = scanner.nextLine();
-                    userController.sign_Up_Client(clientEmail, clientName, clientPassword);
+                    userController.signUpClient(clientEmail, clientName, clientPassword);
                     break;
                 case 3:
                     System.out.println("Enter email:");
                     String email = scanner.nextLine();
+                    signedInEmail = email;
                     System.out.println("Enter password:");
                     String password = scanner.nextLine();
-                    userController.sign_In(email, password);
+                    userController.signIn(email, password);
                     break;
                 case 4:
                     userController.showAllManagers();
@@ -147,6 +169,48 @@ public class ConsoleApp {
                     break;
                 case 9:
                     orderController.analyzeMostOrdered();
+                    break;
+                case 10:
+                    System.out.println("Enter client email:");
+                    String clientOrderEmail = scanner.nextLine();
+                    Client client = userService.getAllClients().stream()
+                            .filter(c -> c.getEmail().equals(clientOrderEmail))
+                            .findFirst()
+                            .orElse(null);
+                    System.out.println("Enter location (Bucuresti, Cluj_Napoca, Brasov, Sighisoara, TgMures):");
+                    String loc = scanner.next();
+                    System.out.println("Enter manager email:");
+                    String locManEmail = scanner.next();
+                    Location location = locationRepo.getAll().stream()
+                            .filter(l -> l.getStoreLocation().equals(Locations.valueOf(loc)))
+                            .filter(l -> l.getStoreManager().getEmail().equals(locManEmail))
+                            .findFirst()
+                            .orElse(null);
+                    if (client != null) {
+                        List<Product> productList = new ArrayList<>();
+                        System.out.println("Enter product names (comma separated):");
+                        String productNames = scanner.next();
+//                        for (String productName : productNames) {
+//                            Product product = productController.getProduct(productName.trim());
+//                            if (product != null) {
+//                                productList.add(product);
+//                            }
+//                        }
+                        Product product = productController.getProduct(productNames.trim());
+                        System.out.println("Apply offer? (yes/no):");
+                        String applyOffer = scanner.next();
+                        Optional<Offer> offer = Optional.empty();
+                        if (applyOffer.equalsIgnoreCase("yes")) {
+                            System.out.println("Enter offer ID:");
+                            int offerId = scanner.nextInt();
+                            offer = Optional.ofNullable(offerService.getOffer(offerId));
+                        }
+                        System.out.println("Pay with points? (true/false):");
+                        boolean payWithPoints = scanner.nextBoolean();
+                        orderController.createOrder(client, location, productList, offer, payWithPoints);
+                    } else {
+                        System.out.println("Client not found.");
+                    }
                     break;
                 case 0:
                     running = false;

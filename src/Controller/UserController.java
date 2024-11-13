@@ -26,7 +26,7 @@ public class UserController {
      * @param password
      * @return
      */
-    public Client sign_Up_Client(String email, String name, String password) {
+    public Client signUpClient(String email, String name, String password) {
         userService.signUpClient(email, name, password);
         return null;
     } //dc nu void?
@@ -39,7 +39,7 @@ public class UserController {
      * @param rank
      * @return
      */
-    public Manager sign_Up_Manager(String email, String name, String password, String rank) {
+    public Manager signUpManager(String email, String name, String password, String rank) {
         userService.signUpManager(email, name, password, rank);
         return null;
     }
@@ -51,7 +51,7 @@ public class UserController {
      * @param password
      * @param manager
      */
-    public void sign_Up_Employee(String email, String name, String password, Manager manager) {
+    public void signUpEmployee(String email, String name, String password, Manager manager) {
         userService.signUpEmployee(email, name, password, manager);
     }
 
@@ -60,7 +60,7 @@ public class UserController {
      * @param email
      * @param password
      */
-    public void sign_In(String email, String password) {
+    public void signIn(String email, String password) {
         userService.signIn(email, password);
     } //nu se potriveste cu conventiile
 
@@ -69,7 +69,7 @@ public class UserController {
      * @param email
      * @param password
      */
-    public void delete_Account(String email, String password) {
+    public void deleteAccount(String email, String password) {
         userService.deleteAccount(email, password);
     }
 
