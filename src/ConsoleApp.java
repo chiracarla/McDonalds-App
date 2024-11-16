@@ -5,6 +5,7 @@ import Controller.UserController;
 import Enums.DishSize;
 import Enums.DrinkVolume;
 import Enums.Locations;
+import Enums.ManagerRank;
 import Model.*;
 import Repository.IRepository;
 import Repository.InMemoryRepository;
@@ -56,20 +57,16 @@ public class ConsoleApp {
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));
         offerController.add(3, offerList);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior );
         userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
 
 
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         int signedInID;
-        String signedInEmail;
         String userType;
         while (running) {
-            System.out.println("Select an option:");
-            System.out.println("1. Sign Up Manager");
-            System.out.println("2. Sign Up Client");
-            System.out.println("3. Sign In");
+            String signedInEmail;
             System.out.println("4. Show All Managers");
             System.out.println("5. Create Location");
             System.out.println("6. Create Main Dish");
@@ -77,6 +74,10 @@ public class ConsoleApp {
             System.out.println("8. Create Drink");
             System.out.println("9. Analyze Most Ordered");
             System.out.println("10. Place Order");
+            System.out.println("Select an option:");
+            System.out.println("1. Sign Up Manager");
+            System.out.println("2. Sign Up Client");
+            System.out.println("3. Sign In");
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
@@ -93,7 +94,8 @@ public class ConsoleApp {
                     String managerPassword = scanner.nextLine();
                     System.out.println("Enter role:");
                     String managerRole = scanner.nextLine();
-                    userController.signUpManager(managerEmail, managerName, managerPassword, managerRole);
+                    userController.signUpManager(managerEmail, managerName, managerPassword, ManagerRank.valueOf(managerRole));
+                    choice = 0;
                     break;
                 case 2:
                     System.out.println("Enter email:");

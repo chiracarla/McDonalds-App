@@ -12,7 +12,7 @@ public abstract class Product implements HasId{
     private int productPrice;
     private Allergens allergens;
     //TODO
-    //stock? atunci va tb sa fie la fiec locatie diferit-maybe not
+    // stock? atunci va tb sa fie la fiec locatie diferit-maybe not
     //poate fiecare locatie sa inceapa cu o lista de stock la fiec produs?
     /**
      * Constructs a Product with the specified name, price, and ID.

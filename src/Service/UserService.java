@@ -1,5 +1,6 @@
 package Service;
 
+import Enums.ManagerRank;
 import Repository.*;
 import Model.*;
 
@@ -59,7 +60,7 @@ public class UserService {
      * @param password
      * @param rank
      */
-    public void signUpManager(String email, String name, String password, String rank) {
+    public void signUpManager(String email, String name, String password, ManagerRank rank) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email))
                 .findFirst();
@@ -97,7 +98,7 @@ public class UserService {
         User newUser = new Employee(email, name, newUserID, password, manager);
         userRepo.create(newUser);
         employeeRepo.create((Employee) newUser);
-        System.out.println("Client signed up successfully!");
+        System.out.println("Employee signed up successfully!");
     }
 
     /**

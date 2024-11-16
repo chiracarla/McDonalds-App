@@ -1,5 +1,6 @@
 package Controller;
 
+import Enums.ManagerRank;
 import Model.*;
 import Service.UserService;
 
@@ -26,9 +27,8 @@ public class UserController {
      * @param password
      * @return
      */
-    public Client signUpClient(String email, String name, String password) {
+    public void signUpClient(String email, String name, String password) {
         userService.signUpClient(email, name, password);
-        return null;
     } //dc nu void?
 
     /**
@@ -39,9 +39,8 @@ public class UserController {
      * @param rank
      * @return
      */
-    public Manager signUpManager(String email, String name, String password, String rank) {
+    public void signUpManager(String email, String name, String password, ManagerRank rank) {
         userService.signUpManager(email, name, password, rank);
-        return null;
     }
 
     /**
@@ -74,7 +73,7 @@ public class UserController {
     }
 
     /**
-     * Shows all clinets
+     * Shows all clients
      */
     public void showAllClients() {
         List<Client> clients = userService.getAllClients();

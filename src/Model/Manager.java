@@ -1,12 +1,13 @@
 package Model;
 
+import Enums.ManagerRank;
 import Model.User;
 
 /**
  * Represents managers in the system
  */
 public class Manager extends User {
-    private String rank;
+    private ManagerRank rank;
     /**
      * Constructs a Manager with the specified email, name, user ID, and password.
      *
@@ -15,7 +16,7 @@ public class Manager extends User {
      * @param id the ID of the manager
      * @param password the password of the manager
      */
-    public Manager(String email, String name, int id, String password, String rank) {
+    public Manager(String email, String name, int id, String password, ManagerRank rank) {
         super(email, name, id, password);
         this.rank = rank;
     }

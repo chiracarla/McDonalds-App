@@ -42,7 +42,7 @@ public class TestConsole {
 
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
+//        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
         userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
 
         userController.signIn("klara.orban@yahoo.com", "1234");
