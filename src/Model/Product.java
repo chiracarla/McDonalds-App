@@ -1,5 +1,7 @@
 package Model;
 
+import Enums.Allergens;
+
 /**
  * Represents a product in the system
  * Products are anything food related
@@ -8,6 +10,7 @@ public abstract class Product implements HasId{
     private int productId;
     private String productName;
     private int productPrice;
+    private Allergens allergens;
     //TODO
     //stock? atunci va tb sa fie la fiec locatie diferit-maybe not
     //poate fiecare locatie sa inceapa cu o lista de stock la fiec produs?
@@ -22,6 +25,13 @@ public abstract class Product implements HasId{
         this.productName = productName;
         this.productPrice = productPrice;
         this.productId = id;
+    }
+
+    public Product(String productName, int productPrice, int id, Allergens allergens) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productId = id;
+        this.allergens = allergens;
     }
 
 //    public abstract int calc_points();
@@ -60,12 +70,21 @@ public abstract class Product implements HasId{
         this.productId = id;
     }
 
+    public Allergens getAllergens() {
+        return allergens;
+    }
+
+    public void setAllergens(Allergens allergens) {
+        this.allergens = allergens;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", productPrice=" + productPrice +
+                ", allergens=" + allergens +
                 '}';
     }
 }

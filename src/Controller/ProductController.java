@@ -6,6 +6,8 @@ import Enums.DrinkVolume;
 import Model.Product;
 import Service.ProductService;
 
+import java.util.List;
+
 /**
  * controller for managing products using product service
  */
@@ -68,5 +70,13 @@ public class ProductController {
      */
     public Product getProduct(String productName){
         return productService.getProduct(productName);
+    }
+
+    public List<Product> sortProductsByPrice(){
+        return productService.sortProductsByPrice();
+    }
+
+    public List<Product> filterProductsByAllergen(Allergens allergen){
+        return productService.filterProductsByAllergens(allergen);
     }
 }

@@ -4,5 +4,5 @@ package Enums;
  * Enum representing the possible allergens
  */
 public enum Allergens {
-    peanuts, milk, egg, vanilla;
+    nuts, egg, meat, fish, gluten, dairy, soy;
 }

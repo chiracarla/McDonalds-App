@@ -4,6 +4,7 @@ import Model.*;
 import Repository.IRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -46,5 +47,12 @@ public class OfferService {
         offerRepository.delete(id);
     }
 //a expirat termenul
+
+    //TODOL filterOffersByProduct
+    public List<Offer> filterOffersByProduct(List<Offer> offers, Product product) {
+        return offers.stream()
+                .filter(offer -> offer.getProducts().contains(product))
+                .collect(Collectors.toList());
+    }
 
 }

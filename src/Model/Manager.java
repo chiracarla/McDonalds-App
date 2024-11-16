@@ -32,4 +32,11 @@ public class Manager extends User {
         return this.getUserID();
     }
 
+    public ManagerRank getRank() {
+        return rank;
+    }
+
+    public void setRank(ManagerRank rank) {
+        this.rank = rank;
+    }
 }

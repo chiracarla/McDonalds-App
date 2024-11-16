@@ -3,8 +3,7 @@ package Service;
 import Repository.*;
 import Model.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  *The {@code UserService} class provides various services related to user actions
@@ -16,7 +15,6 @@ public class UserService {
     private final IRepository<Client> clientRepo;
     private final IRepository<Manager> managerRepo;
     private final IRepository<Employee> employeeRepo;
-
     /**
      * uses repositories to acces the information
      * @param userRepo
@@ -189,8 +187,23 @@ public class UserService {
         return employeeRepo.getAll();
     }
 
+    public Manager readManager(int id) {
+        return managerRepo.read(id);
+    }
+
+    /**
+     * sorts the employees by name
+     * @return
+     */
+    public List<Employee> employeesSortByName(){
+        List<Employee> employees = employeeRepo.getAll();
+        employees.sort(Comparator.comparing(Employee::getName));
+        return employees;
+    }
 }
 //TODO:
 // update account
 // make order in-store/online
-// complex function-- email sending API
+// complex function -- email sending API
+// employee sorting
+//? employee ranking - how many orders they have taken

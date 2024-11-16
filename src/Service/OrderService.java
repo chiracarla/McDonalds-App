@@ -150,4 +150,8 @@ public class OrderService {
             System.out.println("No orders found.");
         }
     }
+
+    public Optional<Object> getAllLocations() {
+        return Optional.of(locationRepo.getAll());
+    }
 }

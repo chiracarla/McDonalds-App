@@ -6,6 +6,8 @@ import Enums.DrinkVolume;
 import Model.*;
 import Repository.IRepository;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -119,4 +121,28 @@ public class ProductService {
     // cu cresterea marimii se adauga 2 lei?
     //delete+update + read
 
+    //TODO: verify - product sorting
+    /**
+     *this function sorts the products by price
+     * functionality: user can choose products according to their budget
+     * @return
+     */
+    public List<Product> sortProductsByPrice(){
+        List<Product> products = productRepo.getAll();
+        products.sort(Comparator.comparingInt(Product::getProductPrice));
+        return products;
+    }
+
+    //TODO: allergens filter
+    /**
+     * this function filters the products by allergens
+     * functionality: user can choose products according to their allergies
+     * @param allergen
+     * @return
+     */
+    public List<Product> filterProductsByAllergens(Allergens allergen){
+        List<Product> products = productRepo.getAll();
+        products.removeIf(product -> product.getAllergens() != null && product.getAllergens().equals(allergen));
+        return products;
+    }
 }

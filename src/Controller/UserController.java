@@ -103,6 +103,20 @@ public class UserController {
         }
     }
 
+    public Manager readManager(int id) {
+        Manager manager = userService.readManager(id);
+        if (manager == null) {
+            System.out.println("No manager found with id: " + id);
+        }
+        return manager;
+    }
 
+    public List<Employee> employeeSortByName() {
+        List<Employee> employees = userService.employeesSortByName();
+        if (employees.isEmpty()) {
+            System.out.println("No employees found.");
+        }
+        return employees;
+    }
 
 }
