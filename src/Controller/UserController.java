@@ -5,6 +5,7 @@ import Model.*;
 import Service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Controller for the user
@@ -59,8 +60,8 @@ public class UserController {
      * @param email
      * @param password
      */
-    public void signIn(String email, String password) {
-        userService.signIn(email, password);
+    public Optional<User> signIn(String email, String password) {
+        return userService.signIn(email, password);
     } //nu se potriveste cu conventiile
 
     /**

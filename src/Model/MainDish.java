@@ -44,13 +44,7 @@ public class MainDish extends Product{
         return this.getProdId();
     }
 
-    @Override
-    public String toString() {
-        return "MainDish{" +
-                "calories=" + calories +
-                ", size=" + size +
-                '}';
-    }
+
 
     //    @Override
 //    public int calc_points() {

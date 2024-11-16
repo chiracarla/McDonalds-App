@@ -28,8 +28,14 @@ public class OfferService {
         for (Product product : products) {
             price += product.getProductPrice();
         }
-        Offer offer = new Offer(price, newPrice, products);
+        Offer offer = new Offer(price, newPrice, products, generateNewOfferID());
         offerRepository.create(offer);
+    }
+
+    private int generateNewOfferID() {
+        return offerRepository.getAll().stream()
+                .mapToInt(Offer::getOfferId)
+                .max().orElse(0)+1;
     }
 
     /**
@@ -48,11 +54,14 @@ public class OfferService {
     }
 //a expirat termenul
 
-    //TODOL filterOffersByProduct
+    public List<Offer> getAllOffers() {
+        return offerRepository.getAll();
+    }
+
+    //TODO filterOffersByProduct
     public List<Offer> filterOffersByProduct(List<Offer> offers, Product product) {
         return offers.stream()
                 .filter(offer -> offer.getProducts().contains(product))
                 .collect(Collectors.toList());
     }
-
 }

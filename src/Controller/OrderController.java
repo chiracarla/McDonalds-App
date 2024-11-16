@@ -46,6 +46,10 @@ public class OrderController {
         return null;
     }
 
+    public List<Location> getLocations() {
+        return orderService.getAllLocations();
+    }
+
     public void analyzeMostOrdered(){
         orderService.analyzeMostOrdered();
     }

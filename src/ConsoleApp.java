@@ -95,7 +95,6 @@ public class ConsoleApp {
                     System.out.println("Enter role:");
                     String managerRole = scanner.nextLine();
                     userController.signUpManager(managerEmail, managerName, managerPassword, ManagerRank.valueOf(managerRole));
-                    choice = 0;
                     break;
                 case 2:
                     System.out.println("Enter email:");
@@ -179,26 +178,23 @@ public class ConsoleApp {
                             .filter(c -> c.getEmail().equals(clientOrderEmail))
                             .findFirst()
                             .orElse(null);
-                    System.out.println("Enter location (Bucuresti, Cluj_Napoca, Brasov, Sighisoara, TgMures):");
-                    String loc = scanner.next();
                     System.out.println("Enter manager email:");
                     String locManEmail = scanner.next();
                     Location location = locationRepo.getAll().stream()
-                            .filter(l -> l.getStoreLocation().equals(Locations.valueOf(loc)))
                             .filter(l -> l.getStoreManager().getEmail().equals(locManEmail))
                             .findFirst()
                             .orElse(null);
                     if (client != null) {
                         List<Product> productList = new ArrayList<>();
                         System.out.println("Enter product names (comma separated):");
-                        String productNames = scanner.next();
-//                        for (String productName : productNames) {
-//                            Product product = productController.getProduct(productName.trim());
-//                            if (product != null) {
-//                                productList.add(product);
-//                            }
-//                        }
-                        Product product = productController.getProduct(productNames.trim());
+                        scanner.nextLine();
+                        String[] productNames = scanner.nextLine().split(",");
+                        for (String productName : productNames) {
+                            Product product = productController.getProduct(productName.trim());
+                            if (product != null) {
+                                productList.add(product);
+                            }
+                        }
                         System.out.println("Apply offer? (yes/no):");
                         String applyOffer = scanner.next();
                         Optional<Offer> offer = Optional.empty();

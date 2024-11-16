@@ -1,5 +1,6 @@
 package Model;
 
+//import java.lang.runtime.ReferenceKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,6 +99,15 @@ public abstract class User implements HasId {
         this.points -= points;
         return this.points - points;
     }
+
+    public List<Offer> getOffers() {
+        return offers;
+    }
+
+    public void setOffers(List<Offer> offers) {
+        this.offers = offers;
+    }
+
     /**
      * Returns a string representation of the user.
      *

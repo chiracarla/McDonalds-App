@@ -5,6 +5,7 @@ import Controller.UserController;
 import Enums.DishSize;
 import Enums.DrinkVolume;
 import Enums.Locations;
+import Enums.ManagerRank;
 import Model.*;
 import Repository.IRepository;
 import Repository.InMemoryRepository;
@@ -42,7 +43,7 @@ public class TestConsole {
 
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
-//        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", "Top manager" );
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior );
         userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
 
         userController.signIn("klara.orban@yahoo.com", "1234");
@@ -70,10 +71,11 @@ public class TestConsole {
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));
         offerController.add(3, offerList);
-        System.out.println(offerService.getOffer(0));
+        System.out.println(offerService.getOffer(1).toString());
+        System.out.println(offerService.getAllOffers());
         userService.getAllClients().get(0).addOffer(offerService.getOffer(0));
-        orderController.createOrder(userService.getAllClients().get(0), loc1, productList, Optional.of(offerService.getOffer(0)), false);
-
+//        orderController.createOrder(userService.getAllClients().get(0), loc1, productList, Optional.of(offerService.getOffer(0)), false);
+//        System.out.println();
         orderController.analyzeMostOrdered();
     }
 }

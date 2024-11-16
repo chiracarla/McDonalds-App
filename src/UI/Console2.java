@@ -19,6 +19,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+
+/**
+ * Manager can:
+ *      view all managers, employees, clients
+ *      add new products
+ *      add and assign new offers
+ * Employees and Clients can:
+ *      make an order
+ *      view offers
+ *      delete/edit account
+ */
 public class Console2 {
     public static void main(String[] args) {
         IRepository<User> userRepo = new InMemoryRepository<>();
@@ -45,75 +56,145 @@ public class Console2 {
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
 
-        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM, 1);
-        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM, 2);
-        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE, 3);
-
-        productController.createSideDish("French Fries", 5, DishSize.MEDIUM, 6);
-        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM, 7);
-
-        productController.createDrink("Sprite", 3, DrinkVolume._300ML, 9);
-        productController.createDrink("Lipton", 3, DrinkVolume._200ML, 7);
-        List<Product> offerList = new ArrayList<>();
-        offerList.add(productController.getProduct("Cheeseburger"));
-        offerController.add(3, offerList);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
-        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-        int signedInID;
-        String userType;
-        System.out.println("Select an option:");
-        System.out.println("1. Sign Up Manager");
-        System.out.println("2. Sign Up Employee");
-        System.out.println("3. Sign Up Client");
-        System.out.println("4. Sign In");
-        System.out.println("0. Exit");
 
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
-//begin session as employee/client/ manager
-        switch (choice) {
-            case 1:
-                System.out.println("Enter email:");
-                String managerEmail = scanner.nextLine();
-                System.out.println("Enter name:");
-                String managerName = scanner.nextLine();
-                System.out.println("Enter password:");
-                String managerPassword = scanner.nextLine();
-                System.out.println("Enter role:");
-                String managerRank = scanner.nextLine();
-                userController.signUpManager(managerEmail, managerName, managerPassword, ManagerRank.valueOf(managerRank));
-                break;
-            case 2:
-                System.out.println("Enter email:");
-                String employeeEmail = scanner.nextLine();
-                System.out.println("Enter name:");
-                String employeeName = scanner.nextLine();
-                System.out.println("Enter password:");
-                String employeePassword = scanner.nextLine();
-                System.out.println("Enter manager ID:");
-                int manID = scanner.nextInt();
-                Manager employeeManager = userController.readManager(manID);
-                userController.signUpEmployee(employeeEmail, employeeName, employeePassword,employeeManager);
-                break;
-            case 3:
-                System.out.println("Enter email:");
-                String clientEmail = scanner.nextLine();
-                System.out.println("Enter name:");
-                String clientName = scanner.nextLine();
-                System.out.println("Enter password:");
-                String clientPassword = scanner.nextLine();
-                userController.signUpClient(clientEmail, clientName, clientPassword);
-                break;
-            case 4:
-                System.out.println("Enter email:");
-                String email = scanner.nextLine();
-                System.out.println("Enter password:");
-                String password = scanner.nextLine();
-                userController.signIn(email, password);
-                break;
+        while (running) {
+            System.out.println("Welcome to McDonald's App!");
+            System.out.println("1. Sign Up");
+            System.out.println("2. Sign In");
+            System.out.println("0. Exit");
+            System.out.print("Select an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    handleSignUp(scanner, userController);
+                    break;
+                case 2:
+                    handleSignIn(scanner, userController, orderController, productController);
+                    break;
+                case 0:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+            }
         }
     }
+    private static void handleSignUp(Scanner scanner, UserController userController) {
+        System.out.println("Select user type to sign up:");
+        System.out.println("1. Client");
+        System.out.println("2. Employee");
+        System.out.println("3. Manager");
+        System.out.print("Choice: ");
+        int type = scanner.nextInt();
+        scanner.nextLine();
 
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        switch (type) {
+            case 1:
+                userController.signUpClient(name, email, password);
+                break;
+            case 2:
+                System.out.print("Enter manager ID: ");
+                int manID = scanner.nextInt();
+                Manager employeeManager = userController.readManager(manID);
+                userController.signUpEmployee(name, email, password, employeeManager);
+                break;
+            case 3:
+                System.out.println("Enter rank (Senior, Junior):");
+                String managerRank = scanner.nextLine();
+                userController.signUpManager(name, email, password, ManagerRank.valueOf(managerRank));
+                break;
+            default:
+                System.out.println("Invalid user type.");
+        }
+        System.out.println("Sign-up successful!");
+    }
+
+    private static void handleSignIn(Scanner scanner, UserController userController, OrderController orderController, ProductController productController) {
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        userController.signIn(email, password).ifPresentOrElse(
+                        user -> showUserMenu(user, orderController, productController),
+                        () -> System.out.println("Invalid email or password."));
+    }
+
+    private static void showUserMenu(User user, OrderController orderController, ProductController productController) {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\nWelcome, " + user.getClass().getSimpleName() + ": " + user.getName());
+//            user.displayOptions();
+            //TODO
+            System.out.print("Select an option (or 0 to logout): ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter manager email:");
+                    String locManEmail = scanner.next();
+                    Location location = orderController.getLocations().stream()
+                            .filter(l -> l.getStoreManager().getEmail().equals(locManEmail))
+                            .findFirst()
+                            .orElse(null);
+                    //TODO:de schimbat cu numele locatiei
+                    //TODO:valabil si pt employee
+                    List<Product> productList = new ArrayList<>();
+                    System.out.println("Enter product names (comma separated):");
+                    scanner.nextLine();
+                    String[] productNames = scanner.nextLine().split(",");
+                    for (String productName : productNames) {
+                        Product product = productController.getProduct(productName.trim());
+                        if (product != null) {
+                            productList.add(product);
+                        }
+                    }
+                    System.out.println("Apply offer? (yes/no):");
+                    String applyOffer = scanner.next();
+                    Optional<Offer> offer = Optional.empty();
+                    if (applyOffer.equalsIgnoreCase("yes")) {
+                        System.out.println("Enter offer ID:");
+                        int offerId = scanner.nextInt();
+                        offer = Optional.ofNullable(user.getOffers().get(offerId));
+                    }
+                    System.out.println("Pay with points? (true/false):");
+                    boolean payWithPoints = scanner.nextBoolean();
+                    orderController.createOrder((Client)user, location, productList, offer, payWithPoints);
+                    break;
+                case 2:
+                    for(Offer o : user.getOffers()) {
+                        System.out.println(o.toString());
+                    }
+                case 3:
+                    System.out.println("Option 3 logic...");
+                case 4:
+                {
+                    if (user instanceof Manager) {
+                        System.out.println("Manager-specific logic...");
+                    } else {
+                        System.out.println("Invalid option!");
+                    }
+                }
+                case 0 :
+                    running = false;
+                default :
+                    System.out.println("Invalid option!");
+            }
+        }
+    }
 }

@@ -10,7 +10,8 @@ import Model.Product;
 public class Offer implements HasId{
     private int originalPrice;
     private int newPrice;
-    List<Product> products;//TODO: unele cu locatii specifice maybe optional<>
+    private int offerId;
+    private List<Product> products;//TODO: unele cu locatii specifice maybe optional<>
     /**
      * Constructs an Offer with the specified original price, new price, and list of products.
      *
@@ -18,10 +19,19 @@ public class Offer implements HasId{
      * @param newPrice the new price of the offer
      * @param products the list of products included in the offer
      */
-    public Offer(int originalPrice, int newPrice, List<Product> products) {
+    public Offer(int originalPrice, int newPrice, List<Product> products, int offerId) {
         this.originalPrice = originalPrice;
         this.newPrice = newPrice;
         this.products = products;
+        this.offerId = offerId;
+    }
+
+    public int getOfferId() {
+        return offerId;
+    }
+
+    public void setOfferId(int offerId) {
+        this.offerId = offerId;
     }
 
     public int getOriginalPrice() {
@@ -50,13 +60,14 @@ public class Offer implements HasId{
                 "originalPrice=" + originalPrice +
                 ", newPrice=" + newPrice +
                 ", products=" + products +
+                ", offerId=" + offerId +
                 '}';
     }
 
     @Override
     public Integer getId() {
-        return 0;
+        return offerId;
     }
 
-
+//TODO id
 }

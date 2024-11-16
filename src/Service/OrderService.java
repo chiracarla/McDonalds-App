@@ -151,7 +151,7 @@ public class OrderService {
         }
     }
 
-    public Optional<Object> getAllLocations() {
-        return Optional.of(locationRepo.getAll());
+    public List<Location> getAllLocations() {
+        return locationRepo.getAll();
     }
 }
