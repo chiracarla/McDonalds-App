@@ -69,5 +69,10 @@ public class Offer implements HasId{
         return offerId;
     }
 
+    @Override
+    public String toFile() {
+        return offerId + "," + originalPrice + "," + newPrice + "," + products;
+    }
+
 //TODO id
 }

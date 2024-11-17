@@ -44,6 +44,10 @@ public class MainDish extends Product{
         return this.getProdId();
     }
 
+    @Override
+    public String toFile() {
+        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + calories + "," + size;
+    }
 
 
     //    @Override

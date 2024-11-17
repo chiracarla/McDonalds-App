@@ -32,6 +32,11 @@ public class Desserts extends Product{
     }
 
     @Override
+    public String toFile() {
+        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + allergens;
+    }
+
+    @Override
     public String toString() {
         return "Desserts{" +
                 "allergens=" + allergens +

@@ -22,4 +22,8 @@ public class Client extends User {
     public Integer getId() {
         return this.getUserID();
     }
+
+    public String toFile(){
+        return getId() + "," + getEmail() + "," + getName() + "," + getPassword();
+    }
 }

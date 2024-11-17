@@ -87,4 +87,9 @@ public abstract class Product implements HasId{
                 ", allergens=" + allergens +
                 '}';
     }
+
+    @Override
+    public String toFile() {
+        return productId + "," + productName + "," + productPrice + "," + allergens;
+    }
 }

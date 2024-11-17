@@ -8,6 +8,8 @@ import Enums.DrinkVolume;
 import Enums.Locations;
 import Enums.ManagerRank;
 import Model.*;
+import Repository.CompositeRepository;
+import Repository.FileRepository;
 import Repository.IRepository;
 import Repository.InMemoryRepository;
 import Service.OfferService;
@@ -32,18 +34,18 @@ import java.util.Scanner;
  */
 public class Console2 {
     public static void main(String[] args) {
-        IRepository<User> userRepo = new InMemoryRepository<>();
-        IRepository<Client> clientRepo = new InMemoryRepository<>();
-        IRepository<Manager> managerRepo = new InMemoryRepository<>();
-        IRepository<Employee> employeeRepo = new InMemoryRepository<>();
-        IRepository<Order> orderRepo = new InMemoryRepository<>();
-        IRepository<Product> productRepo = new InMemoryRepository<>();
-        IRepository<MainDish> mainDRepo = new InMemoryRepository<>();
-        IRepository<SideDish> sideDRepo = new InMemoryRepository<>();
-        IRepository<Drinks> drinkRepo = new InMemoryRepository<>();
-        IRepository<Desserts> dessertRepo = new InMemoryRepository<>();
-        IRepository<Location> locationRepo = new InMemoryRepository<>();
-        IRepository<Offer> offerRepo = new InMemoryRepository<>();
+        IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
+        IRepository<Client> clientRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\clients.txt"));
+        IRepository<Manager> managerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\managers.txt"));
+        IRepository<Employee> employeeRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\employees.txt"));
+        IRepository<Order> orderRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\orders.txt"));
+        IRepository<Product> productRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\products.txt"));
+        IRepository<MainDish> mainDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\mainDishes.txt"));
+        IRepository<SideDish> sideDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\sideDishes.txt"));
+        IRepository<Drinks> drinkRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\drinks.txt"));
+        IRepository<Desserts> dessertRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\desserts.txt"));
+        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
+        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);
 

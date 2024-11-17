@@ -69,5 +69,10 @@ public class Order implements HasId {
     public Integer getId() {
         return 0;
     }
+
+    @Override
+    public String toFile() {
+        return products.toString() + " " + location.toString() + " " + user.toString() + " " + orderID;
+    }
     //TODO id
 }

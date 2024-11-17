@@ -32,4 +32,9 @@ public class Employee extends User{
     public Integer getId() {
         return this.getUserID();
     }
+
+    @Override
+    public String toFile(){
+        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + manager;
+    }
 }

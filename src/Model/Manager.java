@@ -40,4 +40,9 @@ public class Manager extends User {
     public void setRank(ManagerRank rank) {
         this.rank = rank;
     }
+
+    @Override
+    public String toFile() {
+        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + rank;
+    }
 }

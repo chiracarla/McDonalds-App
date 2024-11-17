@@ -2,11 +2,7 @@ package Repository;
 
 import Model.HasId;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,10 +56,22 @@ public class FileRepository<T extends HasId> implements IRepository<T> {
     }
 
     private void writeDataToFile(Map<Integer, T> data) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
-            oos.writeObject(data);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (T obj : data.values()) {
+                writer.write(obj.toFile());
+                writer.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+//    private void writeDataToFile(Map<Integer, T> data) {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
+//            oos.writeObject(data);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

@@ -33,6 +33,11 @@ public class Drinks extends Product {
     }
 
     @Override
+    public String toFile() {
+        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + volume;
+    }
+
+    @Override
     public String toString() {
         return "Drinks{" +
                 "volume=" + volume +

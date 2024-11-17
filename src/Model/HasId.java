@@ -10,4 +10,6 @@ public interface HasId extends Serializable {
      * @return
      */
     Integer getId();
+
+    String toFile();
 }
