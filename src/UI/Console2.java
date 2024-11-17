@@ -3,10 +3,7 @@ import Controller.OfferController;
 import Controller.OrderController;
 import Controller.ProductController;
 import Controller.UserController;
-import Enums.DishSize;
-import Enums.DrinkVolume;
-import Enums.Locations;
-import Enums.ManagerRank;
+import Enums.*;
 import Model.*;
 import Repository.CompositeRepository;
 import Repository.FileRepository;
@@ -32,6 +29,10 @@ import java.util.Scanner;
  *      view offers
  *      delete/edit account
  */
+
+//create location, deleete prods/offers, assign employees to orders, create menu
+    //inn products.txt se salveaza doar drinks aparent
+    //fix toStrings2
 public class Console2 {
     public static void main(String[] args) {
         IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
@@ -58,6 +59,22 @@ public class Console2 {
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
 
+        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
+        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
+        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE);
+
+        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
+        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
+
+        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+        List<Product> offerList = new ArrayList<>();
+        offerList.add(productController.getProduct("Cheeseburger"));
+        offerController.add(3, offerList);
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior );
+        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -75,7 +92,7 @@ public class Console2 {
                     handleSignUp(scanner, userController);
                     break;
                 case 2:
-                    handleSignIn(scanner, userController, orderController, productController);
+                    handleSignIn(scanner, userController, orderController, productController, offerController);
                     break;
                 case 0:
                     running = false;
@@ -123,28 +140,27 @@ public class Console2 {
         System.out.println("Sign-up successful!");
     }
 
-    private static void handleSignIn(Scanner scanner, UserController userController, OrderController orderController, ProductController productController) {
+    private static void handleSignIn(Scanner scanner, UserController userController, OrderController orderController, ProductController productController, OfferController offerController) {
         System.out.print("Enter email: ");
         String email = scanner.nextLine();
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
 
         userController.signIn(email, password).ifPresentOrElse(
-                        user -> showUserMenu(user, orderController, productController),
+                        user -> showUserMenu(user, orderController, productController, userController, offerController),
                         () -> System.out.println("Invalid email or password."));
     }
 
-    private static void showUserMenu(User user, OrderController orderController, ProductController productController) {
+    private static void showUserMenu(User user, OrderController orderController, ProductController productController, UserController userController, OfferController offerController) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
             System.out.println("\nWelcome, " + user.getClass().getSimpleName() + ": " + user.getName());
-//            user.displayOptions();
-            //TODO
+            user.displayOptions();
             System.out.print("Select an option (or 0 to logout): ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -170,6 +186,9 @@ public class Console2 {
                     String applyOffer = scanner.next();
                     Optional<Offer> offer = Optional.empty();
                     if (applyOffer.equalsIgnoreCase("yes")) {
+                        for(Offer o : user.getOffers()) {
+                            System.out.println(o.toString());
+                        }
                         System.out.println("Enter offer ID:");
                         int offerId = scanner.nextInt();
                         offer = Optional.ofNullable(user.getOffers().get(offerId));
@@ -181,17 +200,112 @@ public class Console2 {
                 case 2:
                     for(Offer o : user.getOffers()) {
                         System.out.println(o.toString());
-                    }
+                    } //TODO: implementare la tostring
+                    break;
                 case 3:
-                    System.out.println("Option 3 logic...");
+                    userController.deleteAccount(user.getEmail(), user.getPassword());
+                    break;
                 case 4:
-                {
                     if (user instanceof Manager) {
-                        System.out.println("Manager-specific logic...");
+                        System.out.println("Select Product type to add:");
+                        System.out.println("1. Main Dish");
+                        System.out.println("2. Side Dish");
+                        System.out.println("3. Drink");
+                        System.out.println("4. Dessert");
+                        System.out.print("Choice: ");
+                        int type = scanner.nextInt();
+                        scanner.nextLine();
+                        switch (type){
+                            case 1:
+                                System.out.println("Enter main dish name:");
+                                String mainDishName = scanner.nextLine();
+                                System.out.println("Enter price:");
+                                int mainDishPrice = scanner.nextInt();
+                                System.out.println("Enter size (SMALL, MEDIUM, LARGE):");
+                                String mainDishSize = scanner.next();
+                                System.out.println("Enter stock:");
+                                int mainDishStock = scanner.nextInt();
+                                System.out.println("Enter calories:");
+                                int mainDishCalories = scanner.nextInt();
+                                productController.createMainDish(mainDishName, mainDishPrice, mainDishCalories, DishSize.valueOf(mainDishSize));
+                                break;
+                            case 2:
+                                System.out.println("Enter side dish name:");
+                                String sideDishName = scanner.nextLine();
+                                System.out.println("Enter price:");
+                                int sideDishPrice = scanner.nextInt();
+                                System.out.println("Enter size (SMALL, MEDIUM, LARGE):");
+                                String sideDishSize = scanner.next();
+                                productController.createSideDish(sideDishName, sideDishPrice, DishSize.valueOf(sideDishSize));
+                                break;
+                            case 3:
+                                System.out.println("Enter drink name:");
+                                String drinkName = scanner.nextLine();
+                                System.out.println("Enter price:");
+                                int drinkPrice = scanner.nextInt();
+                                System.out.println("Enter volume (ML_200, ML_300, ML_500):");
+                                String drinkVolume = scanner.next();
+                                productController.createDrink(drinkName, drinkPrice, DrinkVolume.valueOf(drinkVolume));
+                                break;
+                            case 4:
+                                System.out.println("Enter drink name:");
+                                String dessertName = scanner.nextLine();
+                                System.out.println("Enter price:");
+                                int dessertPrice = scanner.nextInt();
+                                System.out.println("Enter allergens (nuts, egg, meat, fish, gluten, dairy, soy):");
+                                String dessertAllergen = scanner.next();
+                                productController.createDessert(dessertName, dessertPrice, Allergens.valueOf(dessertAllergen));
+                                break;
+                            default:
+                                System.out.println("Invalid option!");
+
+                        }
                     } else {
                         System.out.println("Invalid option!");
                     }
-                }
+                    break;
+                case 5:
+                    if (user instanceof Manager) {
+                        List<Product> offerList = new ArrayList<>();
+                        System.out.println("Enter product names (comma separated):");
+                        scanner.nextLine();
+                        String[] offerProductNames = scanner.nextLine().split(",");
+                        for (String productName : offerProductNames) {
+                            Product product = productController.getProduct(productName.trim());
+                            if (product != null) {
+                                offerList.add(product);
+                            }
+                        }
+                        System.out.println("Enter new price:");
+                        int newPrice = scanner.nextInt();
+                        offerController.add(newPrice, offerList);
+                    }
+                    else {
+                        System.out.println("Invalid option!");}
+                    break;
+                case 6:
+                    if (user instanceof Manager) {
+                        System.out.println("View all: ");
+                        System.out.println("1. Clients");
+                        System.out.println("2. Employees");
+                        System.out.println("3. Managers");
+                        System.out.print("Choice: ");
+                        int type = scanner.nextInt();
+                        scanner.nextLine();
+                        switch (type){
+                            case 1:
+                                userController.showAllClients();
+                            case 2:
+                                userController.showAllEmployees();
+                            case 3:
+                                userController.showAllManagers();
+                            default:
+                                System.out.println("Invalid option!");
+                        }
+                    } else {
+                        System.out.println("Invalid option!");
+                    }
+                    break;
                 case 0 :
                     running = false;
                 default :

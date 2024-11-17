@@ -24,10 +24,9 @@ public class ProductController {
      * @param productPrice
      * @param calories
      * @param size
-     * @param id
      */
-    public void createMainDish(String productName, int productPrice, int calories, DishSize size, int id){
-        productService.createMainDish(productName, productPrice, calories, size, id);
+    public void createMainDish(String productName, int productPrice, int calories, DishSize size){
+        productService.createMainDish(productName, productPrice, calories, size);
     }
 
     /**
@@ -35,10 +34,9 @@ public class ProductController {
      * @param productName
      * @param productPrice
      * @param size
-     * @param id
      */
-    public void createSideDish(String productName, int productPrice, DishSize size, int id){
-        productService.createSideDish(productName, productPrice, size,id);
+    public void createSideDish(String productName, int productPrice, DishSize size){
+        productService.createSideDish(productName, productPrice, size);
     }
 
     /**
@@ -46,10 +44,9 @@ public class ProductController {
      * @param productName
      * @param productPrice
      * @param allergens
-     * @param id
      */
-    public void createDessert(String productName, int productPrice, Allergens allergens, int id){
-        productService.createDessert(productName, productPrice, allergens, id);
+    public void createDessert(String productName, int productPrice, Allergens allergens){
+        productService.createDessert(productName, productPrice, allergens);
     }
 
     /**
@@ -57,10 +54,9 @@ public class ProductController {
      * @param productName
      * @param productPrice
      * @param volume
-     * @param id
      */
-    public void createDrink(String productName, int productPrice, DrinkVolume volume, int id){
-        productService.createDrink(productName, productPrice, volume, id);
+    public void createDrink(String productName, int productPrice, DrinkVolume volume){
+        productService.createDrink(productName, productPrice, volume);
     }
 
     /**

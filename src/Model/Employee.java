@@ -23,6 +23,15 @@ public class Employee extends User{
     }
 
     @Override
+    public void displayOptions(){
+        System.out.println("Client Options: \n" +
+                "1. Place order\n" +
+                "2. View all offers\n" +
+                "3. Delete account\n" +
+                "0. Exit \n");
+    }
+
+    @Override
     public String toString() {
         return "Employee{" +
                 "manager=" + manager +

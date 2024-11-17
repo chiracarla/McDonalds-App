@@ -17,6 +17,7 @@ public class Desserts extends Product{
         super(productName, productPrice, id);
         this.allergens = allergens;
     }
+    //TODO: poate ar tb lista de alergeni
 
     public Allergens getAllergens() {
         return allergens;

@@ -22,6 +22,15 @@ public class Manager extends User {
     }
 
     @Override
+    public void displayOptions(){
+        System.out.println("Client Options: \n" +
+                "4. Add new Product\n" +
+                "5. Add new Offer\n" +
+                "6. View all\n" +
+                "0. Exit \n");
+    }
+
+    @Override
     public String toString() {
         return "Manager{" +
                 "rank='" + rank + '\'' +

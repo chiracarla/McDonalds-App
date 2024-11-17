@@ -19,6 +19,14 @@ public class Client extends User {
     }
 
     @Override
+    public void displayOptions(){
+        System.out.println("Client Options: \n" +
+                "1. Place order\n" +
+                "2. View all offers\n" +
+                "3. Delete account\n" +
+                "0. Exit \n");
+    }
+    @Override
     public Integer getId() {
         return this.getUserID();
     }

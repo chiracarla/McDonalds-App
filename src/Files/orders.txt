@@ -1,0 +1,1 @@
+[Product{productId=2, productName='Cheeseburger', productPrice=13, allergens=null}] Location{storeLocation=Bucuresti, storeManager=Manager{rank='Senior'}} User{points=0, userID=2, email='chira.carla@gmail.com', name='Chira Carla', password='5678', offers=[]} 1

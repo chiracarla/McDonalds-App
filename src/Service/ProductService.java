@@ -43,10 +43,9 @@ public class ProductService {
      * @param productPrice
      * @param calories
      * @param size
-     * @param id
      */
-    public void createMainDish(String productName, int productPrice, int calories, DishSize size, int id) {
-        Product mainDish = new MainDish(productName, productPrice, calories, size, id);
+    public void createMainDish(String productName, int productPrice, int calories, DishSize size) {
+        Product mainDish = new MainDish(productName, productPrice, calories, size, generateNewOfferID());
 
         mainDishRepo.create((MainDish) mainDish);
         productRepo.create((Product) mainDish);
@@ -59,10 +58,9 @@ public class ProductService {
      * @param productName
      * @param productPrice
      * @param size
-     * @param id
      */
-    public void createSideDish(String productName, int productPrice, DishSize size , int id){
-        Product sideDish = new SideDish(productName, productPrice, size, id);
+    public void createSideDish(String productName, int productPrice, DishSize size){
+        Product sideDish = new SideDish(productName, productPrice, size, generateNewOfferID());
 
         sideDishRepo.create((SideDish) sideDish);
         productRepo.create((Product) sideDish);
@@ -75,10 +73,9 @@ public class ProductService {
      * @param productName
      * @param productPrice
      * @param allergens
-     * @param id
      */
-    public void createDessert(String productName, int productPrice, Allergens allergens, int id){
-        Desserts desserts = new Desserts(productName, productPrice, allergens, id);
+    public void createDessert(String productName, int productPrice, Allergens allergens){
+        Desserts desserts = new Desserts(productName, productPrice, allergens,generateNewOfferID());
 
         dessertRepo.create((Desserts) desserts);
         productRepo.create((Product) desserts);
@@ -91,10 +88,9 @@ public class ProductService {
      * @param productName
      * @param productPrice
      * @param volume
-     * @param id
      */
-    public void createDrink(String productName, int productPrice, DrinkVolume volume, int id) {
-        Drinks drinks = new Drinks(productName, productPrice, volume, id);
+    public void createDrink(String productName, int productPrice, DrinkVolume volume) {
+        Drinks drinks = new Drinks(productName, productPrice, volume, generateNewOfferID());
 
         drinkRepo.create((Drinks) drinks);
         productRepo.create((Product) drinks);
@@ -131,6 +127,12 @@ public class ProductService {
         List<Product> products = productRepo.getAll();
         products.sort(Comparator.comparingInt(Product::getProductPrice));
         return products;
+    }
+
+    private int generateNewOfferID() {
+        return productRepo.getAll().stream()
+                .mapToInt(Product::getProdId)
+                .max().orElse(0)+1;
     }
 
     //TODO: allergens filter

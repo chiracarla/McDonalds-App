@@ -1,0 +1,1 @@
+1,13,3,[Product{productId=2, productName='Cheeseburger', productPrice=13, allergens=null}]
