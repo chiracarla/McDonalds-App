@@ -23,10 +23,10 @@ public class Manager extends User {
 
     @Override
     public void displayOptions(){
-        System.out.println("Client Options: \n" +
-                "4. Add new Product\n" +
-                "5. Add new Offer\n" +
-                "6. View all\n" +
+        System.out.println("Manager Options: \n" +
+                "5. Add new Product\n" +
+                "6. Add new Offer\n" +
+                "7. View all\n" +
                 "0. Exit \n");
     }
 

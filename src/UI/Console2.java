@@ -30,9 +30,9 @@ import java.util.Scanner;
  *      delete/edit account
  */
 
-//create location, deleete prods/offers, assign employees to orders, create menu
+//create location, deleete prods/offers, assign employees to orders, transform to menu/combo, view menu
     //inn products.txt se salveaza doar drinks aparent
-    //fix toStrings2
+    //fix toStrings
 public class Console2 {
     public static void main(String[] args) {
         IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
@@ -198,14 +198,52 @@ public class Console2 {
                     orderController.createOrder((Client)user, location, productList, offer, payWithPoints);
                     break;
                 case 2:
-                    for(Offer o : user.getOffers()) {
-                        System.out.println(o.toString());
-                    } //TODO: implementare la tostring
+                    System.out.println("1. View all offers");
+                    System.out.println("2. View offers that contain one specific product");
+                    int opt = scanner.nextInt();
+                    if(opt == 1) {
+                        for(Offer o : user.getOffers()) {
+                            System.out.println(o.toString());
+                        } //TODO: implementare la tostring
+                    }
+                    else if(opt == 2) {
+                        System.out.println("Enter product: ");
+                        String productName = scanner.nextLine();
+                        for(Offer o : offerController.filterOffersByProduct(user.getOffers(), productController.getProduct(productName))) {
+                            System.out.println(o.toString());
+                        }
+                    }
                     break;
                 case 3:
                     userController.deleteAccount(user.getEmail(), user.getPassword());
                     break;
                 case 4:
+                    System.out.println("1. View entire menu:"); //va tb sa il facem sortat dupa fel maybe
+                    System.out.println("2. View menu sorted by price");
+                    System.out.println("3. View menu items that contain an allergen");
+                    System.out.print("Choice: ");
+                    int type = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (type) {
+                        case 1:
+                            for(Product p : productController.getAllProducts()) {
+                                System.out.println(p.toString());
+                            }
+                            break;
+                        case 2:
+                            for(Product p : productController.sortProductsByPrice()) {
+                                System.out.println(p.toString());
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Enter allergen: ");
+                            String allergen = scanner.nextLine();
+                            for(Product p : productController.filterProductsByAllergen(Allergens.valueOf(allergen))) {
+                                System.out.println(p.toString());
+                            }
+                            break;
+                    }
+                case 5:
                     if (user instanceof Manager) {
                         System.out.println("Select Product type to add:");
                         System.out.println("1. Main Dish");
@@ -213,9 +251,9 @@ public class Console2 {
                         System.out.println("3. Drink");
                         System.out.println("4. Dessert");
                         System.out.print("Choice: ");
-                        int type = scanner.nextInt();
+                        int foodType = scanner.nextInt();
                         scanner.nextLine();
-                        switch (type){
+                        switch (foodType){
                             case 1:
                                 System.out.println("Enter main dish name:");
                                 String mainDishName = scanner.nextLine();
@@ -264,7 +302,7 @@ public class Console2 {
                         System.out.println("Invalid option!");
                     }
                     break;
-                case 5:
+                case 6:
                     if (user instanceof Manager) {
                         List<Product> offerList = new ArrayList<>();
                         System.out.println("Enter product names (comma separated):");
@@ -279,24 +317,25 @@ public class Console2 {
                         System.out.println("Enter new price:");
                         int newPrice = scanner.nextInt();
                         offerController.add(newPrice, offerList);
+                        //TODO assign offer to user
                     }
                     else {
                         System.out.println("Invalid option!");}
                     break;
-                case 6:
+                case 7:
                     if (user instanceof Manager) {
                         System.out.println("View all: ");
                         System.out.println("1. Clients");
                         System.out.println("2. Employees");
                         System.out.println("3. Managers");
                         System.out.print("Choice: ");
-                        int type = scanner.nextInt();
+                        int userType = scanner.nextInt();
                         scanner.nextLine();
-                        switch (type){
+                        switch (userType){
                             case 1:
                                 userController.showAllClients();
                             case 2:
-                                userController.showAllEmployees();
+                                userController.employeeSortByName();
                             case 3:
                                 userController.showAllManagers();
                             default:

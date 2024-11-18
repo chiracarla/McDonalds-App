@@ -147,4 +147,8 @@ public class ProductService {
         products.removeIf(product -> product.getAllergens() != null && product.getAllergens().equals(allergen));
         return products;
     }
+
+    public List<Product> getAll(){
+        return productRepo.getAll();
+    }
 }

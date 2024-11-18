@@ -22,8 +22,9 @@ public class Client extends User {
     public void displayOptions(){
         System.out.println("Client Options: \n" +
                 "1. Place order\n" +
-                "2. View all offers\n" +
+                "2. View all offers\n" +//filtrat dupa produs
                 "3. Delete account\n" +
+                "4. Show entire Menu\n" + //sortat dupa pret sau filtrat dupa alergeni
                 "0. Exit \n");
     }
     @Override

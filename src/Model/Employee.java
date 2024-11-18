@@ -24,10 +24,11 @@ public class Employee extends User{
 
     @Override
     public void displayOptions(){
-        System.out.println("Client Options: \n" +
+        System.out.println("Employee Options: \n" +
                 "1. Place order\n" +
                 "2. View all offers\n" +
                 "3. Delete account\n" +
+                "4. Show entire Menu\n" +
                 "0. Exit \n");
     }
 
