@@ -29,6 +29,10 @@ public class ProductController {
         productService.createMainDish(productName, productPrice, calories, size);
     }
 
+    public Product readProduct(int id){
+        return  productService.readProduct(id);
+    }
+
     /**
      * creates new side dish
      * @param productName

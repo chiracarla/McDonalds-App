@@ -97,7 +97,7 @@ public class UserController {
     public void showAllEmployees() {
         List<Employee> employees = userService.getAllEmployees();
         if (employees.isEmpty()) {
-            System.out.println("No clients found.");
+            System.out.println("No employees found.");
         } else {
             employees.forEach(employee -> System.out.println(employee.getName()));
         }

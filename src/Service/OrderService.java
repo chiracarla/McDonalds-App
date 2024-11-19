@@ -48,7 +48,6 @@ public class OrderService {
         if(payWithPoints){
             user.subtractPoints((int)(totalPrice/3*2));
         }
-        //TODO:transformare meniu
         order.setTotalPrice(totalPrice);
         orderRepo.create(order);
 
@@ -77,7 +76,6 @@ public class OrderService {
         if(payWithPoints){
             user.subtractPoints((int)(totalPrice/3*2));
         }
-        //TODO:optiune transform menu
         user.addPoints((int) (totalPrice/3));
         totalPrice = totalPrice * 4 / 5;//80%
         order.setTotalPrice(totalPrice);
@@ -107,13 +105,18 @@ public class OrderService {
                 .mapToInt(Order::getOrderID)
                 .max().orElse(0)+1;
     }
+    private int generateNewLocID() {
+        return locationRepo.getAll().stream()
+                .mapToInt(Location::getId)
+                .max().orElse(0)+1;
+    }
 
     /**
      * @param location
      * @param manager
      */
     public void createLocation(Locations location, Manager manager) {
-        Location loc = new Location(location, manager);
+        Location loc = new Location(location, manager, generateNewLocID());
         locationRepo.create(loc);
 
         System.out.println("New location placed! Location: " + loc);
@@ -151,7 +154,34 @@ public class OrderService {
         }
     }
 
+    public Location getByName(Locations loc){
+        for(Location l : getAllLocations()){
+            if(l.getStoreLocation() == loc){
+                return l;
+            }
+        }
+        System.out.println("Location not found");
+        return null;
+    }
+
     public List<Location> getAllLocations() {
         return locationRepo.getAll();
+    }
+
+    public Client getMostActiveClientByLocation(Location location) {
+        Map<Client, Integer> clientOrderCountMap = new HashMap<>();
+
+        List<Order> orders = orderRepo.getAll();
+        for (Order order : orders) {
+            if (order.getLocation().equals(location)) {
+                Client client = (Client) order.getUser();
+                clientOrderCountMap.put(client, clientOrderCountMap.getOrDefault(client, 0) + 1);
+            }
+        }
+
+        return clientOrderCountMap.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
     }
 }

@@ -98,6 +98,10 @@ public class ProductService {
         System.out.println("Drink created: " + productName + " with price: " + productPrice + ", volume: " + volume);
     }
 
+    public Product readProduct(int id){
+        return productRepo.read((Integer) id);
+    }
+
     /**
      *
      * @param productName

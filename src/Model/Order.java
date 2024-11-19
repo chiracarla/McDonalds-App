@@ -31,6 +31,14 @@ public class Order implements HasId {
         this.orderID = orderID;
     }
 
+    public Order(List<Product> products, Location location, User user, int orderID, int price) {
+        this.products = products;
+        this.location = location;
+        this.user = user;
+        this.orderID = orderID;
+        this.totalPrice = price;
+    }
+
     /**
      * Getters and Setters related to the Order
      */

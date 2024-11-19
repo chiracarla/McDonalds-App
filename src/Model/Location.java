@@ -5,15 +5,17 @@ import Enums.Locations;
 public class Location implements HasId {
     private Locations storeLocation;
     private Manager storeManager;
+    int id;
     /**
      * Constructs a Location with the specified ID and address.
      *
      * @param location the name of the location
      * @param manager the manager of the location
      */
-    public Location(Locations location, Manager manager) {
+    public Location(Locations location, Manager manager, int id) {
         this.storeLocation = location;
         this.storeManager = manager;
+        this.id = id;
     }
 
     public Locations getStoreLocation() {
@@ -42,8 +44,8 @@ public class Location implements HasId {
 
     @Override
     public Integer getId() {
-        return 0;
-    }//TODO: tb id
+        return id;
+    }
 
 //    @Override
 //    public String toFile() {

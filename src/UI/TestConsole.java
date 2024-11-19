@@ -41,9 +41,22 @@ public class TestConsole {
         IRepository<MainDish> mainsRepo = new MainsFileRepository("mains.txt");
         IRepository<SideDish> sidesRepo = new SidesFileRepository("sides.txt");
         IRepository<Product> prodsRepo = new ProductFileRepository("prods.txt");
+//        IRepository<Offer> offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
 
+        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertRepo, drinkRepo);
+        ProductController productController = new ProductController(productService);
+
+        IRepository<Offer> offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
+
+        IRepository<Location> locationRepo = new LocationFileRepository("locations.txt");
+        IRepository<Order> orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
+        //        ((OfferFileRepository) offerRepo).setProdController(productController);
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);
+
+        OrderService orderService = new OrderService(orderRepo, locationRepo);
+        OrderController orderController = new OrderController(orderService);
+
 //        UserService userService = new UserService(clientRepo);
 
         // Example usage
@@ -51,13 +64,9 @@ public class TestConsole {
 //        managerRepo.create(manager);
 //        managerRepo.getAll().forEach(System.out::println);
 
-//
-//        OrderService orderService = new OrderService(orderRepo, locationRepo);
-//        OrderController orderController = new OrderController(orderService);
+//        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertRepo, drinkRepo);
+//        ProductController productController = new ProductController(productService);
 
-        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertRepo, drinkRepo);
-        ProductController productController = new ProductController(productService);
-//
 //        OfferService offerService = new OfferService(offerRepo);
 //        OfferController offerController = new OfferController(offerService);
 
@@ -67,19 +76,27 @@ public class TestConsole {
 //
 //        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
 //        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
-//
-//        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
-//        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+
+        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
 //        List<Product> offerList = new ArrayList<>();
-//        offerList.add(productController.getProduct("Cheeseburger"));
+//        offerList.add(productController.getProduct("Lipton"));
 //        offerController.add(3, offerList);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
-        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+//        System.out.println(prodsRepo.read(1));
+//        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
+//        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
 //        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
 
         managerRepo.getAll().forEach(System.out::println);
 
         System.out.println(userRepo.read(1));
+
+        System.out.println(prodsRepo.read(1));
+
+//        orderController.createOrder(userController.signIn("chira.carla@gmail.com", "5678"), );
+
+//        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+//        System.out.println(locationRepo.read(1));
 
     }
 }

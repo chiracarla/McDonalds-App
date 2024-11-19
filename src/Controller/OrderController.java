@@ -45,6 +45,9 @@ public class OrderController {
         orderService.createLocation(location, manager);
         return null;
     }
+    public Location getByName(Locations loc){
+        return orderService.getByName(loc);
+    }
 
     public List<Location> getLocations() {
         return orderService.getAllLocations();
@@ -52,5 +55,9 @@ public class OrderController {
 
     public void analyzeMostOrdered(){
         orderService.analyzeMostOrdered();
+    }
+
+    public Client getMostActiveClientByLocation(Location location){
+        return orderService.getMostActiveClientByLocation(location);
     }
 }

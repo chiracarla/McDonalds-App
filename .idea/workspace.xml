@@ -4,28 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="started better fileRepo-using factory design pattern(Code With Me)">
-      <change afterPath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="created a complex function">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clients.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
-    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="" />
+    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +63,45 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Service/OrderService.java">
+      <ranges>
+        <range start1="50" end1="51" start2="50" end2="50" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="79" end1="80" start2="78" end2="78" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="109" end1="109" start2="107" end2="112" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="115" end1="116" start2="118" end2="119" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="153" end1="153" start2="156" end2="166" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="156" end1="156" start2="169" end2="186" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/UI/Console2.java">
+      <ranges>
+        <range start1="7" end1="11" start2="7" end2="8" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="49" end1="67" start2="46" end2="80" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="70" end1="353" start2="83" end2="372" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Controller/OrderController.java">
+      <ranges>
+        <range start1="47" end1="47" start2="47" end2="50" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="55" end1="55" start2="58" end2="62" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/UI/TestConsole.java">
+      <ranges>
+        <range start1="43" end1="43" start2="43" end2="44" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="44" end1="44" start2="45" end2="53" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="46" end1="46" start2="55" end2="59" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="53" end1="56" start2="66" end2="68" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="57" end1="60" start2="69" end2="69" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="69" end1="72" start2="78" end2="81" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="73" end1="74" start2="82" end2="83" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="75" end1="77" start2="84" end2="87" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="82" end1="82" start2="92" end2="96" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="83" end1="83" start2="97" end2="100" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -90,7 +133,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestConsole">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
       <module name="McDonalds App" />
@@ -111,10 +154,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestConsole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.TestConsole" />
+      <module name="McDonalds App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConsoleApp" />
         <item itemvalue="Application.Console2" />
+        <item itemvalue="Application.TestConsole" />
+        <item itemvalue="Application.ConsoleApp" />
       </list>
     </recent_temporary>
   </component>
@@ -215,9 +272,9 @@
     <MESSAGE value="little corrections" />
     <MESSAGE value="fixed problems" />
     <MESSAGE value="added ids to products + offer controller + service" />
-    <MESSAGE value="created a complex function" />
     <MESSAGE value="added the new sorting and filtering functions to ui" />
     <MESSAGE value="started better fileRepo-using factory design pattern(Code With Me)" />
-    <option name="LAST_COMMIT_MESSAGE" value="started better fileRepo-using factory design pattern(Code With Me)" />
+    <MESSAGE value="created a complex function" />
+    <option name="LAST_COMMIT_MESSAGE" value="created a complex function" />
   </component>
 </project>
