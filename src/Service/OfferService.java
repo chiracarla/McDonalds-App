@@ -53,7 +53,6 @@ public class OfferService {
         offerRepository.delete(id);
     }
 //a expirat termenul
-
     public List<Offer> getAllOffers() {
         return offerRepository.getAll();
     }

@@ -127,9 +127,11 @@ public abstract class User implements HasId {
 
     public void displayOptions(){}
 
-    @Override
-    public String toFile(){
-        return this.userID + "," + this.email + "," + this.name + "," + this.password;
-    }
+//    @Override
+//    public String toFile(){
+//        return this.userID + "," + this.email + "," + this.name + "," + this.password;
+//    }
+
+    public abstract String getUserType();
 
 }

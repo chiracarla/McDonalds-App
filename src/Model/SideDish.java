@@ -43,10 +43,10 @@ public class SideDish extends Product{
         return this.getProdId();
     }
 
-    @Override
-    public String toFile() {
-        return this.getProdId() + "," + this.getProductName() + "," + this.getProductPrice() + "," + this.size;
-    }
+//    @Override
+//    public String toFile() {
+//        return this.getProdId() + "," + this.getProductName() + "," + this.getProductPrice() + "," + this.size;
+//    }
 //
 //    @Override
 //    public int calc_points() {

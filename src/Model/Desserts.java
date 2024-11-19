@@ -32,10 +32,10 @@ public class Desserts extends Product{
         return this.getProdId();
     }
 
-    @Override
-    public String toFile() {
-        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + allergens;
-    }
+//    @Override
+//    public String toFile() {
+//        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + allergens;
+//    }
 
     @Override
     public String toString() {

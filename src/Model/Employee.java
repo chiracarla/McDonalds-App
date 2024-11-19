@@ -43,8 +43,20 @@ public class Employee extends User{
         return this.getUserID();
     }
 
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+//    @Override
+//    public String toFile(){
+//        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + manager;
+//    }
+
     @Override
-    public String toFile(){
-        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + manager;
+    public String getUserType() {
+        return "Employee";
     }
 }

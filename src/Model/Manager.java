@@ -50,8 +50,13 @@ public class Manager extends User {
         this.rank = rank;
     }
 
+//    @Override
+//    public String toFile() {
+//        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + rank;
+//    }
+
     @Override
-    public String toFile() {
-        return getUserID() + "," + getEmail() + "," + getName() + "," + getPassword() + "," + rank;
+    public String getUserType() {
+        return "Manager";
     }
 }

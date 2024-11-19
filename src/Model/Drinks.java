@@ -32,10 +32,10 @@ public class Drinks extends Product {
         return this.getProdId();
     }
 
-    @Override
-    public String toFile() {
-        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + volume;
-    }
+//    @Override
+//    public String toFile() {
+//        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + volume;
+//    }
 
     @Override
     public String toString() {

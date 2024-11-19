@@ -11,5 +11,5 @@ public interface HasId extends Serializable {
      */
     Integer getId();
 
-    String toFile();
+//    String toFile();
 }

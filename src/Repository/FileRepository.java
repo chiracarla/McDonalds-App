@@ -8,70 +8,84 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class FileRepository<T extends HasId> implements IRepository<T> {
+import java.io.*;
+import java.util.*;
 
+public abstract class FileRepository<T extends HasId> implements IRepository<T> {
     private final String filePath;
+    private Map<Integer, T> data;
 
     public FileRepository(String filePath) {
         this.filePath = filePath;
+        this.data = loadFromFile();
     }
 
     @Override
     public void create(T obj) {
-        doInFile(data->data.putIfAbsent(obj.getId(), obj));
-    }
-
-    @Override
-    public T read(Integer id) {
-        return readDataFromFile().get(id);
+        if (data.containsKey(obj.getId())) {
+            throw new IllegalArgumentException("Object with ID " + obj.getId() + " already exists.");
+        }
+        data.put(obj.getId(), obj);
+        saveToFile();
     }
 
     @Override
     public void update(T obj) {
-        doInFile(data->data.replace(obj.getId(), obj));
+        if (!data.containsKey(obj.getId())) {
+            throw new IllegalArgumentException("Object with ID " + obj.getId() + " does not exist.");
+        }
+        data.put(obj.getId(), obj);
+        saveToFile();
     }
 
     @Override
     public void delete(Integer id) {
-        doInFile(data->data.remove(id));
+        if (!data.containsKey(id)) {
+            throw new IllegalArgumentException("Object with ID " + id + " does not exist.");
+        }
+        data.remove(id);
+        saveToFile();
+    }
+
+    @Override
+    public T read(Integer id) {
+        return data.get(id);
     }
 
     @Override
     public List<T> getAll() {
-        return readDataFromFile().values().stream().toList();
+        return new ArrayList<>(data.values());
     }
 
-    private void doInFile(Consumer<Map<Integer, T>> function) {
-        Map<Integer, T> data = readDataFromFile();
-        function.accept(data);
-        writeDataToFile(data);
-    }
+    protected abstract String toFile(T obj); // Convert object to string
+    protected abstract T fromFile(String data); // Convert string to object
 
-    private Map<Integer, T> readDataFromFile() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
-            return (Map<Integer, T>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            return new HashMap<>();
-        }
-    }
-
-    private void writeDataToFile(Map<Integer, T> data) {
+    private void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (T obj : data.values()) {
-                writer.write(obj.toFile());
+                writer.write(toFile(obj));
                 writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error saving to file", e);
         }
     }
 
-//    private void writeDataToFile(Map<Integer, T> data) {
-//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
-//            oos.writeObject(data);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    private Map<Integer, T> loadFromFile() {
+        Map<Integer, T> result = new HashMap<>();
+        File file = new File(filePath);
+        if (!file.exists()) {
+            return result;
+        }
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                T obj = fromFile(line);
+                result.put(obj.getId(), obj);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Error loading from file", e);
+        }
+        return result;
+    }
 }

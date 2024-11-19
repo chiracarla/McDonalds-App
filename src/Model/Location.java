@@ -45,8 +45,8 @@ public class Location implements HasId {
         return 0;
     }//TODO: tb id
 
-    @Override
-    public String toFile() {
-        return storeLocation + "," + storeManager;
-    }
+//    @Override
+//    public String toFile() {
+//        return storeLocation + "," + storeManager;
+//    }
 }

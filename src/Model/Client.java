@@ -32,7 +32,12 @@ public class Client extends User {
         return this.getUserID();
     }
 
-    public String toFile(){
-        return getId() + "," + getEmail() + "," + getName() + "," + getPassword();
+//    public String toFile(){
+//        return getId() + "," + getEmail() + "," + getName() + "," + getPassword();
+//    }
+
+    @Override
+    public String getUserType() {
+        return "Client";
     }
 }
