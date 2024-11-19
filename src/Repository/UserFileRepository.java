@@ -17,14 +17,19 @@ public class UserFileRepository extends FileRepository<User>{
         switch (userType) {
             case "Client":
                 return obj.getId() + "," + obj.getEmail() + "," +
-                        obj.getName() + "," + obj.getPassword(); // assuming Client constructor
+                        obj.getName() + "," + obj.getPassword() + "," + obj.getUserType(); // assuming Client constructor
             case "Manager":
                 Manager manager = (Manager) obj;
                 return obj.getId() + "," + obj.getEmail() + "," +
                         obj.getName() + "," + obj.getPassword() + "," +
                         ((Manager) obj).getRank() + "," + obj.getUserType(); // assuming Manager constructor
-//            case "Employee":
-//                return new Employee(email, name, id, password); // assuming Employee constructor
+            case "Employee":
+                Employee employee = (Employee) obj;
+                return obj.getId() + "," + obj.getEmail() + "," +
+                        obj.getName() + "," + obj.getPassword() + "," +
+                        obj.getPoints() + "," + employee.getManager().getId()+ "," + employee.getManager().getEmail() + "," +
+                        employee.getManager().getName() + "," + employee.getManager().getPassword() + "," +
+                        employee.getManager().getRank();
             default:
                 throw new IllegalArgumentException("Unknown user type: " + userType);
         }
@@ -50,8 +55,13 @@ public class UserFileRepository extends FileRepository<User>{
             case "Manager":
                 ManagerRank rank = ManagerRank.valueOf(parts[4]);
                 return new Manager(email, name, id, password, rank); // assuming Manager constructor
-//            case "Employee":
-//                return new Employee(email, name, id, password); // assuming Employee constructor
+            case "Employee":
+                int manID = Integer.parseInt(parts[4]);
+                String manEmail = parts[5];
+                String manName = parts[6];
+                String manPassword = parts[7];
+                ManagerRank manRank = ManagerRank.valueOf(parts[8]);
+                return new Employee(email, name, id, password, new Manager(manEmail, manName, manID, manPassword, manRank));
             default:
                 throw new IllegalArgumentException("Unknown user type: " + userType);
         }

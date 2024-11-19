@@ -32,6 +32,11 @@ public class Drinks extends Product {
         return this.getProdId();
     }
 
+    @Override
+    public String getType() {
+        return "Drink";
+    }
+
 //    @Override
 //    public String toFile() {
 //        return getProdId() + "," + getProductName() + "," + getProductPrice() + "," + volume;

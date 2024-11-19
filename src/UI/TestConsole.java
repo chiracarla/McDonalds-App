@@ -36,6 +36,12 @@ public class TestConsole {
         IRepository<Manager> managerRepo = new ManagerFileRepository("managers.txt");
         IRepository<User> userRepo = new UserFileRepository("users.txt");
         IRepository<Employee> employeeRepo = new EmployeeFileRepository("employee.txt");
+        IRepository<Desserts> dessertRepo = new DessertFileRepository("desserts.txt");
+        IRepository<Drinks> drinkRepo = new DrinkFileRepository("drinks.txt");
+        IRepository<MainDish> mainsRepo = new MainsFileRepository("mains.txt");
+        IRepository<SideDish> sidesRepo = new SidesFileRepository("sides.txt");
+        IRepository<Product> prodsRepo = new ProductFileRepository("prods.txt");
+
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);
 //        UserService userService = new UserService(clientRepo);
@@ -49,8 +55,8 @@ public class TestConsole {
 //        OrderService orderService = new OrderService(orderRepo, locationRepo);
 //        OrderController orderController = new OrderController(orderService);
 
-//        ProductService productService = new ProductService(productRepo, mainDRepo, sideDRepo, dessertRepo, drinkRepo);
-//        ProductController productController = new ProductController(productService);
+        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertRepo, drinkRepo);
+        ProductController productController = new ProductController(productService);
 //
 //        OfferService offerService = new OfferService(offerRepo);
 //        OfferController offerController = new OfferController(offerService);

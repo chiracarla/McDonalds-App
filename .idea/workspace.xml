@@ -4,29 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="added the new sorting and filtering functions to ui">
-      <change afterPath="$PROJECT_DIR$/src/Repository/ManagerFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="started better fileRepo-using factory design pattern(Code With Me)">
+      <change afterPath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/clients.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/managers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Drinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Drinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/HasId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/HasId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SideDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SideDish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +76,7 @@
     "Application.Console2.executor": "Run",
     "Application.ConsoleApp.executor": "Run",
     "Application.Main.executor": "Run",
-    "Application.TestConsole.executor": "Debug",
+    "Application.TestConsole.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -198,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731933155130</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="started better fileRepo-using factory design pattern(Code With Me)">
+      <option name="closed" value="true" />
+      <created>1732026359078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732026359078</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,17 +217,7 @@
     <MESSAGE value="added ids to products + offer controller + service" />
     <MESSAGE value="created a complex function" />
     <MESSAGE value="added the new sorting and filtering functions to ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the new sorting and filtering functions to ui" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/UI/TestConsole.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="started better fileRepo-using factory design pattern(Code With Me)" />
+    <option name="LAST_COMMIT_MESSAGE" value="started better fileRepo-using factory design pattern(Code With Me)" />
   </component>
 </project>

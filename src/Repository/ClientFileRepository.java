@@ -18,7 +18,6 @@ public class ClientFileRepository extends FileRepository<Client>{
         String email = parts[1];
         String name = parts[2];
         String password = parts[3];
-        int points = Integer.parseInt(parts[4]);
         return new Client(email, name, id, password);
     }
 }

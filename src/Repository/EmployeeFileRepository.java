@@ -15,7 +15,7 @@ public class EmployeeFileRepository extends FileRepository<Employee>{
     protected String toFile(Employee obj) {
         return obj.getId() + "," + obj.getEmail() + "," +
                 obj.getName() + "," + obj.getPassword() + "," +
-                obj.getPoints() + "'" + obj.getManager().getId()+ "," + obj.getManager().getEmail() + "," +
+                obj.getPoints() + "," + obj.getManager().getId()+ "," + obj.getManager().getEmail() + "," +
                 obj.getManager().getName() + "," + obj.getManager().getPassword() + "," +
                 obj.getManager().getRank();
     }
@@ -27,12 +27,11 @@ public class EmployeeFileRepository extends FileRepository<Employee>{
         String email = parts[1];
         String name = parts[2];
         String password = parts[3];
-        int points = Integer.parseInt(parts[4]);
-        int manID = Integer.parseInt(parts[5]);
-        String manEmail = parts[6];
-        String manName = parts[7];
-        String manPassword = parts[8];
-        ManagerRank rank = ManagerRank.valueOf(parts[9]);
+        int manID = Integer.parseInt(parts[4]);
+        String manEmail = parts[5];
+        String manName = parts[6];
+        String manPassword = parts[7];
+        ManagerRank rank = ManagerRank.valueOf(parts[8]);
         return new Employee(email, name, id, password, new Manager(manEmail, manName, manID, manPassword, rank));
     }
 }

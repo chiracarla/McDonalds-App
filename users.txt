@@ -1,2 +1,2 @@
 1,klara.orban@yahoo.com,Orban Klara,1234,Senior,Manager
-2,chira.carla@gmail.com,Chira Carla,5678
+2,chira.carla@gmail.com,Chira Carla,5678,Client

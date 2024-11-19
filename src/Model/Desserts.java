@@ -44,6 +44,11 @@ public class Desserts extends Product{
                 '}';
     }
 
+    @Override
+    public String getType() {
+        return "Dessert";
+    }
+
     //    @Override
 //    public int calc_points() {
 //        return (int) (this.getProductPrice()*0.5);

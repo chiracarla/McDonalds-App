@@ -44,6 +44,11 @@ public class SideDish extends Product{
     }
 
 //    @Override
+    public String getType() {
+        return "Side";
+    }
+
+//    @Override
 //    public String toFile() {
 //        return this.getProdId() + "," + this.getProductName() + "," + this.getProductPrice() + "," + this.size;
 //    }
