@@ -4,40 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="created a complex function">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="UI and JavaDocs implementations(code with me)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prods.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prods.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CompositeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CompositeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/clients.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/drinks.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/locations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/mainDishes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/mainDishes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/managers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ManagerFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ManagerFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
     </list>
-    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="updated fileRepo and console.it is working (code with me)">
+    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings">
       <change beforePath="$PROJECT_DIR$/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/offers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/offers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/InMemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/locations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mains.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prods.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prods.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sides.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sides.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/offers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/offers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/orders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/products.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/sideDishes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/sideDishes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,37 +62,18 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Controller/UserController.java">
-      <ranges>
-        <range start1="62" end1="63" start2="62" end2="63" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="64" end1="65" start2="64" end2="65" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="105" end1="105" start2="105" end2="108" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="113" end1="113" start2="116" end2="120" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Controller/ProductController.java">
-      <ranges>
-        <range start1="77" end1="78" start2="77" end2="78" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="81" end1="82" start2="81" end2="81" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="83" end1="83" start2="82" end2="87" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/drinks.txt">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="0" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="2" end1="3" start2="1" end2="1" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="4" end1="14" start2="2" end2="2" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/UI/Console2.java">
       <ranges>
-        <range start1="47" end1="56" start2="47" end2="47" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="57" end1="58" start2="48" end2="60" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="59" end1="61" start2="61" end2="73" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="81" end1="83" start2="93" end2="95" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="88" end1="88" start2="100" end2="101" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="161" end1="164" start2="174" end2="184" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="359" end1="361" start2="379" end2="381" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="34" end1="47" start2="34" end2="34" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="48" end1="60" start2="35" end2="53" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="61" end1="74" start2="54" end2="84" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="86" end1="92" start2="96" end2="99" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="93" end1="95" start2="100" end2="107" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="98" end1="99" start2="110" end2="111" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="103" end1="104" start2="115" end2="116" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="243" end1="243" start2="255" end2="256" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="255" end1="256" start2="268" end2="269" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
+        <range start1="394" end1="394" start2="407" end2="420" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
       </ranges>
     </file>
   </component>
@@ -201,7 +170,7 @@
       <workItem from="1731071194164" duration="41000" />
       <workItem from="1731096711379" duration="11948000" />
       <workItem from="1731145336897" duration="5095000" />
-      <workItem from="1732089614974" duration="7903000" />
+      <workItem from="1732089614974" duration="13129000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -275,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732060753974</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UI and JavaDocs implementations(code with me)">
+      <option name="closed" value="true" />
+      <created>1732100783502</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732100783502</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated toStrings">
+      <option name="closed" value="true" />
+      <created>1732100821263</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732100821263</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +276,8 @@
     <MESSAGE value="started better fileRepo-using factory design pattern(Code With Me)" />
     <MESSAGE value="created a complex function" />
     <MESSAGE value="updated fileRepo and console.it is working (code with me)" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated fileRepo and console.it is working (code with me)" />
+    <MESSAGE value="UI and JavaDocs implementations(code with me)" />
+    <MESSAGE value="Updated toStrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated toStrings" />
   </component>
 </project>

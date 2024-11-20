@@ -58,7 +58,7 @@ public class ProductFileRepository extends FileRepository <Product> {
         String[] parts = data.split(",");
 
         // Extract individual fields
-        String userType = parts[parts.length - 1]; // Manager, Client, etc.
+        String userType = parts[parts.length - 1];
         int id = Integer.parseInt(parts[0]);
         String name = parts[1];
         int price = Integer.parseInt(parts[2]);

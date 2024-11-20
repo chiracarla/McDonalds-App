@@ -32,46 +32,56 @@ import java.util.Scanner;
     //fix toStrings
 public class Console2 {
     public static void main(String[] args) {
-//        IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
-//        IRepository<Client> clientRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\clients.txt"));
-//        IRepository<Manager> managerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\managers.txt"));
-//        IRepository<Employee> employeeRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\employees.txt"));
-//        IRepository<Order> orderRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\orders.txt"));
-//        IRepository<Product> productRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\products.txt"));
-//        IRepository<MainDish> mainDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\mainDishes.txt"));
-//        IRepository<SideDish> sideDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\sideDishes.txt"));
-//        IRepository<Drinks> drinkRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\drinks.txt"));
-//        IRepository<Desserts> dessertRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\desserts.txt"));
-//        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
-//        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
 
+        IRepository<User> userRepo;
+        IRepository<Client> clientRepo;
+        IRepository<Manager> managerRepo;
+        IRepository<Employee> employeeRepo;
+        IRepository<Order> orderRepo;
+        IRepository<Product> prodsRepo;
+        IRepository<MainDish> mainsRepo;
+        IRepository<SideDish> sidesRepo;
+        IRepository<Drinks> drinkRepo;
+        IRepository<Desserts> dessertRepo;
+        IRepository<Location> locationRepo;
+        IRepository<Offer> offerRepo;
+        System.out.println("1. In Memory");
+        System.out.println("2. File");
+        System.out.print("Select an option: ");
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+        scanner.nextLine();
 
-        IRepository<User> userRepo = new InMemoryRepository<>();
-        IRepository<Client> clientRepo = new InMemoryRepository<>();
-        IRepository<Manager> managerRepo = new InMemoryRepository<>();
-        IRepository<Employee> employeeRepo = new InMemoryRepository<>();
-        IRepository<Order> orderRepo = new InMemoryRepository<>();
-        IRepository<Product> prodsRepo = new InMemoryRepository<>();
-        IRepository<MainDish> mainsRepo = new InMemoryRepository<>();
-        IRepository<SideDish> sidesRepo = new InMemoryRepository<>();
-        IRepository<Drinks> drinkRepo = new InMemoryRepository<>();
-        IRepository<Desserts> dessertRepo = new InMemoryRepository<>();
-        IRepository<Location> locationRepo = new InMemoryRepository<>();
-        IRepository<Offer> offerRepo = new InMemoryRepository<>();
-
-//        IRepository<Client> clientRepo = new ClientFileRepository("clients.txt");
-//        IRepository<Manager> managerRepo = new ManagerFileRepository("managers.txt");
-//        IRepository<User> userRepo = new UserFileRepository("users.txt");
-//        IRepository<Employee> employeeRepo = new EmployeeFileRepository("employee.txt");
-//        IRepository<Desserts> dessertRepo = new DessertFileRepository("desserts.txt");
-//        IRepository<Drinks> drinkRepo = new DrinkFileRepository("drinks.txt");
-//        IRepository<MainDish> mainsRepo = new MainsFileRepository("mains.txt");
-//        IRepository<SideDish> sidesRepo = new SidesFileRepository("sides.txt");
-//        IRepository<Product> prodsRepo = new ProductFileRepository("prods.txt");
-//        IRepository<Offer> offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
-//        IRepository<Location> locationRepo = new LocationFileRepository("locations.txt");
-//        IRepository<Order> orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
-
+        if (option == 1) {
+            userRepo = new InMemoryRepository<>();
+            clientRepo = new InMemoryRepository<>();
+            managerRepo = new InMemoryRepository<>();
+            employeeRepo = new InMemoryRepository<>();
+            orderRepo = new InMemoryRepository<>();
+            prodsRepo = new InMemoryRepository<>();
+            mainsRepo = new InMemoryRepository<>();
+            sidesRepo = new InMemoryRepository<>();
+            drinkRepo = new InMemoryRepository<>();
+            dessertRepo = new InMemoryRepository<>();
+            locationRepo = new InMemoryRepository<>();
+            offerRepo = new InMemoryRepository<>();
+        } else if (option == 2) {
+            userRepo = new UserFileRepository("users.txt");
+            clientRepo = new ClientFileRepository("clients.txt");
+            managerRepo = new ManagerFileRepository("managers.txt");
+            employeeRepo = new EmployeeFileRepository("employees.txt");
+            prodsRepo = new ProductFileRepository("prods.txt");
+            locationRepo = new LocationFileRepository("locations.txt");
+            orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
+            mainsRepo = new MainsFileRepository("mains.txt");
+            sidesRepo = new SidesFileRepository("sides.txt");
+            drinkRepo = new DrinkFileRepository("drinks.txt");
+            dessertRepo = new DessertFileRepository("desserts.txt");
+            offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
+        } else {
+            System.out.println("Invalid option selected.");
+            return;
+        }
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);
 
@@ -84,24 +94,26 @@ public class Console2 {
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
 
-        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
-        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
-        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE);
-
-        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
-        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
+//        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
+//        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
+//        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE);
 //
-        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
-        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+//        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
+//        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
+//
+//        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+//        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+        productController.createDessert("Pie", 6, Allergens.gluten);
+        productController.createDessert("Ice cream", 5, Allergens.dairy);
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));
         offerController.add(3, offerList);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior );
+        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
         userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
         userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
         orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
@@ -241,6 +253,7 @@ public class Console2 {
                     }
                     else if(opt == 2) {
                         System.out.println("Enter product: ");
+                        scanner.nextLine();
                         String productName = scanner.nextLine();
                         for(Offer o : offerController.filterOffersByProduct(user.getOffers(), productController.getProduct(productName))) {
                             System.out.println(o.toString());
@@ -253,7 +266,7 @@ public class Console2 {
                 case 4:
                     System.out.println("1. View entire menu:"); //va tb sa il facem sortat dupa fel maybe
                     System.out.println("2. View menu sorted by price");
-                    System.out.println("3. View menu items that contain an allergen");
+                    System.out.println("3. View menu items that dont contain an allergen");
                     System.out.print("Choice: ");
                     int type = scanner.nextInt();
                     scanner.nextLine();
@@ -392,3 +405,16 @@ public class Console2 {
         }
     }
 }
+//        IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
+//        IRepository<Client> clientRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\clients.txt"));
+//        IRepository<Manager> managerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\managers.txt"));
+//        IRepository<Employee> employeeRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\employees.txt"));
+//        IRepository<Order> orderRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\orders.txt"));
+//        IRepository<Product> productRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\products.txt"));
+//        IRepository<MainDish> mainDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\mainDishes.txt"));
+//        IRepository<SideDish> sideDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\sideDishes.txt"));
+//        IRepository<Drinks> drinkRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\drinks.txt"));
+//        IRepository<Desserts> dessertRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\desserts.txt"));
+//        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
+//        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
+

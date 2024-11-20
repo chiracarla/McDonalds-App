@@ -1,2 +1,2 @@
-1,Sprite,3,_300ML
-2,Lipton,3,_200ML
+6,Sprite,3,_300ML
+7,Lipton,3,_200ML

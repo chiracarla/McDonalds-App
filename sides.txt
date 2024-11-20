@@ -1,14 +1,2 @@
-38,French Fries,5,MEDIUM
-39,Chicken McNuggets,8,MEDIUM
-43,French Fries,5,MEDIUM
-44,Chicken McNuggets,8,MEDIUM
-14,French Fries,5,MEDIUM
-15,Chicken McNuggets,8,MEDIUM
-48,French Fries,5,MEDIUM
-49,Chicken McNuggets,8,MEDIUM
-19,French Fries,5,MEDIUM
-20,Chicken McNuggets,8,MEDIUM
-24,French Fries,5,MEDIUM
-25,Chicken McNuggets,8,MEDIUM
-29,French Fries,5,MEDIUM
-30,Chicken McNuggets,8,MEDIUM
+4,French Fries,5,MEDIUM
+5,Chicken McNuggets,8,MEDIUM

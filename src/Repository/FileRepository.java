@@ -36,7 +36,7 @@ public abstract class FileRepository<T extends HasId> implements IRepository<T> 
     @Override
     public void create(T obj) {
         if (data.containsKey(obj.getId())) {
-            throw new IllegalArgumentException("Object with ID " + obj.getId() + " already exists.");
+            throw new IllegalArgumentException("ID " + obj.getId() + " exists.");
         }
         data.put(obj.getId(), obj);
         saveToFile();
@@ -50,7 +50,7 @@ public abstract class FileRepository<T extends HasId> implements IRepository<T> 
     @Override
     public void update(T obj) {
         if (!data.containsKey(obj.getId())) {
-            throw new IllegalArgumentException("Object with ID " + obj.getId() + " does not exist.");
+            throw new IllegalArgumentException("ID " + obj.getId() + " doesn't exist.");
         }
         data.put(obj.getId(), obj);
         saveToFile();
@@ -64,7 +64,7 @@ public abstract class FileRepository<T extends HasId> implements IRepository<T> 
     @Override
     public void delete(Integer id) {
         if (!data.containsKey(id)) {
-            throw new IllegalArgumentException("Object with ID " + id + " does not exist.");
+            throw new IllegalArgumentException("ID " + id + " doesn't exist.");
         }
         data.remove(id);
         saveToFile();

@@ -1,5 +1,3 @@
 1,Bucuresti,1,klara.orban@yahoo.com,Orban Klara,1234,Senior
 2,Bucuresti,1,klara.orban@yahoo.com,Orban Klara,1234,Senior
 3,Bucuresti,1,klara.orban@yahoo.com,Orban Klara,1234,Senior
-4,Bucuresti,1,klara.orban@yahoo.com,Orban Klara,1234,Senior
-5,Bucuresti,1,klara.orban@yahoo.com,Orban Klara,1234,Senior
