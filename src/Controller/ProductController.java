@@ -81,6 +81,11 @@ public class ProductController {
     }
 // poate ar fi mai bine sa fie direct scris in string
 
+    /**
+     * filters products by allergen
+     * @param allergen
+     * @return
+     */
     public List<Product> filterProductsByAllergen(Allergens allergen){
         return productService.filterProductsByAllergens(allergen);
     }

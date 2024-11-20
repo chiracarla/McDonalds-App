@@ -6,17 +6,30 @@ import Model.Drinks;
 import Model.MainDish;
 import com.sun.tools.javac.Main;
 
+/**
+ * The {@code MainsFileRepository} class extends the {@code FileRepository} class
+ */
 public class MainsFileRepository extends FileRepository<MainDish>{
     public MainsFileRepository(String filePath){
         super(filePath);
     }
 
+    /**
+     * Converts a {@code MainDish} entity to a string representation for storage.
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(MainDish obj) {
         return obj.getId() + "," + obj.getProductName() + "," +
                 obj.getProductPrice() + "," + obj.getCalories() + "," + obj.getSize();
     }
 
+    /**
+     * Converts a string representation of a {@code MainDish} entity to an actual entity.
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected MainDish fromFile(String data) {
         String[] parts = data.split(",");

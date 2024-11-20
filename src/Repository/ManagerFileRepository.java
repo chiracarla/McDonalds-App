@@ -2,11 +2,20 @@ package Repository;
 import Enums.ManagerRank;
 import Model.Manager;
 
+/**
+ * The {@code ManagerFileRepository} class extends the {@code FileRepository} class
+ * and provides specific methods for managing {@code Manager} entities in the application.
+ */
 public class ManagerFileRepository extends FileRepository<Manager>{
     public ManagerFileRepository(String filePath) {
         super(filePath);
     }
 
+    /**
+     * Converts a {@code Manager} entity to a string representation for storage in a file.
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(Manager obj) {
         return obj.getId() + "," + obj.getEmail() + "," +
@@ -14,6 +23,11 @@ public class ManagerFileRepository extends FileRepository<Manager>{
                 obj.getRank();
     }
 
+    /**
+     * Creates a {@code Manager} entity from a string representation in a file.
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected Manager fromFile(String data) {
         String[] parts = data.split(",");

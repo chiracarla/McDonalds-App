@@ -58,6 +58,13 @@ public class OfferService {
     }
 
     //TODO filterOffersByProduct
+
+    /**
+     * Filters the offers by product
+     * @param offers
+     * @param product
+     * @return
+     */
     public List<Offer> filterOffersByProduct(List<Offer> offers, Product product) {
         return offers.stream()
                 .filter(offer -> offer.getProducts().contains(product))

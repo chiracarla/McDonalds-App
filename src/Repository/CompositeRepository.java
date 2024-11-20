@@ -3,7 +3,12 @@ package Repository;
 import Model.HasId;
 
 import java.util.List;
-
+/**
+ * Interface representing a repository for managing entities.
+ *Uses two repositories to manage the entities
+ * InMemoryRepo and InFileRepo
+ * @param <T> the type of entity
+ */
 public class CompositeRepository<T extends HasId> implements IRepository<T> {
     private final IRepository<T> inMemoryRepo;
     private final IRepository<T> inFileRepo;

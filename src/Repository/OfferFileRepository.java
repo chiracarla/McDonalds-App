@@ -7,6 +7,9 @@ import Model.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Uses the FileRepo as schema
+ */
 public class OfferFileRepository extends FileRepository<Offer> {
 
     public final ProductFileRepository prodFRepo;
@@ -19,7 +22,11 @@ public class OfferFileRepository extends FileRepository<Offer> {
 //        prodC = pc;
 //    }
 
-
+    /**
+     * Saves a Offer's string to the file
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(Offer obj) {
         StringBuilder productsString = new StringBuilder();
@@ -34,7 +41,11 @@ public class OfferFileRepository extends FileRepository<Offer> {
 
     }
 
-
+    /**
+     * Creates the object of a offer from file
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected Offer fromFile(String data) {
         String[] parts = data.split(",");

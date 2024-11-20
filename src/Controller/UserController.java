@@ -103,6 +103,9 @@ public class UserController {
         }
     }
 
+    /**
+     * reads a manager
+     */
     public Manager readManager(int id) {
         Manager manager = userService.readManager(id);
         if (manager == null) {
@@ -111,6 +114,10 @@ public class UserController {
         return manager;
     }
 
+    /**
+     * sort the employees by name
+     * @return
+     */
     public List<Employee> employeeSortByName() {
         List<Employee> employees = userService.employeesSortByName();
         if (employees.isEmpty()) {

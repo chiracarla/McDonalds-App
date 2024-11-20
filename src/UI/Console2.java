@@ -45,20 +45,32 @@ public class Console2 {
 //        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
 //        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
 
-        IRepository<Client> clientRepo = new ClientFileRepository("clients.txt");
-        IRepository<Manager> managerRepo = new ManagerFileRepository("managers.txt");
-        IRepository<User> userRepo = new UserFileRepository("users.txt");
-        IRepository<Employee> employeeRepo = new EmployeeFileRepository("employee.txt");
-        IRepository<Desserts> dessertRepo = new DessertFileRepository("desserts.txt");
-        IRepository<Drinks> drinkRepo = new DrinkFileRepository("drinks.txt");
-        IRepository<MainDish> mainsRepo = new MainsFileRepository("mains.txt");
-        IRepository<SideDish> sidesRepo = new SidesFileRepository("sides.txt");
-        IRepository<Product> prodsRepo = new ProductFileRepository("prods.txt");
 
-        IRepository<Offer> offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
+        IRepository<User> userRepo = new InMemoryRepository<>();
+        IRepository<Client> clientRepo = new InMemoryRepository<>();
+        IRepository<Manager> managerRepo = new InMemoryRepository<>();
+        IRepository<Employee> employeeRepo = new InMemoryRepository<>();
+        IRepository<Order> orderRepo = new InMemoryRepository<>();
+        IRepository<Product> prodsRepo = new InMemoryRepository<>();
+        IRepository<MainDish> mainsRepo = new InMemoryRepository<>();
+        IRepository<SideDish> sidesRepo = new InMemoryRepository<>();
+        IRepository<Drinks> drinkRepo = new InMemoryRepository<>();
+        IRepository<Desserts> dessertRepo = new InMemoryRepository<>();
+        IRepository<Location> locationRepo = new InMemoryRepository<>();
+        IRepository<Offer> offerRepo = new InMemoryRepository<>();
 
-        IRepository<Location> locationRepo = new LocationFileRepository("locations.txt");
-        IRepository<Order> orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
+//        IRepository<Client> clientRepo = new ClientFileRepository("clients.txt");
+//        IRepository<Manager> managerRepo = new ManagerFileRepository("managers.txt");
+//        IRepository<User> userRepo = new UserFileRepository("users.txt");
+//        IRepository<Employee> employeeRepo = new EmployeeFileRepository("employee.txt");
+//        IRepository<Desserts> dessertRepo = new DessertFileRepository("desserts.txt");
+//        IRepository<Drinks> drinkRepo = new DrinkFileRepository("drinks.txt");
+//        IRepository<MainDish> mainsRepo = new MainsFileRepository("mains.txt");
+//        IRepository<SideDish> sidesRepo = new SidesFileRepository("sides.txt");
+//        IRepository<Product> prodsRepo = new ProductFileRepository("prods.txt");
+//        IRepository<Offer> offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
+//        IRepository<Location> locationRepo = new LocationFileRepository("locations.txt");
+//        IRepository<Order> orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
 
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);

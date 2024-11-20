@@ -6,11 +6,20 @@ import Enums.DrinkVolume;
 import Enums.ManagerRank;
 import Model.*;
 
+/**
+ * The {@code ProductFileRepository} class provides a repository for managing products.
+ */
 public class ProductFileRepository extends FileRepository <Product> {
     public ProductFileRepository(String filePath) {
         super(filePath);
     }
 
+    /**
+     * Converts an entity to a string to be written to file
+     * checks the type of the product and writes the specific fields
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(Product obj) {
         // Assuming that User class has a type (Client, Manager, etc.)
@@ -38,6 +47,11 @@ public class ProductFileRepository extends FileRepository <Product> {
 //        return obj.getId() + "," + obj.getEmail() + "," + obj.getName() + "," + obj.getPassword() + "," + obj.getUserType();
     }
 
+    /**
+     * Converts a string from file to an entity
+     * @param data the string to convert
+     * @return
+     */
     @Override
     protected Product fromFile(String data) {
         // Split the data string into parts based on comma separator

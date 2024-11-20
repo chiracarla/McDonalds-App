@@ -24,6 +24,12 @@ public class OfferController {
         offerService.addOffer( newPrice, products);
     }//TODO: user input
 
+    /**
+     * filters offers by product
+     * @param offers
+     * @param product
+     * @return
+     */
     public List<Offer> filterOffersByProduct(List<Offer> offers, Product product) {
         return offerService.filterOffersByProduct(offers, product);
     }

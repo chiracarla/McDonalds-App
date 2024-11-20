@@ -97,7 +97,7 @@ public class OrderService {
     }
 
     /**
-     *
+     *generates new orderID
      * @return
      */
     private int generateNewOrderID() {
@@ -122,7 +122,9 @@ public class OrderService {
         System.out.println("New location placed! Location: " + loc);
     }
 
-    //this function analyzes the most ordered product and gives out how likely it was to get ordered
+    /**
+     * this function analyzes the most ordered product and gives out how likely it was to get ordered
+     */
     public void analyzeMostOrdered() {
         List<Order> orders = orderRepo.getAll();
         Map<Product, Integer> productCount = new HashMap<>();
@@ -168,6 +170,11 @@ public class OrderService {
         return locationRepo.getAll();
     }
 
+    /**
+     * gets the most active client in a location
+     * @param location
+     * @return
+     */
     public Client getMostActiveClientByLocation(Location location) {
         Map<Client, Integer> clientOrderCountMap = new HashMap<>();
 

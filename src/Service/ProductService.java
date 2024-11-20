@@ -133,6 +133,10 @@ public class ProductService {
         return products;
     }
 
+    /**
+     * generates a new offer ID
+     * @return
+     */
     private int generateNewOfferID() {
         return productRepo.getAll().stream()
                 .mapToInt(Product::getProdId)

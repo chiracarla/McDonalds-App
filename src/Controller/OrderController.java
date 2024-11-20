@@ -57,6 +57,11 @@ public class OrderController {
         orderService.analyzeMostOrdered();
     }
 
+    /**
+     * Gets the most active client by location
+     * @param location
+     * @return
+     */
     public Client getMostActiveClientByLocation(Location location){
         return orderService.getMostActiveClientByLocation(location);
     }

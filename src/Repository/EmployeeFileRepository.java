@@ -6,11 +6,19 @@ import Enums.ManagerRank;
 import Model.*;
 import Model.Client;
 
+/**
+ * Uses the FileRepository as schema
+ */
 public class EmployeeFileRepository extends FileRepository<Employee>{
     public EmployeeFileRepository(String filePath) {
         super(filePath);
     }
 
+    /**
+     * Creates a string for the Employee entity
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(Employee obj) {
         return obj.getId() + "," + obj.getEmail() + "," +
@@ -20,6 +28,11 @@ public class EmployeeFileRepository extends FileRepository<Employee>{
                 obj.getManager().getRank();
     }
 
+    /**
+     * Creates the object saved in the Employee file
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected Employee fromFile(String data) {
         String[] parts = data.split(",");

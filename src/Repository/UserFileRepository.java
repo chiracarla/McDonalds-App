@@ -4,11 +4,20 @@ import java.util.*;
 
 import Enums.ManagerRank;
 import Model.*;
+
+/**
+ * The {@code UserFileRepository} class extends the {@code FileRepository} class
+ */
 public class UserFileRepository extends FileRepository<User>{
     public UserFileRepository(String filePath) {
         super(filePath);
     }
 
+    /**
+     * Converts an entity to a string representation for writing to file
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(User obj) {
         // Assuming that User class has a type (Client, Manager, etc.)
@@ -36,6 +45,11 @@ public class UserFileRepository extends FileRepository<User>{
 //        return obj.getId() + "," + obj.getEmail() + "," + obj.getName() + "," + obj.getPassword() + "," + obj.getUserType();
     }
 
+    /**
+     * Converts a string representation from file to an entity
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected User fromFile(String data) {
         // Split the data string into parts based on comma separator

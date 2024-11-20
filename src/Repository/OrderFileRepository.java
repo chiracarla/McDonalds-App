@@ -8,6 +8,9 @@ import Model.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Uses the FileRepo as schema
+ */
 public class OrderFileRepository extends FileRepository<Order>{
 //Order(List<Product> products, Location location, User user, int orderID)
     public UserFileRepository userFR;
@@ -19,6 +22,12 @@ public class OrderFileRepository extends FileRepository<Order>{
         prodFR = prodR;
         locFR = locR;
     }
+
+    /**
+     * Saves a Order's string to the file
+     * @param obj the entity to convert
+     * @return
+     */
     @Override
     protected String toFile(Order obj) {
         StringBuilder productsString = new StringBuilder();
@@ -33,7 +42,11 @@ public class OrderFileRepository extends FileRepository<Order>{
 
     }
 
-
+    /**
+     * Creates the object of a order from file
+     * @param data the string representation of the entity
+     * @return
+     */
     @Override
     protected Order fromFile(String data) {
         String[] parts = data.split(",");
