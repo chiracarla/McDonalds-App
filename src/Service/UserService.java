@@ -120,12 +120,13 @@ public class UserService {
      * @param email
      * @param password
      */
-    public Optional<User> signIn(String email, String password) {
+    public User signIn(String email, String password) {
         Optional<User> existingUser = userRepo.getAll().stream()
                 .filter(user -> user.getEmail().equals(email) && user.getPassword().equals(password)) // Check for email and password
                 .findFirst();
+        User user;
         if (existingUser.isPresent()) {
-            User user = existingUser.get();
+            user = existingUser.get();
 
             if (user instanceof Client) {
                 System.out.println("Successfully signed in as Client!");
@@ -141,8 +142,9 @@ public class UserService {
             }
         } else {
             System.out.println("User not found or incorrect password!");
+            user = null;
         }
-        return existingUser;
+        return user;
     }
 
     /**

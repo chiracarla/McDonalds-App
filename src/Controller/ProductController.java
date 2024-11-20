@@ -75,11 +75,10 @@ public class ProductController {
     public List<Product> getAllProducts(){
         return productService.getAll();
     }
-//poate ar tb sa returneze string
+
     public List<Product> sortProductsByPrice(){
         return productService.sortProductsByPrice();
     }
-// poate ar fi mai bine sa fie direct scris in string
 
     /**
      * filters products by allergen

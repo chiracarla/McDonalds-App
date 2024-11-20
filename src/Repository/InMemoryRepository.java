@@ -37,6 +37,7 @@ public class InMemoryRepository<T extends HasId> implements IRepository<T> {
 
     @Override
     public List<T> getAll() {
-        return data.values().stream().toList();
+        return new ArrayList<>(data.values());
+//        return data.values().stream().toList();
     }
 }

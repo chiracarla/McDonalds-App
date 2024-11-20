@@ -91,13 +91,14 @@ public class Console2 {
         productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
         productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
 //
-//        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
-//        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));
         offerController.add(3, offerList);
         userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior );
         userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+        userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
         orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
 
         Scanner scanner = new Scanner(System.in);
@@ -171,9 +172,16 @@ public class Console2 {
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
 
-        userController.signIn(email, password).ifPresentOrElse(
-                        user -> showUserMenu(user, orderController, productController, userController, offerController),
-                        () -> System.out.println("Invalid email or password."));
+        User user = userController.signIn(email, password);
+        if (user != null) {
+            showUserMenu(user, orderController, productController, userController, offerController);
+        } else {
+            System.out.println("Invalid email or password.");
+        }
+
+//        userController.signIn(email, password).ifPresentOrElse(
+//                        user -> showUserMenu(user, orderController, productController, userController, offerController),
+//                        () -> System.out.println("Invalid email or password."));
     }
 
     private static void showUserMenu(User user, OrderController orderController, ProductController productController, UserController userController, OfferController offerController) {
@@ -369,8 +377,8 @@ public class Console2 {
                                 userController.employeeSortByName();
                             case 4:
                                 userController.showAllManagers();
-                            default:
-                                System.out.println("Invalid option!");
+//                            default:
+//                                System.out.println("Invalid option!");
                         }
                     } else {
                         System.out.println("Invalid option!");

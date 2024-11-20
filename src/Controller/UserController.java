@@ -60,9 +60,9 @@ public class UserController {
      * @param email
      * @param password
      */
-    public Optional<User> signIn(String email, String password) {
+    public User signIn(String email, String password) {
         return userService.signIn(email, password);
-    } //nu se potriveste cu conventiile
+    }
 
     /**
      * Allows the signed in user to delete the account
