@@ -29,8 +29,18 @@ public class UserController {
      * @return
      */
     public void signUpClient(String email, String name, String password) {
+        name.trim();
+        if (!isValidName(name)) {
+            throw new IllegalArgumentException("Name must contain at least two words, each starting with a capital letter.");
+        }
+        if (!isValidEmail(email)) {
+            throw new IllegalArgumentException("Email is not valid. Please provide a valid email address.");
+        }
+        if (!isValidPassword(password)) {
+            throw new IllegalArgumentException("Password must contain at least one letter and one number.");
+        }
         userService.signUpClient(email, name, password);
-    } //dc nu void?
+    }
 
     /**
      * signs up a manager
@@ -41,6 +51,17 @@ public class UserController {
      * @return
      */
     public void signUpManager(String email, String name, String password, ManagerRank rank) {
+        name.trim();
+        if (!isValidName(name)) {
+            throw new IllegalArgumentException("Name must contain at least two words, each starting with a capital letter.");
+        }
+        if (!isValidEmail(email)) {
+            throw new IllegalArgumentException("Email is not valid. Please provide a valid email address.");
+        }
+        if (!isValidPassword(password)) {
+            throw new IllegalArgumentException("Password must contain at least one letter and one number.");
+        }
+//        userService.signUpManager(email, name, password, rank);
         userService.signUpManager(email, name, password, rank);
     }
 
@@ -52,6 +73,16 @@ public class UserController {
      * @param manager
      */
     public void signUpEmployee(String email, String name, String password, Manager manager) {
+        name.trim();
+        if (!isValidName(name)) {
+            throw new IllegalArgumentException("Name must contain at least two words, each starting with a capital letter.");
+        }
+        if (!isValidEmail(email)) {
+            throw new IllegalArgumentException("Email is not valid. Please provide a valid email address.");
+        }
+        if (!isValidPassword(password)) {
+            throw new IllegalArgumentException("Password must contain at least one letter and one number.");
+        }
         userService.signUpEmployee(email, name, password, manager);
     }
 
@@ -124,6 +155,28 @@ public class UserController {
             System.out.println("No employees found.");
         }
         return employees;
+    }
+
+    private boolean isValidName(String name) {
+        String[] parts = name.trim().split("\\s+");
+        if (parts.length < 2) {
+            return false;
+        }
+        for (String part : parts) {
+            if (!part.matches("[A-Z].*")){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        return email.matches(emailRegex);
+    }//Oare astea tb simplificate?
+
+    private boolean isValidPassword(String password) {
+        return password.matches("^(?=.*[A-Za-z])(?=.*\\d).+$");
     }
 
 }

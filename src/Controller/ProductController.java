@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ProductController {
     private final ProductService productService; //nu are repos asociate
-
+//poate va tb sa facem controllerul sa fie mai accesibil ( sunt multe verificari in ui)
     public ProductController(ProductService productService) {
         this.productService = productService;
     }

@@ -103,8 +103,8 @@ public class Console2 {
 //
 //        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
 //        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
-        productController.createDessert("Pie", 6, Allergens.gluten);
-        productController.createDessert("Ice cream", 5, Allergens.dairy);
+//        productController.createDessert("Pie", 6, Allergens.gluten);
+//        productController.createDessert("Ice cream", 5, Allergens.dairy);
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Cheeseburger"));
         offerController.add(3, offerList);

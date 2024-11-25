@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="UI and JavaDocs implementations(code with me)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/clients.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/drinks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/locations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/mainDishes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/mainDishes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/managers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
     </list>
-    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings">
-      <change beforePath="$PROJECT_DIR$/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/locations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mains.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prods.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prods.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sides.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sides.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/offers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/offers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/orders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/products.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/sideDishes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/sideDishes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
-    </list>
+    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,22 +44,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/UI/Console2.java">
-      <ranges>
-        <range start1="34" end1="47" start2="34" end2="34" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="48" end1="60" start2="35" end2="53" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="61" end1="74" start2="54" end2="84" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="86" end1="92" start2="96" end2="99" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="93" end1="95" start2="100" end2="107" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="98" end1="99" start2="110" end2="111" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="103" end1="104" start2="115" end2="116" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="243" end1="243" start2="255" end2="256" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="255" end1="256" start2="268" end2="269" changelist="00f1f8dd-201a-4c0c-af96-68efef10d77b" />
-        <range start1="394" end1="394" start2="407" end2="420" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -89,25 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Console2.executor": "Run",
-    "Application.ConsoleApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TestConsole.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Project_uni/sem3/Statistics/lab2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Console2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConsole.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/Statistics/lab2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Console2">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
