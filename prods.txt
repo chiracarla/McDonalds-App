@@ -1,0 +1,11 @@
+1,Hamburger,12,1307,MEDIUM,Main
+2,Cheeseburger,13,1350,MEDIUM,Main
+3,Big Mac,15,1500,LARGE,Main
+4,French Fries,5,MEDIUM,Side
+5,Chicken McNuggets,8,MEDIUM,Side
+6,Sprite,3,_300ML,Drink
+7,Lipton,3,_200ML,Drink
+8,Pie,6,gluten,Dessert
+9,Ice cream,5,dairy,Dessert
+10,Pie,6,gluten,Dessert
+11,Ice cream,5,dairy,Dessert

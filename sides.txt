@@ -1,0 +1,2 @@
+4,French Fries,5,MEDIUM
+5,Chicken McNuggets,8,MEDIUM
