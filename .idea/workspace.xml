@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="created UI inMemory or File option">
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/UserDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="nexessary for SSMS run in folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDonalds App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/McDonalds App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732100821263</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test runs on SSMS db -- only for klara">
+      <option name="closed" value="true" />
+      <created>1733582066796</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733582066796</updated>
+    </task>
+    <task id="LOCAL-00013" summary="nexessary for SSMS run in folder">
+      <option name="closed" value="true" />
+      <created>1733582152350</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733582152350</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +306,8 @@
     <MESSAGE value="updated fileRepo and console.it is working (code with me)" />
     <MESSAGE value="UI and JavaDocs implementations(code with me)" />
     <MESSAGE value="Updated toStrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated toStrings" />
+    <MESSAGE value="test runs on SSMS db -- only for klara" />
+    <MESSAGE value="nexessary for SSMS run in folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="nexessary for SSMS run in folder" />
   </component>
 </project>

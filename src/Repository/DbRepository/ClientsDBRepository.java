@@ -59,4 +59,48 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void update(Client obj){
+        super.update(obj);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        // Delete from Clients table first
+        String sql = "DELETE FROM Clients WHERE userID=?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Delete from Users table
+        super.delete(id);
+    }
+
+    @Override
+    public List<Client> getAll() {
+        String sql = """
+    SELECT u.userID, u.name, u.email, u.password, u.points, u.userType
+    FROM Users u
+    JOIN Clients c ON u.userID = c.userID
+    """;
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet resultSet = statement.executeQuery();
+
+            List<Client> clients = new ArrayList<>();
+
+            while (resultSet.next()) {
+                clients.add(extractFromResultSet(resultSet));
+            }
+
+            return clients;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
