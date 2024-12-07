@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="nexessary for SSMS run in folder">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="Users and subtables DB and extractions created">
+      <change afterPath="$PROJECT_DIR$/src/Model/ConcreteProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteProductsDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DessertsDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DrinksDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/MainDishDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ProductsDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/SideDishesDBRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
@@ -51,7 +58,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -277,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733582152350</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Users and subtables DB and extractions created">
+      <option name="closed" value="true" />
+      <created>1733595177465</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733595177465</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +323,7 @@
     <MESSAGE value="Updated toStrings" />
     <MESSAGE value="test runs on SSMS db -- only for klara" />
     <MESSAGE value="nexessary for SSMS run in folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="nexessary for SSMS run in folder" />
+    <MESSAGE value="Users and subtables DB and extractions created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users and subtables DB and extractions created" />
   </component>
 </project>

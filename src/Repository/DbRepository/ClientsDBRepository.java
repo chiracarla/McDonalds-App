@@ -53,7 +53,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
             if (resultSet.next()) {
                 return extractFromResultSet(resultSet);
             } else {
-                return null; // No manager found
+                return null;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
