@@ -20,20 +20,19 @@ public class OrderDBRepository extends DBRepository<Order> {
         this.dbUrl = dbUrl;
         this.dbUser = dbUser;
         this.dbPassword = dbPassword;
-//        try {
-//            this.connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            this.connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Order extractFromResultSet(ResultSet resultSet) throws SQLException {
         int orderID = resultSet.getInt("orderID");
-        double totalPrice = resultSet.getDouble("totalPrice");
 
         // Extract Location
         int locationID = resultSet.getInt("locationID");
-        String locationName = resultSet.getString("locationName");
+        String locationName = resultSet.getString("storeLocation");
         Location location = new Location(Locations.valueOf(locationName), new Manager("email", "name", locationID, "password", ManagerRank.Junior), locationID);
 
         // Extract Client
@@ -57,13 +56,13 @@ public class OrderDBRepository extends DBRepository<Order> {
 
     @Override
     public Order read(Integer orderID) {
-        String sql = "SELECT o.orderID, o.totalPrice, o.locationID, l.locationName, o.userID, u.email AS clientEmail, u.name AS clientName, u.password AS clientPassword, " +
+        String sql = "SELECT o.orderID, o.locationID, l.storeLocation, o.userID, u.email AS clientEmail, u.name AS clientName, u.password AS clientPassword, " +
                 "p.productID, p.productName, p.productPrice " +
                 "FROM Orders o " +
-                "JOIN Locations l ON o.locationID = l.id " +
-                "JOIN Users u ON o.userID = u.id " +
+                "JOIN Location l ON o.locationID = l.id " +
+                "JOIN Users u ON o.userID = u.userID " +
                 "JOIN OrderProducts op ON o.orderID = op.orderID " +
-                "JOIN Products p ON op.productID = p.id " +
+                "JOIN Products p ON op.productID = p.productID " +
                 "WHERE o.orderID = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {

@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="Users and subtables DB and extractions created">
-      <change afterPath="$PROJECT_DIR$/src/Model/ConcreteProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteProductsDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DessertsDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DrinksDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/MainDishDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ProductsDBRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/SideDishesDBRepository.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="created most part of the db, everything functioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733595177465</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="created most part of the db, everything functioning">
+      <option name="closed" value="true" />
+      <created>1733613097078</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733613097078</updated>
+    </task>
+    <task id="LOCAL-00016" summary="created most part of the db, everything functioning">
+      <option name="closed" value="true" />
+      <created>1733613116786</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733613116786</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,6 +330,7 @@
     <MESSAGE value="test runs on SSMS db -- only for klara" />
     <MESSAGE value="nexessary for SSMS run in folder" />
     <MESSAGE value="Users and subtables DB and extractions created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users and subtables DB and extractions created" />
+    <MESSAGE value="created most part of the db, everything functioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="created most part of the db, everything functioning" />
   </component>
 </project>
