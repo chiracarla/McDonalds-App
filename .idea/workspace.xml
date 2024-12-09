@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="created most part of the db, everything functioning">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
+      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OffersDBRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,29 +61,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Console2.executor": "Run",
-    "Application.ConsoleApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TestConsole.executor": "Run",
-    "Application.TestConsoleDB.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Project_uni/sem3/McDonalds App/src/Repository",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Console2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConsole.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConsoleDB.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/McDonalds App/src/Repository&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Project_uni\sem3\McDonalds App\src\Repository" />
@@ -169,6 +171,7 @@
       <workItem from="1733350122464" duration="2834000" />
       <workItem from="1733476063162" duration="4788000" />
       <workItem from="1733494397459" duration="9573000" />
+      <workItem from="1733660804475" duration="5581000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -298,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733613116786</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="small change to make order correctly running!">
+      <option name="closed" value="true" />
+      <created>1733613955173</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733613955173</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +342,7 @@
     <MESSAGE value="nexessary for SSMS run in folder" />
     <MESSAGE value="Users and subtables DB and extractions created" />
     <MESSAGE value="created most part of the db, everything functioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="created most part of the db, everything functioning" />
+    <MESSAGE value="small change to make order correctly running!" />
+    <option name="LAST_COMMIT_MESSAGE" value="small change to make order correctly running!" />
   </component>
 </project>

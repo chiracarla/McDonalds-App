@@ -28,9 +28,9 @@ public class TestConsoleDB {
         IRepository<Product> prodsRepo = new ConcreteProductsDBRepository(dbUrl, dbUser, dbPassword);
         ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertsRepo, drinkRepo);
         IRepository<Order> orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
+        IRepository<Offer> offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
 //        ProductController productController = new ProductController(productService);
 
-        System.out.println(orderRepo.read(1).getUser().getName());
         System.out.println(productService.readProduct(10).getProductName());
         Desserts dessert = dessertsRepo.read(8);
         if(dessert != null) {
@@ -92,5 +92,19 @@ public class TestConsoleDB {
         } else {
             System.out.println("Employee not found");
         }
+
+        System.out.println(orderRepo.read(1).getUser().getName());
+        List<Order> orders = orderRepo.getAll();
+        for (Order order : orders) {
+            System.out.println(order.getProducts());
+        }
+
+        System.out.println("Offers:");
+        System.out.println(offerRepo.read(1).getProducts());
+        List<Offer> offers = offerRepo.getAll();
+        for (Offer offer : offers) {
+            System.out.println(offer.getProducts());
+        }
+
     }
 }
