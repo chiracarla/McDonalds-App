@@ -1,13 +1,18 @@
 package UI;
 
+import Controller.OfferController;
+import Controller.OrderController;
 import Controller.ProductController;
 import Controller.UserController;
 import Enums.DishSize;
 import Enums.DrinkVolume;
+import Enums.Locations;
 import Enums.ManagerRank;
 import Model.*;
 import Repository.*;
 import Repository.DbRepository.*;
+import Service.OfferService;
+import Service.OrderService;
 import Service.ProductService;
 import Service.UserService;
 
@@ -32,12 +37,20 @@ public class TestConsoleDB {
         IRepository<Order> orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<Offer> offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<User> userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
+        IRepository<Location> locRepo = new LocationDBRepository(dbUrl, dbUser, dbPassword);
 
         ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertsRepo, drinkRepo);
         ProductController productController = new ProductController(productService);
 
         UserService userService = new UserService(userRepo, clientRepo, managersRepo, employeesRepo);
         UserController userController = new UserController(userService);
+
+        OrderService orderService = new OrderService(orderRepo, locRepo);
+        OrderController orderController = new OrderController(orderService);
+
+        OfferService offerService = new OfferService(offerRepo);
+        OfferController offerController = new OfferController(offerService);
+
 
 
 
@@ -118,6 +131,17 @@ public class TestConsoleDB {
         for (Offer offer : offers) {
             System.out.println(offer.getProducts());
         }
+
+        Location location = orderController.getLocations().stream()
+                .filter(l -> l.getStoreLocation().equals(Locations.Bucuresti))
+                .findFirst()
+                .orElse(null);
+
+        System.out.println(location);
+
+        userService.signUpManager("alina@yahoo.com", "Alina Cerb", "123a", ManagerRank.Junior);
+//        System.out.println(orderService.calculateTotalPrice());
+
 
     }
 }

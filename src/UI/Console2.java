@@ -12,10 +12,9 @@ import Service.OrderService;
 import Service.ProductService;
 import Service.UserService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
+
+import Exceptions.*;
 
 /**
  * Manager can:
@@ -81,8 +80,8 @@ public class Console2 {
             dessertRepo = new DessertFileRepository("desserts.txt");
             offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
         } else if (option == 3) {
-            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
-//            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
+//            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
             String dbUser = "sa";
             String dbPassword = "m@pMcDonalds1";
             managerRepo = new ManagersDBRepository(dbUrl, dbUser, dbPassword);
@@ -171,12 +170,41 @@ public class Console2 {
         int type = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Enter name: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter email: ");
-        String email = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
+        String name;
+        try {
+            System.out.print("Enter name: ");
+            name = scanner.nextLine();
+            name.trim();
+            validateName(name);
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+            System.out.print("Please re-enter name: ");
+            name = scanner.nextLine();
+            name.trim();
+            validateName(name);
+        }
+        String email;
+        try {
+            System.out.print("Enter email: ");
+            email = scanner.nextLine();
+            validateEmail(email);
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+            System.out.print("Please re-enter email: ");
+            email = scanner.nextLine();
+            validateEmail(email);
+        }
+        String password;
+        try {
+            System.out.print("Enter password: ");
+            password = scanner.nextLine();
+            validatePassword(password);
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+            System.out.print("Please re-enter password: ");
+            password = scanner.nextLine();
+            validatePassword(password);
+        }
 
         switch (type) {
             case 1:
@@ -189,8 +217,21 @@ public class Console2 {
                 userController.signUpEmployee(email, name, password, employeeManager);
                 break;
             case 3:
-                System.out.println("Enter rank (Senior, Junior):");
-                String managerRank = scanner.nextLine();
+                String managerRank;
+                try {
+                    System.out.print("Enter rank (Senior, Junior): ");
+                    managerRank = scanner.nextLine();
+                    if(!Arrays.asList("Junior", "Senior").contains(managerRank)) {
+                        throw new ValidationException("Invalid rank");
+                    }
+                } catch (ValidationException e) {
+                    System.out.println(e.getMessage());
+                    System.out.print("Please re-enter name: ");
+                    managerRank = scanner.nextLine();
+                    if(!Arrays.asList("Junior", "Senior").contains(managerRank)) {
+                        throw new ValidationException("Invalid rank");
+                    }
+                }
                 userController.signUpManager(email, name, password, ManagerRank.valueOf(managerRank));
                 break;
             default:
@@ -230,10 +271,23 @@ public class Console2 {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter manager email:");
-                    String locManEmail = scanner.next();
+                    System.out.println("Enter location (Bucuresti, Brasov, Sighisoara):");
+                    String loc = scanner.nextLine();
+//                    try {
+//                        loc = scanner.nextLine();
+//                        if(!Arrays.asList("Bucuresti", "Brasov", "Sighisoara").contains(loc)) {
+//                            throw new ValidationException("Invalid location");
+//                        }
+//                    } catch (ValidationException e) {
+//                        System.out.println(e.getMessage());
+//                        System.out.print("Please re-enter name: ");
+//                        loc = scanner.nextLine();
+//                        if(!Arrays.asList("Bucuresti", "Brasov", "Sighisoara").contains(loc)) {
+//                            throw new ValidationException("Invalid location");
+//                        }
+//                    }
                     Location location = orderController.getLocations().stream()
-                            .filter(l -> l.getStoreManager().getEmail().equals(locManEmail))
+                            .filter(l -> l.getStoreLocation().equals(Locations.valueOf(loc)))
                             .findFirst()
                             .orElse(null);
                     //TODO:de schimbat cu numele locatiei
@@ -249,7 +303,20 @@ public class Console2 {
                         }
                     }
                     System.out.println("Apply offer? (yes/no):");
-                    String applyOffer = scanner.next();
+                    String applyOffer;
+                    try {
+                        applyOffer = scanner.nextLine();
+                        if(!Arrays.asList("yes", "no").contains(applyOffer)) {
+                            throw new ValidationException("Invalid option");
+                        }
+                    } catch (ValidationException e) {
+                        System.out.println(e.getMessage());
+                        System.out.print("Please re-enter option(yes/no): ");
+                        applyOffer = scanner.nextLine();
+                        if(!Arrays.asList("yes", "no").contains(applyOffer)) {
+                            throw new ValidationException("Invalid option");
+                        }
+                    }
                     Optional<Offer> offer = Optional.empty();
                     if (applyOffer.equalsIgnoreCase("yes")) {
                         for(Offer o : user.getOffers()) {
@@ -327,9 +394,22 @@ public class Console2 {
                                 System.out.println("Enter price:");
                                 int mainDishPrice = scanner.nextInt();
                                 System.out.println("Enter size (SMALL, MEDIUM, LARGE):");
-                                String mainDishSize = scanner.next();
-                                System.out.println("Enter stock:");
-                                int mainDishStock = scanner.nextInt();
+                                String mainDishSize;
+                                try {
+                                    mainDishSize = scanner.next();
+                                    if(!Arrays.asList("SMALL", "MEDIUM", "LARGE").contains(mainDishSize)) {
+                                        throw new ValidationException("Invalid size");
+                                    }
+                                } catch (ValidationException e) {
+                                    System.out.println(e.getMessage());
+                                    System.out.print("Please re-enter size: ");
+                                    mainDishSize = scanner.nextLine();
+                                    if(!Arrays.asList("SMALL", "MEDIUM", "LARGE").contains(mainDishSize)) {
+                                        throw new ValidationException("Invalid size");
+                                    }
+                                }
+//                                System.out.println("Enter stock:");
+//                                int mainDishStock = scanner.nextInt();
                                 System.out.println("Enter calories:");
                                 int mainDishCalories = scanner.nextInt();
                                 productController.createMainDish(mainDishName, mainDishPrice, mainDishCalories, DishSize.valueOf(mainDishSize));
@@ -340,7 +420,20 @@ public class Console2 {
                                 System.out.println("Enter price:");
                                 int sideDishPrice = scanner.nextInt();
                                 System.out.println("Enter size (SMALL, MEDIUM, LARGE):");
-                                String sideDishSize = scanner.next();
+                                String sideDishSize;
+                                try {
+                                    sideDishSize = scanner.next();
+                                    if(!Arrays.asList("SMALL", "MEDIUM", "LARGE").contains(sideDishSize)) {
+                                        throw new ValidationException("Invalid size");
+                                    }
+                                } catch (ValidationException e) {
+                                    System.out.println(e.getMessage());
+                                    System.out.print("Please re-enter size: ");
+                                    sideDishSize = scanner.nextLine();
+                                    if(!Arrays.asList("SMALL", "MEDIUM", "LARGE").contains(sideDishSize)) {
+                                        throw new ValidationException("Invalid size");
+                                    }
+                                }
                                 productController.createSideDish(sideDishName, sideDishPrice, DishSize.valueOf(sideDishSize));
                                 break;
                             case 3:
@@ -349,7 +442,20 @@ public class Console2 {
                                 System.out.println("Enter price:");
                                 int drinkPrice = scanner.nextInt();
                                 System.out.println("Enter volume (ML_200, ML_300, ML_500):");
-                                String drinkVolume = scanner.next();
+                                String drinkVolume;
+                                try {
+                                    drinkVolume = scanner.next();
+                                    if(!Arrays.asList("ML_200", "ML_300", "ML_500").contains(drinkVolume)) {
+                                        throw new ValidationException("Invalid volume");
+                                    }
+                                } catch (ValidationException e) {
+                                    System.out.println(e.getMessage());
+                                    System.out.print("Please re-enter volume: ");
+                                    drinkVolume = scanner.nextLine();
+                                    if(!Arrays.asList("ML_200", "ML_300", "ML_500").contains(drinkVolume)) {
+                                        throw new ValidationException("Invalid volume");
+                                    }
+                                }
                                 productController.createDrink(drinkName, drinkPrice, DrinkVolume.valueOf(drinkVolume));
                                 break;
                             case 4:
@@ -358,7 +464,20 @@ public class Console2 {
                                 System.out.println("Enter price:");
                                 int dessertPrice = scanner.nextInt();
                                 System.out.println("Enter allergens (nuts, egg, meat, fish, gluten, dairy, soy):");
-                                String dessertAllergen = scanner.next();
+                                String dessertAllergen;
+                                try {
+                                    dessertAllergen = scanner.next();
+                                    if(!Arrays.asList("nuts", "egg", "meat", "fish", "gluten", "dairy", "soy").contains(dessertAllergen)) {
+                                        throw new ValidationException("Invalid allergen");
+                                    }
+                                } catch (ValidationException e) {
+                                    System.out.println(e.getMessage());
+                                    System.out.print("Please re-enter allergen: ");
+                                    dessertAllergen = scanner.nextLine();
+                                    if(!Arrays.asList("nuts", "egg", "meat", "fish", "gluten", "dairy", "soy").contains(dessertAllergen)) {
+                                        throw new ValidationException("Invalid allergen");
+                                    }
+                                }
                                 productController.createDessert(dessertName, dessertPrice, Allergens.valueOf(dessertAllergen));
                                 break;
                             default:
@@ -423,6 +542,30 @@ public class Console2 {
                 default :
                     System.out.println("Invalid option!");
             }
+        }
+    }
+    private static void validateName(String name) {
+        String[] parts = name.trim().split("\\s+");
+        if (parts.length < 2) {
+            throw new ValidationException("Invalid name format (at least 2 names)");
+        }
+        for (String part : parts) {
+            if (!part.matches("[A-Z].*")){
+                throw new ValidationException("Invalid name format (names should start with upper case letters)");
+            }
+        }
+    }
+
+    private static void validateEmail(String email){
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        if(!email.matches(emailRegex)){
+            throw new ValidationException("Invalid email format");
+        }
+    }
+
+    private static void validatePassword(String password) {
+        if(!password.matches("^(?=.*[A-Za-z])(?=.*\\d).+$")){
+            throw new ValidationException("Invalid password format (should contain at least one number and one letter");
         }
     }
 }

@@ -7,7 +7,10 @@
     <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
@@ -64,36 +67,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Console2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestConsoleDB.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/McDonalds App/src/Repository&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Console2.executor": "Run",
+    "Application.ConsoleApp.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.TestConsole.executor": "Run",
+    "Application.TestConsoleDB.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Project_uni/sem3/McDonalds App/src/Repository",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Project_uni\sem3\McDonalds App\src\Repository" />
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestConsoleDB">
+  <component name="RunManager" selected="Application.Console2">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
       <module name="McDonalds App" />
@@ -142,8 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.Console2" />
+        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.TestConsole" />
         <item itemvalue="Application.ConsoleApp" />
         <item itemvalue="Application.TestConsoleDB" />
@@ -347,5 +350,20 @@
     <MESSAGE value="created most part of the db, everything functioning" />
     <MESSAGE value="small change to make order correctly running!" />
     <option name="LAST_COMMIT_MESSAGE" value="small change to make order correctly running!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Service/UserService.java</url>
+          <line>107</line>
+          <properties class="Service.UserService" method="generateNewUserId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

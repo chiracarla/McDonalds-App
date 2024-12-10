@@ -88,7 +88,7 @@ public class OrderService {
      * @param products
      * @return
      */
-    private int calculateTotalPrice(List<Product> products) {
+    public int calculateTotalPrice(List<Product> products) {
         int totalPrice = 0;
         for (Product product : products) {
             totalPrice += product.getProductPrice();
@@ -105,6 +105,7 @@ public class OrderService {
                 .mapToInt(Order::getOrderID)
                 .max().orElse(0)+1;
     }
+
     private int generateNewLocID() {
         return locationRepo.getAll().stream()
                 .mapToInt(Location::getId)

@@ -44,14 +44,17 @@ public class OrderDBRepository extends DBRepository<Order> {
 
         // Extract Products
         List<Product> products = new ArrayList<>();
+        double totalPrice = 0;
         do {
             int productID = resultSet.getInt("productID");
             String productName = resultSet.getString("productName");
             int productPrice = resultSet.getInt("productPrice");
             products.add(new ConcreteProduct(productName, productPrice, productID));
+            totalPrice += productPrice;
         } while (resultSet.next() && resultSet.getInt("orderID") == orderID);
-
-        return new Order(products, location, client, orderID);
+        Order order = new Order(products, location, client, orderID);
+        order.setTotalPrice(totalPrice);
+        return order;
     }
 
     @Override

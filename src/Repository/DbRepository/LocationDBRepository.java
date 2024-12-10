@@ -110,7 +110,7 @@ public class LocationDBRepository extends DBRepository<Location> {
     }
 
     private Manager getManagerById(int id) throws SQLException {
-        String sql = "SELECT * FROM Managers WHERE userID = ?";
+        String sql = "SELECT m.managerRank, u.email, u.name, u.password FROM Managers m JOIN Users u ON m.userID = u.userID WHERE m.userID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -118,7 +118,7 @@ public class LocationDBRepository extends DBRepository<Location> {
                 String email = resultSet.getString("email");
                 String name = resultSet.getString("name");
                 String password = resultSet.getString("password");
-                ManagerRank rank = ManagerRank.valueOf(resultSet.getString("rank"));
+                ManagerRank rank = ManagerRank.valueOf(resultSet.getString("managerRank"));
                 return new Manager(email, name, id, password, rank);
             } else {
                 throw new SQLException("Manager with ID " + id + " not found");
