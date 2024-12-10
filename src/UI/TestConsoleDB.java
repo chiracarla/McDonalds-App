@@ -13,7 +13,8 @@ import java.util.List;
 
 public class TestConsoleDB {
     public static void main(String[] args) {
-        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+//        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+        String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
 //        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
         String dbUser = "sa";
         String dbPassword = "m@pMcDonalds1";
@@ -26,10 +27,11 @@ public class TestConsoleDB {
         IRepository<MainDish> mainsRepo = new MainDishDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<SideDish> sidesRepo = new SideDishesDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<Product> prodsRepo = new ConcreteProductsDBRepository(dbUrl, dbUser, dbPassword);
-        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertsRepo, drinkRepo);
         IRepository<Order> orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<Offer> offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
-//        ProductController productController = new ProductController(productService);
+
+        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertsRepo, drinkRepo);
+        ProductController productController = new ProductController(productService);
 
         System.out.println(productService.readProduct(10).getProductName());
         Desserts dessert = dessertsRepo.read(8);

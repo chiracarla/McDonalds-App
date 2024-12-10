@@ -9,3 +9,5 @@
 9,Ice cream,5,dairy,Dessert
 10,Pie,6,gluten,Dessert
 11,Ice cream,5,dairy,Dessert
+12,Sprite,3,_300ML,Drink
+13,Lipton,3,_200ML,Drink

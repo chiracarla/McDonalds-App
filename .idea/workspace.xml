@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
-      <change afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OffersDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDonalds App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/McDonalds App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
@@ -90,7 +92,7 @@
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestConsoleDB">
+  <component name="RunManager" selected="Application.TestConsole">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
       <module name="McDonalds App" />
@@ -139,10 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.TestConsole" />
-        <item itemvalue="Application.ConsoleApp" />
         <item itemvalue="Application.Console2" />
+        <item itemvalue="Application.ConsoleApp" />
+        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.TestConsoleDB" />
       </list>
     </recent_temporary>
@@ -150,8 +152,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>

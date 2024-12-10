@@ -6,6 +6,7 @@ import Controller.UserController;
 import Enums.*;
 import Model.*;
 import Repository.*;
+import Repository.DbRepository.*;
 import Service.OfferService;
 import Service.OrderService;
 import Service.ProductService;
@@ -47,6 +48,7 @@ public class Console2 {
         IRepository<Offer> offerRepo;
         System.out.println("1. In Memory");
         System.out.println("2. File");
+        System.out.println("3. Database");
         System.out.print("Select an option: ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -78,7 +80,25 @@ public class Console2 {
             drinkRepo = new DrinkFileRepository("drinks.txt");
             dessertRepo = new DessertFileRepository("desserts.txt");
             offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
-        } else {
+        } else if (option == 3) {
+            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
+//        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+            String dbUser = "sa";
+            String dbPassword = "m@pMcDonalds1";
+            managerRepo = new ManagersDBRepository(dbUrl, dbUser, dbPassword);
+            clientRepo = new ClientsDBRepository(dbUrl, dbUser, dbPassword);
+            employeeRepo = new EmployeesDBRepository(dbUrl, dbUser, dbPassword);
+            dessertRepo = new DessertsDBRepository(dbUrl, dbUser, dbPassword);
+            drinkRepo = new DrinksDBRepository(dbUrl, dbUser, dbPassword);
+            mainsRepo = new MainDishDBRepository(dbUrl, dbUser, dbPassword);
+            sidesRepo = new SideDishesDBRepository(dbUrl, dbUser, dbPassword);
+            prodsRepo = new ConcreteProductsDBRepository(dbUrl, dbUser, dbPassword);
+            orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
+            offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
+            userRepo = new InMemoryRepository<>();
+//            userRepo = new UserDBRepository(dbUrl, dbUser, dbPassword);
+            locationRepo = new LocationDBRepository(dbUrl, dbUser, dbPassword);
+        }else {
             System.out.println("Invalid option selected.");
             return;
         }
@@ -105,13 +125,13 @@ public class Console2 {
 //        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
 //        productController.createDessert("Pie", 6, Allergens.gluten);
 //        productController.createDessert("Ice cream", 5, Allergens.dairy);
-        List<Product> offerList = new ArrayList<>();
-        offerList.add(productController.getProduct("Cheeseburger"));
-        offerController.add(3, offerList);
-        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
-        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
-        userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
-        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+//        List<Product> offerList = new ArrayList<>();
+//        offerList.add(productController.getProduct("Cheeseburger"));
+//        offerController.add(3, offerList);
+//        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
+//        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+//        userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
+//        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
 
         scanner = new Scanner(System.in);
         boolean running = true;

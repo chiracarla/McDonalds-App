@@ -17,6 +17,6 @@ public class ConcreteUserDBRepository extends UserDBRepository<ConcreteUser> {
         String password = resultSet.getString("password");
         String type = resultSet.getString("userType");
 //userID, name, email, password, points, userType
-        return new ConcreteUser(email, name, id, password);
+        return new ConcreteUser(email, name, id, password); //TODO:problem
     }
 }
