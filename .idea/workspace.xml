@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="console validation exceptions added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
     </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
@@ -315,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733613955173</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="console validation exceptions added">
+      <option name="closed" value="true" />
+      <created>1733861720758</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733861720758</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +351,8 @@
     <MESSAGE value="Users and subtables DB and extractions created" />
     <MESSAGE value="created most part of the db, everything functioning" />
     <MESSAGE value="small change to make order correctly running!" />
-    <option name="LAST_COMMIT_MESSAGE" value="small change to make order correctly running!" />
+    <MESSAGE value="console validation exceptions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="console validation exceptions added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -6,7 +6,7 @@ import Service.UserService;
 
 import java.util.List;
 import java.util.Optional;
-
+import Exceptions.*;
 /**
  * Controller for the user
  */
@@ -63,7 +63,12 @@ public class UserController {
      * @param password
      */
     public User signIn(String email, String password) {
-        return userService.signIn(email, password);
+        try {
+            return userService.signIn(email, password);
+        } catch (EntityNotFoundException e) {
+            System.out.println("Validation Error: " + e.getMessage());
+            return null;
+        }
     }
 
     /**
