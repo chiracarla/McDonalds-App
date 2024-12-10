@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="started adding db to console" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDonalds App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/McDonalds App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
+    </list>
     <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2o71we0D7jhSVQwX7cuovcccxkC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -85,7 +92,7 @@
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestConsole">
+  <component name="RunManager" selected="Application.TestConsoleDB">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
       <module name="McDonalds App" />
@@ -134,10 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestConsole" />
-        <item itemvalue="Application.Console2" />
-        <item itemvalue="Application.ConsoleApp" />
         <item itemvalue="Application.TestConsoleDB" />
+        <item itemvalue="Application.TestConsole" />
+        <item itemvalue="Application.ConsoleApp" />
+        <item itemvalue="Application.Console2" />
         <item itemvalue="Application.TestConsoleDB" />
       </list>
     </recent_temporary>
@@ -145,8 +152,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -304,15 +311,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733613955173</updated>
     </task>
-    <task id="LOCAL-00018" summary="started adding db to console">
-      <option name="closed" value="true" />
-      <created>1733832596948</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1733832596948</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +345,6 @@
     <MESSAGE value="Users and subtables DB and extractions created" />
     <MESSAGE value="created most part of the db, everything functioning" />
     <MESSAGE value="small change to make order correctly running!" />
-    <MESSAGE value="started adding db to console" />
-    <option name="LAST_COMMIT_MESSAGE" value="started adding db to console" />
+    <option name="LAST_COMMIT_MESSAGE" value="small change to make order correctly running!" />
   </component>
 </project>

@@ -95,8 +95,9 @@ public class Console2 {
             prodsRepo = new ConcreteProductsDBRepository(dbUrl, dbUser, dbPassword);
             orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
             offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
-            userRepo = new InMemoryRepository<>();
+//            userRepo = new InMemoryRepository<>();
 //            userRepo = new UserDBRepository(dbUrl, dbUser, dbPassword);
+            userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
             locationRepo = new LocationDBRepository(dbUrl, dbUser, dbPassword);
         }else {
             System.out.println("Invalid option selected.");
