@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.Client;
 import Model.Manager;
 import com.microsoft.sqlserver.jdbc.ISQLServerConnection;
@@ -23,7 +24,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
             statement.setInt(1, obj.getUserID());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -56,7 +57,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
                 return null;
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -74,7 +75,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         // Delete from Users table
@@ -100,7 +101,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
 
             return clients;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 }

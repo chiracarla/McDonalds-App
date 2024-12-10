@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="console validation exceptions added">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small change to make order correctly running!">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clients.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/managers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
-    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings" />
+    <list id="00f1f8dd-201a-4c0c-af96-68efef10d77b" name="Changes by carlachira" comment="Updated toStrings">
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/DessertsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DessertsDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/DrinksDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/DrinksDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/LocationDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/MainDishDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/MainDishDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OffersDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OffersDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ProductsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ProductsDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/SideDishesDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/SideDishesDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/UserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/UserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +86,8 @@
     "Application.Main.executor": "Run",
     "Application.TestConsole.executor": "Run",
     "Application.TestConsoleDB.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.signUpClient.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -90,7 +110,7 @@
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Console2">
+  <component name="RunManager" selected="JUnit.UserServiceTest.signUpClient">
     <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Console2" />
       <module name="McDonalds App" />
@@ -100,13 +120,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConsoleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ConsoleApp" />
-      <module name="McDonalds App" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,13 +150,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="McDonalds App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.signUpClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="McDonalds App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.UserServiceTest" />
+      <option name="METHOD_NAME" value="signUpClient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.signUpClient" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.Console2" />
-        <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="Application.TestConsole" />
-        <item itemvalue="Application.ConsoleApp" />
-        <item itemvalue="Application.TestConsoleDB" />
       </list>
     </recent_temporary>
   </component>
@@ -309,15 +353,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733613955173</updated>
     </task>
-    <task id="LOCAL-00018" summary="console validation exceptions added">
-      <option name="closed" value="true" />
-      <created>1733861720758</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1733861720758</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,22 +387,6 @@
     <MESSAGE value="Users and subtables DB and extractions created" />
     <MESSAGE value="created most part of the db, everything functioning" />
     <MESSAGE value="small change to make order correctly running!" />
-    <MESSAGE value="console validation exceptions added" />
-    <option name="LAST_COMMIT_MESSAGE" value="console validation exceptions added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Service/UserService.java</url>
-          <line>107</line>
-          <properties class="Service.UserService" method="generateNewUserId">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="small change to make order correctly running!" />
   </component>
 </project>

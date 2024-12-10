@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.ConcreteProduct;
 import Model.Offer;
 import Model.Product;
@@ -23,7 +24,7 @@ public class OffersDBRepository extends DBRepository<Offer> {
         try {
             this.connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 

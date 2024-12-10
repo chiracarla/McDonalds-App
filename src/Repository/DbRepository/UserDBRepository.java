@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.User;
 import Repository.DBRepository;
 import com.microsoft.sqlserver.jdbc.ISQLServerConnection;
@@ -28,7 +29,7 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
 
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -47,7 +48,7 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
                 return null;
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -65,7 +66,7 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
 
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -77,7 +78,7 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -96,7 +97,7 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
 
             return users;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 

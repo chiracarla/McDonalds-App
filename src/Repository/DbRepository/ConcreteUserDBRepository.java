@@ -23,6 +23,7 @@
 package Repository.DbRepository;
 
 import Enums.ManagerRank;
+import Exceptions.EntityNotFoundException;
 import Model.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -67,12 +68,12 @@ public class ConcreteUserDBRepository extends UserDBRepository<User> {
                                         Manager manager = new Manager(managerEmail, managerName, managerId, managerPassword, rank);
                                         return new Employee(email, name, id, password, manager);
                                     } else {
-                                        throw new SQLException("Manager not found with ID: " + managerId);
+                                        throw new EntityNotFoundException("Manager not found with ID: " + managerId);
                                     }
                                 }
                             }
                         } else {
-                            throw new SQLException("Employee not found with ID: " + id);
+                            throw new EntityNotFoundException("Employee not found with ID: " + id);
                         }
                     }
                 }
@@ -89,7 +90,7 @@ public class ConcreteUserDBRepository extends UserDBRepository<User> {
                             password = managerResultSet.getString("password");
                             return new Manager(email, name, id, password, rank);
                         } else {
-                            throw new SQLException("Manager not found with ID: " + id);
+                            throw new EntityNotFoundException("Manager not found with ID: " + id);
                         }
                     }
                 }

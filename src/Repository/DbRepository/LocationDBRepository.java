@@ -1,6 +1,8 @@
 package Repository.DbRepository;
 
 import Enums.ManagerRank;
+import Exceptions.DatabaseException;
+import Exceptions.EntityNotFoundException;
 import Model.Location;
 import Enums.Locations;
 import Model.Manager;
@@ -24,7 +26,7 @@ public class LocationDBRepository extends DBRepository<Location> {
         try {
             this.connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -46,7 +48,7 @@ public class LocationDBRepository extends DBRepository<Location> {
             statement.setInt(3, location.getStoreManager().getId());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -64,7 +66,7 @@ public class LocationDBRepository extends DBRepository<Location> {
                 return null; // No location found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -77,7 +79,7 @@ public class LocationDBRepository extends DBRepository<Location> {
             statement.setInt(3, location.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -88,7 +90,7 @@ public class LocationDBRepository extends DBRepository<Location> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -103,7 +105,7 @@ public class LocationDBRepository extends DBRepository<Location> {
                 locations.add(extractFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return locations;
@@ -121,7 +123,7 @@ public class LocationDBRepository extends DBRepository<Location> {
                 ManagerRank rank = ManagerRank.valueOf(resultSet.getString("managerRank"));
                 return new Manager(email, name, id, password, rank);
             } else {
-                throw new SQLException("Manager with ID " + id + " not found");
+                throw new EntityNotFoundException("Manager with ID " + id + " not found");
             }
         }
     }

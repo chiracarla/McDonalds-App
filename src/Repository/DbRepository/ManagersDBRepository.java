@@ -1,6 +1,7 @@
 package Repository.DbRepository;
 
 import Enums.ManagerRank;
+import Exceptions.DatabaseException;
 import Model.Manager;
 import com.microsoft.sqlserver.jdbc.ISQLServerConnection;
 
@@ -26,7 +27,7 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
             statement.setString(2, obj.getRank().name());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -62,7 +63,7 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
                 return null; // No manager found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -78,7 +79,7 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
             statement.setInt(2, obj.getUserID());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -91,7 +92,7 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         // Delete from Users table
@@ -117,7 +118,7 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
 
             return managers;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 

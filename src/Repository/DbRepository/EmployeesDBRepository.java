@@ -1,6 +1,7 @@
 package Repository.DbRepository;
 
 import Enums.ManagerRank;
+import Exceptions.DatabaseException;
 import Model.Employee;
 import Model.Manager;
 import com.microsoft.sqlserver.jdbc.ISQLServerConnection;
@@ -27,7 +28,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
             statement.setInt(2, obj.getManager().getUserID());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -73,7 +74,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
                 return null; // No employee found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -89,7 +90,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
             statement.setInt(2, obj.getUserID());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -102,7 +103,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         // Delete from Users table
@@ -131,7 +132,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
 
             return employees;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 

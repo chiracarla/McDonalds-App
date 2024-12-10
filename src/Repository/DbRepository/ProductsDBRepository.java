@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.Product;
 import Repository.DBRepository;
 
@@ -21,7 +22,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
         try {
             this.connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -34,7 +35,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
             statement.setString(4, product.getType());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -47,7 +48,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
                 return extractFromResultSet(resultSet);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
         return null;
     }
@@ -61,7 +62,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
             statement.setInt(4, product.getProdId());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -71,7 +72,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -85,7 +86,7 @@ public abstract class ProductsDBRepository<T extends Product> extends DBReposito
             }
             return products;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 

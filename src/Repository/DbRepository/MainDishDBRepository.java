@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.MainDish;
 import Enums.DishSize;
 import java.sql.*;
@@ -64,7 +65,7 @@ public class MainDishDBRepository extends ProductsDBRepository<MainDish> {
             statement.setInt(3, mainDish.getProdId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -76,7 +77,7 @@ public class MainDishDBRepository extends ProductsDBRepository<MainDish> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         super.delete(id);
@@ -93,7 +94,7 @@ public class MainDishDBRepository extends ProductsDBRepository<MainDish> {
                 mainDishesList.add(extractFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return mainDishesList;

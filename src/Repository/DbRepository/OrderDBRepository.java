@@ -2,6 +2,7 @@ package Repository.DbRepository;
 
 import Enums.Locations;
 import Enums.ManagerRank;
+import Exceptions.DatabaseException;
 import Model.*;
 import Repository.DBRepository;
 
@@ -78,7 +79,7 @@ public class OrderDBRepository extends DBRepository<Order> {
                 return null; // No order found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -106,7 +107,7 @@ public class OrderDBRepository extends DBRepository<Order> {
             orderProductsStatement.executeBatch();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -139,7 +140,7 @@ public class OrderDBRepository extends DBRepository<Order> {
             insertOrderProductsStatement.executeBatch();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -160,7 +161,7 @@ public class OrderDBRepository extends DBRepository<Order> {
             deleteOrderStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -184,7 +185,7 @@ public class OrderDBRepository extends DBRepository<Order> {
                 orders.add(order);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return orders;

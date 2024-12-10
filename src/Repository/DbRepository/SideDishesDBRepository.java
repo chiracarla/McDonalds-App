@@ -1,5 +1,6 @@
 package Repository.DbRepository;
 
+import Exceptions.DatabaseException;
 import Model.SideDish;
 import Enums.DishSize;
 import java.sql.*;
@@ -31,7 +32,7 @@ public class SideDishesDBRepository extends ProductsDBRepository<SideDish> {
             statement.setString(2, sideDish.getSize().name());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -49,7 +50,7 @@ public class SideDishesDBRepository extends ProductsDBRepository<SideDish> {
                 return null; // No side dish found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -63,7 +64,7 @@ public class SideDishesDBRepository extends ProductsDBRepository<SideDish> {
             statement.setInt(2, sideDish.getProdId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -75,7 +76,7 @@ public class SideDishesDBRepository extends ProductsDBRepository<SideDish> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         super.delete(id);
@@ -92,7 +93,7 @@ public class SideDishesDBRepository extends ProductsDBRepository<SideDish> {
                 sideDishesList.add(extractFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return sideDishesList;

@@ -3,13 +3,14 @@ package Service;
 import Enums.Allergens;
 import Enums.DishSize;
 import Enums.DrinkVolume;
+import Exceptions.EntityNotFoundException;
 import Model.*;
 import Repository.IRepository;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-
+import Exceptions.*;
 /**
  *
  */
@@ -35,7 +36,6 @@ public class ProductService {
         this.dessertRepo = dessertRepo;
         this.drinkRepo = drinkRepo;
     }
-    //TODO: parca trebuia o clasa abstracta
 
     /**
      *
@@ -46,7 +46,7 @@ public class ProductService {
      */
     public void createMainDish(String productName, int productPrice, int calories, DishSize size) {
         Product mainDish = new MainDish(productName, productPrice, calories, size, generateNewOfferID());
-
+        
         mainDishRepo.create((MainDish) mainDish);
         productRepo.create((Product) mainDish);
 
@@ -111,11 +111,16 @@ public class ProductService {
         Optional<Product> existingProduct = productRepo.getAll().stream()
                 .filter(product -> product.getProductName().equals(productName))
                 .findFirst();
-        if(existingProduct.isPresent()){
+//        if(existingProduct.isPresent()){
+//            return existingProduct.get();
+//        }
+//        System.out.println("No product found with name: " + productName);
+//        return null;
+        try{
             return existingProduct.get();
+        } catch (RuntimeException e) {
+            throw new EntityNotFoundException("No product found with name: " + productName);
         }
-        System.out.println("No product found with name: " + productName);
-        return null;
     }
     //problema posibila: produse cu acelasi nume dar marimi diferite: solutie- selectarea marimii
     // cu cresterea marimii se adauga 2 lei?

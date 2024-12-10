@@ -1,6 +1,7 @@
 package Repository.DbRepository;
 
 import Enums.Allergens;
+import Exceptions.DatabaseException;
 import Model.Desserts;
 import java.sql.*;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class DessertsDBRepository extends ProductsDBRepository<Desserts> {
                 return null; // No dessert found
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -47,7 +48,7 @@ public class DessertsDBRepository extends ProductsDBRepository<Desserts> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         super.delete(id);
@@ -63,7 +64,7 @@ public class DessertsDBRepository extends ProductsDBRepository<Desserts> {
             statement.setInt(2, dessert.getProdId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -79,7 +80,7 @@ public class DessertsDBRepository extends ProductsDBRepository<Desserts> {
                 dessertsList.add(extractFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return dessertsList;

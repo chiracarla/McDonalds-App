@@ -1,6 +1,7 @@
 package Repository.DbRepository;
 
 import Enums.DrinkVolume;
+import Exceptions.DatabaseException;
 import Model.Drinks;
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class DrinksDBRepository extends ProductsDBRepository<Drinks> {
             statement.setString(2, drink.getVolume().name());
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -49,7 +50,7 @@ public class DrinksDBRepository extends ProductsDBRepository<Drinks> {
                 return null;
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
     @Override
@@ -60,7 +61,7 @@ public class DrinksDBRepository extends ProductsDBRepository<Drinks> {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 //        super.delete(id);
     }
@@ -74,7 +75,7 @@ public class DrinksDBRepository extends ProductsDBRepository<Drinks> {
             statement.setInt(2, drink.getProdId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
     }
 
@@ -89,7 +90,7 @@ public class DrinksDBRepository extends ProductsDBRepository<Drinks> {
                 drinksList.add(extractFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException(e.getMessage());
         }
 
         return drinksList;
