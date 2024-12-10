@@ -92,6 +92,7 @@ public class TestConsoleDB {
             System.out.println("Client not found");
         }
 
+        System.out.println(userRepo.getAll());
         userService.signIn("client.email@example.com", "password123");
 
 //        Employee newEmployee = new Employee("new.email@example.com", "New Employee", 4, "password123", manager);
