@@ -46,7 +46,9 @@ public class ProductService {
      */
     public void createMainDish(String productName, int productPrice, int calories, DishSize size) {
         Product mainDish = new MainDish(productName, productPrice, calories, size, generateNewOfferID());
-        
+        if(productPrice > 100){
+            throw new BusinessLogicException("too expensive");
+        }
         mainDishRepo.create((MainDish) mainDish);
         productRepo.create((Product) mainDish);
 
@@ -61,7 +63,9 @@ public class ProductService {
      */
     public void createSideDish(String productName, int productPrice, DishSize size){
         Product sideDish = new SideDish(productName, productPrice, size, generateNewOfferID());
-
+        if(productPrice > 100){
+            throw new BusinessLogicException("too expensive");
+        }
         sideDishRepo.create((SideDish) sideDish);
         productRepo.create((Product) sideDish);
 
@@ -76,7 +80,9 @@ public class ProductService {
      */
     public void createDessert(String productName, int productPrice, Allergens allergens){
         Desserts desserts = new Desserts(productName, productPrice, allergens,generateNewOfferID());
-
+        if(productPrice > 100){
+            throw new BusinessLogicException("too expensive");
+        }
         dessertRepo.create((Desserts) desserts);
         productRepo.create((Product) desserts);
 
@@ -91,7 +97,9 @@ public class ProductService {
      */
     public void createDrink(String productName, int productPrice, DrinkVolume volume) {
         Drinks drinks = new Drinks(productName, productPrice, volume, generateNewOfferID());
-
+        if(productPrice > 100){
+            throw new BusinessLogicException("too expensive");
+        }
         drinkRepo.create((Drinks) drinks);
         productRepo.create((Product) drinks);
 

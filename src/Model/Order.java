@@ -75,7 +75,7 @@ public class Order implements HasId {
 
     @Override
     public Integer getId() {
-        return 0;
+        return orderID;
     }
 
 //    @Override

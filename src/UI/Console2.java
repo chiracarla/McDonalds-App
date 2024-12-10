@@ -95,7 +95,7 @@ public class Console2 {
             orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
             offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
 //            userRepo = new InMemoryRepository<>();
-            userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
+//            userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
             userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
             locationRepo = new LocationDBRepository(dbUrl, dbUser, dbPassword);
         }else {
