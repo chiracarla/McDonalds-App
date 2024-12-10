@@ -1,6 +1,7 @@
 package UI;
 
 import Controller.ProductController;
+import Controller.UserController;
 import Enums.DishSize;
 import Enums.DrinkVolume;
 import Enums.ManagerRank;
@@ -8,6 +9,7 @@ import Model.*;
 import Repository.*;
 import Repository.DbRepository.*;
 import Service.ProductService;
+import Service.UserService;
 
 import java.util.List;
 
@@ -29,9 +31,15 @@ public class TestConsoleDB {
         IRepository<Product> prodsRepo = new ConcreteProductsDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<Order> orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
         IRepository<Offer> offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
+        IRepository<User> userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
 
         ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertsRepo, drinkRepo);
         ProductController productController = new ProductController(productService);
+
+        UserService userService = new UserService(userRepo, clientRepo, managersRepo, employeesRepo);
+        UserController userController = new UserController(userService);
+
+
 
         System.out.println(productService.readProduct(10).getProductName());
         Desserts dessert = dessertsRepo.read(8);
@@ -83,6 +91,8 @@ public class TestConsoleDB {
         } else {
             System.out.println("Client not found");
         }
+
+        userService.signIn("client.email@example.com", "password123");
 
 //        Employee newEmployee = new Employee("new.email@example.com", "New Employee", 4, "password123", manager);
 //        employeesRepo.create(newEmployee);

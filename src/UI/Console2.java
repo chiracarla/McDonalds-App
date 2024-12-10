@@ -81,8 +81,8 @@ public class Console2 {
             dessertRepo = new DessertFileRepository("desserts.txt");
             offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
         } else if (option == 3) {
-            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
-//            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
+//            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
             String dbUser = "sa";
             String dbPassword = "m@pMcDonalds1";
             managerRepo = new ManagersDBRepository(dbUrl, dbUser, dbPassword);
@@ -96,7 +96,7 @@ public class Console2 {
             orderRepo = new OrderDBRepository(dbUrl, dbUser, dbPassword);
             offerRepo = new OffersDBRepository(dbUrl, dbUser, dbPassword);
 //            userRepo = new InMemoryRepository<>();
-//            userRepo = new UserDBRepository(dbUrl, dbUser, dbPassword);
+            userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
             userRepo = new ConcreteUserDBRepository(dbUrl, dbUser, dbPassword);
             locationRepo = new LocationDBRepository(dbUrl, dbUser, dbPassword);
         }else {
