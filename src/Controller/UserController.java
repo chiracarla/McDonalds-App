@@ -63,12 +63,8 @@ public class UserController {
      * @param password
      */
     public User signIn(String email, String password) {
-        try {
-            return userService.signIn(email, password);
-        } catch (EntityNotFoundException e) {
-            System.out.println("Validation Error: " + e.getMessage());
-            return null;
-        }
+        return userService.signIn(email, password);
+
     }
 
     /**

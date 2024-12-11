@@ -19,7 +19,7 @@ public class EmployeesDBRepository extends UserDBRepository<Employee> {
     @Override
     public void create(Employee obj) {
         // Insert into Users table first
-        super.create(obj);
+//        super.create(obj);
 
         String sql = "INSERT INTO Employees (userID, managerID) VALUES (?, ?)";
 

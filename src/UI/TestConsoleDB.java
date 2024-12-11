@@ -20,8 +20,8 @@ import java.util.List;
 
 public class TestConsoleDB {
     public static void main(String[] args) {
-//        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
-        String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
+        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+//        String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
 //        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
         String dbUser = "sa";
         String dbPassword = "m@pMcDonalds1";
@@ -104,7 +104,7 @@ public class TestConsoleDB {
         } else {
             System.out.println("Client not found");
         }
-
+//        userService.signUpManager("letitia@yahoo.com", "Leti L", "123a", ManagerRank.Junior);
         System.out.println(userRepo.getAll());
         userService.signIn("client.email@example.com", "password123");
 
@@ -139,9 +139,9 @@ public class TestConsoleDB {
 
         System.out.println(location);
 
-        userService.signUpManager("alina@yahoo.com", "Alina Cerb", "123a", ManagerRank.Junior);
+//        userService.signUpManager("alina@yahoo.com", "Alina Cerb", "123a", ManagerRank.Junior);
 //        System.out.println(orderService.calculateTotalPrice());
-
+        System.out.println(orderRepo.getAll());
 
     }
 }

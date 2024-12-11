@@ -80,8 +80,8 @@ public class Console2 {
             dessertRepo = new DessertFileRepository("desserts.txt");
             offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
         } else if (option == 3) {
-//            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
-            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
+            String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
+//            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";
             String dbUser = "sa";
             String dbPassword = "m@pMcDonalds1";
             managerRepo = new ManagersDBRepository(dbUrl, dbUser, dbPassword);
@@ -294,7 +294,7 @@ public class Console2 {
                     //TODO:valabil si pt employee
                     List<Product> productList = new ArrayList<>();
                     System.out.println("Enter product names (comma separated):");
-                    scanner.nextLine();
+//                    scanner.nextLine();
                     String[] productNames = scanner.nextLine().split(",");
                     for (String productName : productNames) {
                         Product product = productController.getProduct(productName.trim());

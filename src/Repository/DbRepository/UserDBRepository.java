@@ -26,7 +26,6 @@ public abstract class UserDBRepository<T extends User> extends DBRepository<T> {
             statement.setString(4, obj.getPassword());
             statement.setInt(5, obj.getPoints());
             statement.setString(6, obj.getUserType());
-
             statement.execute();
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage());

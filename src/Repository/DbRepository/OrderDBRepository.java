@@ -28,6 +28,36 @@ public class OrderDBRepository extends DBRepository<Order> {
         }
     }
 
+//    private Order extractFromResultSet(ResultSet resultSet) throws SQLException {
+//        int orderID = resultSet.getInt("orderID");
+//
+//        // Extract Location
+//        int locationID = resultSet.getInt("locationID");
+//        String locationName = resultSet.getString("storeLocation");
+//        Location location = new Location(Locations.valueOf(locationName), new Manager("email", "name", locationID, "password", ManagerRank.Junior), locationID);
+//
+//        // Extract Client
+//        int clientID = resultSet.getInt("userID");
+//        String clientEmail = resultSet.getString("clientEmail");
+//        String clientName = resultSet.getString("clientName");
+//        String clientPassword = resultSet.getString("clientPassword");
+//        Client client = new Client(clientEmail, clientName, clientID, clientPassword);
+//
+//        // Extract Products
+//        List<Product> products = new ArrayList<>();
+//        double totalPrice = 0;
+//        do {
+//            int productID = resultSet.getInt("productID");
+//            String productName = resultSet.getString("productName");
+//            int productPrice = resultSet.getInt("productPrice");
+//            products.add(new ConcreteProduct(productName, productPrice, productID));
+//            totalPrice += productPrice;
+//        } while (resultSet.next() && resultSet.getInt("orderID") == orderID);
+//        Order order = new Order(products, location, client, orderID);
+//        order.setTotalPrice(totalPrice);
+//        return order;
+//    }
+
     private Order extractFromResultSet(ResultSet resultSet) throws SQLException {
         int orderID = resultSet.getInt("orderID");
 
@@ -43,20 +73,11 @@ public class OrderDBRepository extends DBRepository<Order> {
         String clientPassword = resultSet.getString("clientPassword");
         Client client = new Client(clientEmail, clientName, clientID, clientPassword);
 
-        // Extract Products
-        List<Product> products = new ArrayList<>();
-        double totalPrice = 0;
-        do {
-            int productID = resultSet.getInt("productID");
-            String productName = resultSet.getString("productName");
-            int productPrice = resultSet.getInt("productPrice");
-            products.add(new ConcreteProduct(productName, productPrice, productID));
-            totalPrice += productPrice;
-        } while (resultSet.next() && resultSet.getInt("orderID") == orderID);
-        Order order = new Order(products, location, client, orderID);
-        order.setTotalPrice(totalPrice);
+        // Create Order
+        Order order = new Order(new ArrayList<>(), location, client, orderID);
         return order;
     }
+
 
     @Override
     public Order read(Integer orderID) {
@@ -165,6 +186,32 @@ public class OrderDBRepository extends DBRepository<Order> {
         }
     }
 
+//    @Override
+//    public List<Order> getAll() {
+//        String sql = "SELECT o.orderID, o.locationID, l.storeLocation, o.userID, u.email AS clientEmail, u.name AS clientName, u.password AS clientPassword, " +
+//                "p.productID, p.productName, p.productPrice " +
+//                "FROM Orders o " +
+//                "JOIN Location l ON o.locationID = l.id " +
+//                "JOIN Users u ON o.userID = u.userID " +
+//                "JOIN OrderProducts op ON o.orderID = op.orderID " +
+//                "JOIN Products p ON op.productID = p.productID";
+//
+//        List<Order> orders = new ArrayList<>();
+//
+//        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+//            ResultSet resultSet = statement.executeQuery();
+//
+//            while (resultSet.next()) {
+//                Order order = extractFromResultSet(resultSet);
+//                orders.add(order);
+//            }
+//        } catch (SQLException e) {
+//            throw new DatabaseException(e.getMessage());
+//        }
+//
+//        return orders;
+//    }
+
     @Override
     public List<Order> getAll() {
         String sql = "SELECT o.orderID, o.locationID, l.storeLocation, o.userID, u.email AS clientEmail, u.name AS clientName, u.password AS clientPassword, " +
@@ -176,13 +223,33 @@ public class OrderDBRepository extends DBRepository<Order> {
                 "JOIN Products p ON op.productID = p.productID";
 
         List<Order> orders = new ArrayList<>();
+        Order currentOrder = null;
+        int currentOrderID = -1;
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                Order order = extractFromResultSet(resultSet);
-                orders.add(order);
+                int orderID = resultSet.getInt("orderID");
+
+                if (orderID != currentOrderID) {
+                    if (currentOrder != null) {
+                        orders.add(currentOrder);
+                    }
+                    currentOrder = extractFromResultSet(resultSet);
+                    currentOrderID = orderID;
+                }
+
+                // Add products to the current order
+                int productID = resultSet.getInt("productID");
+                String productName = resultSet.getString("productName");
+                int productPrice = resultSet.getInt("productPrice");
+                currentOrder.getProducts().add(new ConcreteProduct(productName, productPrice, productID));
+                currentOrder.setTotalPrice(currentOrder.getTotalPrice() + productPrice);
+            }
+
+            if (currentOrder != null) {
+                orders.add(currentOrder);
             }
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage());

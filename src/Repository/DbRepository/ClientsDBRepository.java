@@ -25,7 +25,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
             statement.execute();
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage());
-        }
+            }
     }
 
     @Override

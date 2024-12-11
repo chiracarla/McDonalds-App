@@ -16,22 +16,6 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
     }
 
     @Override
-    public void create(Manager obj) {
-        // Insert into Users table first
-        super.create(obj);
-
-        String sql = "INSERT INTO Managers (userID, managerRank) VALUES (?, ?)";
-
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, obj.getUserID());
-            statement.setString(2, obj.getRank().name());
-            statement.execute();
-        } catch (SQLException e) {
-            throw new DatabaseException(e.getMessage());
-        }
-    }
-
-    @Override
     protected Manager extractFromResultSet(ResultSet resultSet) throws SQLException {
         int userID = resultSet.getInt("userID");
         String name = resultSet.getString("name");
@@ -62,6 +46,26 @@ public class ManagersDBRepository extends UserDBRepository<Manager> {
             } else {
                 return null; // No manager found
             }
+        } catch (SQLException e) {
+            throw new DatabaseException(e.getMessage());
+        }
+    }
+
+
+    @Override
+    public void create(Manager obj) {
+        // Insert into Users table first
+//        super.create(obj);
+
+        String sql = "INSERT INTO Managers (userID, managerRank) VALUES (?, ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, obj.getUserID());
+            statement.setString(2, obj.getRank().name());
+
+            System.out.println("Inserting into Managers: userID=" + obj.getUserID() + ", managerRank=" + obj.getRank().name());
+
+            statement.execute();
         } catch (SQLException e) {
             throw new DatabaseException(e.getMessage());
         }
