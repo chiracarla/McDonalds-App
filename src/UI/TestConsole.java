@@ -20,18 +20,6 @@ import java.util.Optional;
 import java.util.Scanner;
 public class TestConsole {
     public static void main(String[] args) {
-//        IRepository<User> userRepo = new FileRepository<>("src\\Files\\users.txt");
-//        IRepository<Client> clientRepo =  new FileRepository<>("src\\Files\\clients.txt");
-//        IRepository<Manager> managerRepo = new FileRepository<>("src\\Files\\managers.txt");
-//        IRepository<Employee> employeeRepo = new FileRepository<>("src\\Files\\employees.txt");
-//        IRepository<Order> orderRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\orders.txt"));
-//        IRepository<Product> productRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\products.txt"));
-//        IRepository<MainDish> mainDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\mainDishes.txt"));
-//        IRepository<SideDish> sideDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\sideDishes.txt"));
-//        IRepository<Drinks> drinkRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\drinks.txt"));
-//        IRepository<Desserts> dessertRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\desserts.txt"));
-//        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
-//        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
         IRepository<Client> clientRepo = new ClientFileRepository("clients.txt");
         IRepository<Manager> managerRepo = new ManagerFileRepository("managers.txt");
         IRepository<User> userRepo = new UserFileRepository("users.txt");
@@ -50,7 +38,6 @@ public class TestConsole {
 
         IRepository<Location> locationRepo = new LocationFileRepository("locations.txt");
         IRepository<Order> orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
-        //        ((OfferFileRepository) offerRepo).setProdController(productController);
         UserService userService = new UserService(userRepo, clientRepo, managerRepo, employeeRepo);
         UserController userController = new UserController(userService);
 
@@ -62,13 +49,13 @@ public class TestConsole {
         // Example usage
 //        Manager manager = new Manager("manager@example.com", "John Doe", 1, "password", ManagerRank.Senior);
 //        managerRepo.create(manager);
-//        managerRepo.getAll().forEach(System.out::println);
+        managerRepo.getAll().forEach(System.out::println);
 
 //        ProductService productService = new ProductService(prodsRepo, mainsRepo, sidesRepo, dessertRepo, drinkRepo);
 //        ProductController productController = new ProductController(productService);
 
-//        OfferService offerService = new OfferService(offerRepo);
-//        OfferController offerController = new OfferController(offerService);
+        OfferService offerService = new OfferService(offerRepo);
+        OfferController offerController = new OfferController(offerService);
 
 //        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
 //        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
@@ -76,12 +63,14 @@ public class TestConsole {
 //
 //        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
 //        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
+//
+//        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+//        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+        List<Product> offerList = new ArrayList<>();
+        offerList.add(productController.getProduct("Lipton"));
 
-        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
-        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
-//        List<Product> offerList = new ArrayList<>();
-//        offerList.add(productController.getProduct("Lipton"));
 //        offerController.add(3, offerList);
+
 //        System.out.println(prodsRepo.read(1));
 //        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
 //        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
@@ -95,8 +84,10 @@ public class TestConsole {
 
 //        orderController.createOrder(userController.signIn("chira.carla@gmail.com", "5678"), );
 
-//        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
-//        System.out.println(locationRepo.read(1));
+        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+        System.out.println(locationRepo.read(1));
+
+        orderController.createOrder(userRepo.read(2), locationRepo.read(1), );
 
     }
 }

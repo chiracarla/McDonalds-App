@@ -19,8 +19,11 @@ public class OrderFileRepository extends FileRepository<Order>{
     public OrderFileRepository(String filePath, UserFileRepository userR, ProductFileRepository prodR, LocationFileRepository locR) {
         super(filePath);
         userFR = userR;
+        System.out.println(userFR);
         prodFR = prodR;
+        System.out.println(prodFR);
         locFR = locR;
+        System.out.println(locFR);
     }
 
     /**
@@ -49,6 +52,9 @@ public class OrderFileRepository extends FileRepository<Order>{
      */
     @Override
     protected Order fromFile(String data) {
+        System.out.println(locFR);
+        System.out.println(userFR);
+        System.out.println(prodFR);
         String[] parts = data.split(",");
         int orderId = Integer.parseInt(parts[0]);
         int price = Integer.parseInt(parts[1]); // Original price of the offer
