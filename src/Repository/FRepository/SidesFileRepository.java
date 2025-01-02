@@ -1,12 +1,13 @@
-package Repository;
+package Repository.FRepository;
 
 import Enums.DishSize;
 import Model.SideDish;
+import Repository.FileRepository;
 
 /**
  * The {@code SidesFileRepository} class extends the {@code FileRepository} class
  */
-public class SidesFileRepository extends FileRepository<SideDish>{
+public class SidesFileRepository extends FileRepository<SideDish> {
     public SidesFileRepository(String filePath){
         super(filePath);
     }

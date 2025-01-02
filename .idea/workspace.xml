@@ -4,18 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="finished testing">
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small corrections">
+      <change afterPath="$PROJECT_DIR$/src/Repository/FRepository/OfferFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/FRepository/OrderFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desserts.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drinks.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/employee.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locations.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainDishes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/mains.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/offers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prods.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/prods.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sideDishes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sides.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/sides.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/clients.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/desserts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/desserts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/drinks.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/employees.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/locations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/mainDishes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/managers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/offers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/offers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/orders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/products.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/sideDishes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Files/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/EmployeesDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ManagersDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/OrderDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/DessertFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/DrinkFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/EmployeeFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/LocationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/MainsFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ManagerFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ManagerFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ProductFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/SidesFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" />
     </list>
     <list id="22168745-8e79-42f9-800c-c9cbb735709b" name="Changes by carlachira" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/UserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/UserDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +92,22 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/UI/TestConsole.java">
+      <ranges>
+        <range start1="7" end1="9" start2="7" end2="7" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="10" end1="11" start2="8" end2="9" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="19" end1="20" start2="17" end2="18" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="22" end1="33" start2="20" end2="29" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="36" end1="37" start2="32" end2="34" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="38" end1="40" start2="35" end2="37" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="62" end1="63" start2="59" end2="60" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="71" end1="72" start2="68" end2="69" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="86" end1="87" start2="83" end2="84" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="89" end1="90" start2="86" end2="87" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
@@ -76,6 +129,7 @@
     "Application.Main.executor": "Run",
     "Application.TestConsole.executor": "Run",
     "Application.TestConsoleDB.executor": "Run",
+    "JUnit.AppTests.executor": "Run",
     "JUnit.UserServiceTest.crudOperations.executor": "Run",
     "JUnit.UserServiceTest.crudOperationsOrder.executor": "Run",
     "JUnit.UserServiceTest.crudOperationsProducts.executor": "Run",
@@ -108,7 +162,33 @@
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestConsoleDB">
+  <component name="RunManager" selected="Application.TestConsole">
+    <configuration name="Console2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.Console2" />
+      <module name="McDonalds App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestConsole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.TestConsole" />
+      <module name="McDonalds App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestConsoleDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.TestConsoleDB" />
       <module name="McDonalds App" />
@@ -122,7 +202,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTests.employeesSortByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="McDonalds App" />
       <extension name="coverage">
         <pattern>
@@ -132,40 +212,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Service" />
       <option name="MAIN_CLASS_NAME" value="Service.AppTests" />
-      <option name="METHOD_NAME" value="employeesSortByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTests.filterFunctions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="McDonalds App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Service" />
-      <option name="MAIN_CLASS_NAME" value="Service.AppTests" />
-      <option name="METHOD_NAME" value="filterFunctions" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTests.filterProductsByAllergens" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="McDonalds App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Service" />
-      <option name="MAIN_CLASS_NAME" value="Service.AppTests" />
-      <option name="METHOD_NAME" value="filterProductsByAllergens" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestConsole" />
+        <item itemvalue="Application.Console2" />
+        <item itemvalue="JUnit.AppTests" />
         <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="JUnit.AppTests.sortProductsByPrice" />
-        <item itemvalue="JUnit.AppTests.employeesSortByName" />
-        <item itemvalue="JUnit.AppTests.filterProductsByAllergens" />
-        <item itemvalue="JUnit.AppTests.filterFunctions" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +268,9 @@
       <workItem from="1733476063162" duration="4788000" />
       <workItem from="1733494397459" duration="9573000" />
       <workItem from="1733660804475" duration="5581000" />
+      <workItem from="1733996873397" duration="2000" />
+      <workItem from="1735131650383" duration="490000" />
+      <workItem from="1735847089674" duration="5280000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -374,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733874984464</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="small corrections">
+      <option name="closed" value="true" />
+      <created>1733918819478</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733918819478</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,6 +469,7 @@
     <MESSAGE value="testing and exceptions(to repo) - code w me" />
     <MESSAGE value="finished testing" />
     <MESSAGE value="app tests finished - code with me" />
-    <option name="LAST_COMMIT_MESSAGE" value="app tests finished - code with me" />
+    <MESSAGE value="small corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="small corrections" />
   </component>
 </project>

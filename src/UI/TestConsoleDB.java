@@ -143,5 +143,7 @@ public class TestConsoleDB {
 //        System.out.println(orderService.calculateTotalPrice());
         System.out.println(orderRepo.getAll());
 
+        userRepo.delete(12);
+
     }
 }

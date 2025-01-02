@@ -7,6 +7,7 @@ import Enums.*;
 import Model.*;
 import Repository.*;
 import Repository.DbRepository.*;
+import Repository.FRepository.*;
 import Service.OfferService;
 import Service.OrderService;
 import Service.ProductService;
@@ -67,18 +68,18 @@ public class Console2 {
             locationRepo = new InMemoryRepository<>();
             offerRepo = new InMemoryRepository<>();
         } else if (option == 2) {
-            userRepo = new UserFileRepository("users.txt");
-            clientRepo = new ClientFileRepository("clients.txt");
-            managerRepo = new ManagerFileRepository("managers.txt");
-            employeeRepo = new EmployeeFileRepository("employees.txt");
-            prodsRepo = new ProductFileRepository("prods.txt");
-            locationRepo = new LocationFileRepository("locations.txt");
-            orderRepo = new OrderFileRepository("orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
-            mainsRepo = new MainsFileRepository("mains.txt");
-            sidesRepo = new SidesFileRepository("sides.txt");
-            drinkRepo = new DrinkFileRepository("drinks.txt");
-            dessertRepo = new DessertFileRepository("desserts.txt");
-            offerRepo = new OfferFileRepository("offers.txt", (ProductFileRepository) prodsRepo);
+            userRepo = new UserFileRepository("src/Files/users.txt");
+            clientRepo = new ClientFileRepository("src/Files/clients.txt");
+            managerRepo = new ManagerFileRepository("src/Files/managers.txt");
+            employeeRepo = new EmployeeFileRepository("src/Files/employees.txt");
+            prodsRepo = new ProductFileRepository("src/Files/prods.txt");
+            locationRepo = new LocationFileRepository("src/Files/locations.txt");
+            orderRepo = new OrderFileRepository("src/Files/orders.txt", (UserFileRepository) userRepo, (ProductFileRepository) prodsRepo, (LocationFileRepository) locationRepo);
+            mainsRepo = new MainsFileRepository("src/Files/mains.txt");
+            sidesRepo = new SidesFileRepository("src/Files/sides.txt");
+            drinkRepo = new DrinkFileRepository("src/Files/drinks.txt");
+            dessertRepo = new DessertFileRepository("src/Files/desserts.txt");
+            offerRepo = new OfferFileRepository("src/Files/offers.txt", (ProductFileRepository) prodsRepo);
         } else if (option == 3) {
             String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=McDonalds;encrypt=false";
 //            String dbUrl = "jdbc:sqlserver://192.168.4.213:1433;databaseName=McDonalds;encrypt=false";

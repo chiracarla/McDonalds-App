@@ -1,15 +1,15 @@
-package Repository;
+package Repository.FRepository;
 
 import Enums.Allergens;
 import Enums.DishSize;
 import Enums.DrinkVolume;
-import Enums.ManagerRank;
 import Model.*;
+import Repository.FileRepository;
 
 /**
  * The {@code ProductFileRepository} class provides a repository for managing products.
  */
-public class ProductFileRepository extends FileRepository <Product> {
+public class ProductFileRepository extends FileRepository<Product> {
     public ProductFileRepository(String filePath) {
         super(filePath);
     }

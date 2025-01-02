@@ -1,3 +1,0 @@
-1,Hamburger,12,1307,MEDIUM
-2,Cheeseburger,13,1350,MEDIUM
-3,Big Mac,15,1500,LARGE

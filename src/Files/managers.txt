@@ -1,1 +1,4 @@
 1,klara.orban@yahoo.com,Orban Klara,1234,Senior
+5,manager1@example.com,Manager One,password,Senior
+6,manager2@example.com,Manager Two,password,Junior
+7,manager@example.com,Manager Name,password,Senior

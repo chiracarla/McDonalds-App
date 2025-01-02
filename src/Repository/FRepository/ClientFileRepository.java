@@ -1,10 +1,12 @@
-package Repository;
+package Repository.FRepository;
 import Model.Client;
+import Repository.FileRepository;
+
 /**
  * The {@code ClientFileRepository} class extends the {@code FileRepository} class
  * and provides specific implementation for the {@code Client} entity.
  */
-public class ClientFileRepository extends FileRepository<Client>{
+public class ClientFileRepository extends FileRepository<Client> {
     public ClientFileRepository(String filePath) {
         super(filePath);
     }

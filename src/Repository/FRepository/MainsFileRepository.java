@@ -1,15 +1,13 @@
-package Repository;
+package Repository.FRepository;
 
 import Enums.DishSize;
-import Enums.DrinkVolume;
-import Model.Drinks;
 import Model.MainDish;
-import com.sun.tools.javac.Main;
+import Repository.FileRepository;
 
 /**
  * The {@code MainsFileRepository} class extends the {@code FileRepository} class
  */
-public class MainsFileRepository extends FileRepository<MainDish>{
+public class MainsFileRepository extends FileRepository<MainDish> {
     public MainsFileRepository(String filePath){
         super(filePath);
     }

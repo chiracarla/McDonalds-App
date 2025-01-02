@@ -1,12 +1,13 @@
-package Repository;
+package Repository.FRepository;
 import Enums.ManagerRank;
 import Model.Manager;
+import Repository.FileRepository;
 
 /**
  * The {@code ManagerFileRepository} class extends the {@code FileRepository} class
  * and provides specific methods for managing {@code Manager} entities in the application.
  */
-public class ManagerFileRepository extends FileRepository<Manager>{
+public class ManagerFileRepository extends FileRepository<Manager> {
     public ManagerFileRepository(String filePath) {
         super(filePath);
     }

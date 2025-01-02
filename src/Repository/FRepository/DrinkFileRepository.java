@@ -1,12 +1,12 @@
-package Repository;
-import Enums.Allergens;
+package Repository.FRepository;
 import Enums.DrinkVolume;
 import Model.*;
+import Repository.FileRepository;
 
 /**
  * Uses the FileRepo as schema
  */
-public class DrinkFileRepository extends FileRepository<Drinks>{
+public class DrinkFileRepository extends FileRepository<Drinks> {
     public DrinkFileRepository(String filePath) {
         super(filePath);
     }

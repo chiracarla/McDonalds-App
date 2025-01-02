@@ -1,14 +1,13 @@
-package Repository;
-import java.io.*;
-import java.util.*;
+package Repository.FRepository;
 
 import Enums.ManagerRank;
 import Model.*;
+import Repository.FileRepository;
 
 /**
  * The {@code UserFileRepository} class extends the {@code FileRepository} class
  */
-public class UserFileRepository extends FileRepository<User>{
+public class UserFileRepository extends FileRepository<User> {
     public UserFileRepository(String filePath) {
         super(filePath);
     }

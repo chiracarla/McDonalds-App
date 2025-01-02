@@ -1,12 +1,13 @@
-package Repository;
+package Repository.FRepository;
 
 import Enums.Allergens;
 import Model.*;
+import Repository.FileRepository;
 
 /**
  * Uses the FileRepository class to access the information about the desserts
  */
-public class DessertFileRepository extends FileRepository<Desserts>{
+public class DessertFileRepository extends FileRepository<Desserts> {
     public DessertFileRepository(String filePath) {
         super(filePath);
     }

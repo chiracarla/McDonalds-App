@@ -17,7 +17,7 @@ public class ClientsDBRepository extends UserDBRepository<Client> {
 
     @Override
     public void create(Client obj) {
-        super.create(obj);
+//        super.create(obj);
         String sql = "INSERT INTO Clients (userID) VALUES (?)";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {

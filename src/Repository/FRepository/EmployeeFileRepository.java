@@ -1,15 +1,13 @@
-package Repository;
-import java.io.*;
-import java.util.*;
+package Repository.FRepository;
 
 import Enums.ManagerRank;
 import Model.*;
-import Model.Client;
+import Repository.FileRepository;
 
 /**
  * Uses the FileRepository as schema
  */
-public class EmployeeFileRepository extends FileRepository<Employee>{
+public class EmployeeFileRepository extends FileRepository<Employee> {
     public EmployeeFileRepository(String filePath) {
         super(filePath);
     }

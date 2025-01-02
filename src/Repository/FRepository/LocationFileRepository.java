@@ -1,11 +1,10 @@
-package Repository;
+package Repository.FRepository;
 
-import Enums.Allergens;
 import Enums.Locations;
 import Enums.ManagerRank;
-import Model.Desserts;
 import Model.Location;
 import Model.Manager;
+import Repository.FileRepository;
 
 /**
  * The {@code LocationFileRepository} class extends the {@code FileRepository} class
