@@ -134,7 +134,6 @@ public class ProductService {
     // cu cresterea marimii se adauga 2 lei?
     //delete+update + read
 
-    //TODO: verify - product sorting
     /**
      *this function sorts the products by price
      * functionality: user can choose products according to their budget
@@ -156,7 +155,6 @@ public class ProductService {
                 .max().orElse(0)+1;
     }
 
-    //TODO: allergens filter
     /**
      * this function filters the products by allergens
      * functionality: user can choose products according to their allergies

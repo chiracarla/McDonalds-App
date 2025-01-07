@@ -32,7 +32,6 @@ public class OrderController {
     public void createOrder(Client user, Location location, List<Product> products, Optional<Offer> offer, boolean payWithPoints) {
         orderService.createOrder(user, location, products, offer, payWithPoints);
     }
-    //TODO: ar tb cu user input
 
     /**
      * Creates a new location

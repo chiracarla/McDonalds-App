@@ -203,10 +203,8 @@ public class UserService {
         employees.sort(Comparator.comparing(Employee::getName));
         return employees;
     }
+
+    public Client readClient(int id){
+        return clientRepo.read(id);
+    }
 }
-//TODO:
-// update account
-// make order in-store/online
-// complex function -- email sending API
-// employee sorting
-//? employee ranking - how many orders they have taken

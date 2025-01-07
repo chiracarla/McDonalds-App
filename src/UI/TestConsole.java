@@ -66,11 +66,11 @@ public class TestConsole {
         List<Product> offerList = new ArrayList<>();
         offerList.add(productController.getProduct("Lipton"));
 
-        offerController.add(3, offerList);
+//        offerController.add(3, offerList);
 
 //        System.out.println(prodsRepo.read(1));
 //        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
-//        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+        userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerController.lastOffer());
 //        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
 
         managerRepo.getAll().forEach(System.out::println);

@@ -11,7 +11,7 @@ public class Offer implements HasId{
     private int originalPrice;
     private int newPrice;
     private int offerId;
-    private List<Product> products;//TODO: unele cu locatii specifice maybe optional<>
+    private List<Product> products;
     /**
      * Constructs an Offer with the specified original price, new price, and list of products.
      *
@@ -74,5 +74,4 @@ public class Offer implements HasId{
 //        return offerId + "," + originalPrice + "," + newPrice + "," + products;
 //    }
 
-//TODO id
 }

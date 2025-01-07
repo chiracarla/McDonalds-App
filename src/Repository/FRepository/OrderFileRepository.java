@@ -25,11 +25,8 @@ public class OrderFileRepository implements IRepository<Order> {
     public OrderFileRepository(String filePath, UserFileRepository userR, ProductFileRepository prodR, LocationFileRepository locR) {
         this.filePath = filePath;
         userFR = userR;
-        System.out.println(userFR);
         prodFR = prodR;
-        System.out.println(prodFR);
         locFR = locR;
-        System.out.println(locFR);
         this.data = loadFromFile();
     }
 
@@ -58,9 +55,6 @@ public class OrderFileRepository implements IRepository<Order> {
      */
 
     protected Order fromFile(String data) {
-        System.out.println(locFR);
-        System.out.println(userFR);
-        System.out.println(prodFR);
         String[] parts = data.split(",");
         int orderId = Integer.parseInt(parts[0]);
         double price = Double.valueOf(parts[1]); // Original price of the offer

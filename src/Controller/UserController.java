@@ -129,5 +129,11 @@ public class UserController {
         return employees;
     }
 
-
+    public Client readClient(int id) {
+        Client client = userService.readClient(id);
+        if (client == null) {
+            System.out.println("No client found with id: " + id);
+        }
+        return client;
+    }
 }

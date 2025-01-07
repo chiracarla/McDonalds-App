@@ -22,7 +22,7 @@ public class OfferController {
      */
     public void add( int newPrice, List<Product> products) {
         offerService.addOffer( newPrice, products);
-    }//TODO: user input
+    }
 
     /**
      * filters offers by product
@@ -32,5 +32,8 @@ public class OfferController {
      */
     public List<Offer> filterOffersByProduct(List<Offer> offers, Product product) {
         return offerService.filterOffersByProduct(offers, product);
+    }
+    public Offer lastOffer(){
+        return offerService.lastOffer();
     }
 }

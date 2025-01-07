@@ -82,5 +82,4 @@ public class Order implements HasId {
 //    public String toFile() {
 //        return products.toString() + " " + location.toString() + " " + user.toString() + " " + orderID;
 //    }
-    //TODO id
 }

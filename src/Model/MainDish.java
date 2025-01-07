@@ -60,7 +60,3 @@ public class MainDish extends Product{
 //        return (int) (this.getProductPrice() * 0.7);
 //    }
 }
-//TODO:
-// cumpar de: 30 lei
-// primesc: 10 p
-// pot sa cumpar de: 15 lei

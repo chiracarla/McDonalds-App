@@ -1,14 +1,25 @@
 package Repository.FRepository;
 import Model.Client;
+import Model.Offer;
+import Model.Order;
 import Repository.FileRepository;
+import Repository.IRepository;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * The {@code ClientFileRepository} class extends the {@code FileRepository} class
  * and provides specific implementation for the {@code Client} entity.
  */
 public class ClientFileRepository extends FileRepository<Client> {
+//    private final String filePath;
     public ClientFileRepository(String filePath) {
         super(filePath);
+//        this.filePath = filePath;
     }
 
     /**
@@ -36,4 +47,5 @@ public class ClientFileRepository extends FileRepository<Client> {
         String password = parts[3];
         return new Client(email, name, id, password);
     }
+
 }

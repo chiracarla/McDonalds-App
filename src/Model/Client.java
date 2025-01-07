@@ -1,6 +1,7 @@
 package Model;
 
 import Model.User;
+import java.util.List;
 
 /**
  * Represents the buyers/clients of the system
@@ -18,6 +19,10 @@ public class Client extends User {
         super(email, name, id, password);
     }
 
+    public Client(String email, String name, int id, String password, List<Offer> offers){
+        super(email, name, id, password);
+        this.offers = offers;
+    }
     @Override
     public void displayOptions(){
         System.out.println("Client Options: \n" +

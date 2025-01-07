@@ -28,9 +28,7 @@ import Exceptions.*;
  *      delete/edit account
  */
 
-//create location, deleete prods/offers, assign employees to orders, transform to menu/combo, view menu
-    //inn products.txt se salveaza doar drinks aparent
-    //fix toStrings
+
 public class Console2 {
     public static void main(String[] args) {
 
@@ -115,25 +113,26 @@ public class Console2 {
         OfferService offerService = new OfferService(offerRepo);
         OfferController offerController = new OfferController(offerService);
 
-//        productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
-//        productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
-//        productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE);
-//
-//        productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
-//        productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
-//
-//        productController.createDrink("Sprite", 3, DrinkVolume._300ML);
-//        productController.createDrink("Lipton", 3, DrinkVolume._200ML);
-//        productController.createDessert("Pie", 6, Allergens.gluten);
-//        productController.createDessert("Ice cream", 5, Allergens.dairy);
-//        List<Product> offerList = new ArrayList<>();
-//        offerList.add(productController.getProduct("Cheeseburger"));
-//        offerController.add(3, offerList);
-//        userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
-//        userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
-//        userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
-//        orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+        if( option == 1) {
+            productController.createMainDish("Hamburger", 12, 1307, DishSize.MEDIUM);
+            productController.createMainDish("Cheeseburger", 13, 1350, DishSize.MEDIUM);
+            productController.createMainDish("Big Mac", 15, 1500, DishSize.LARGE);
 
+            productController.createSideDish("French Fries", 5, DishSize.MEDIUM);
+            productController.createSideDish("Chicken McNuggets", 8, DishSize.MEDIUM);
+
+            productController.createDrink("Sprite", 3, DrinkVolume._300ML);
+            productController.createDrink("Lipton", 3, DrinkVolume._200ML);
+            productController.createDessert("Pie", 6, Allergens.gluten);
+            productController.createDessert("Ice cream", 5, Allergens.dairy);
+            List<Product> offerList = new ArrayList<>();
+            offerList.add(productController.getProduct("Cheeseburger"));
+            offerController.add(3, offerList);
+            userController.signUpManager("klara.orban@yahoo.com", "Orban Klara", "1234", ManagerRank.Senior);
+            userController.signUpClient("chira.carla@gmail.com", "Chira Carla", "5678");
+            userController.signIn("chira.carla@gmail.com", "5678").addOffer(offerRepo.getAll().get(0));
+            orderController.createLocation(Locations.Bucuresti, userService.readManager(1));
+        }
         scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -178,11 +177,15 @@ public class Console2 {
             name.trim();
             validateName(name);
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
-            System.out.print("Please re-enter name: ");
-            name = scanner.nextLine();
-            name.trim();
-            validateName(name);
+            try {
+                System.out.println(e.getMessage());
+                System.out.print("Please re-enter name: ");
+                name = scanner.nextLine();
+                name.trim();
+                validateName(name);
+            } catch (ValidationException x) {
+                return;
+            }
         }
         String email;
         try {
@@ -190,21 +193,30 @@ public class Console2 {
             email = scanner.nextLine();
             validateEmail(email);
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
-            System.out.print("Please re-enter email: ");
-            email = scanner.nextLine();
-            validateEmail(email);
+            try {
+                System.out.println(e.getMessage());
+                System.out.print("Please re-enter email: ");
+                email = scanner.nextLine();
+                validateEmail(email);
+            } catch (ValidationException x) {
+                return;
+            }
         }
+
         String password;
         try {
             System.out.print("Enter password: ");
             password = scanner.nextLine();
             validatePassword(password);
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
-            System.out.print("Please re-enter password: ");
-            password = scanner.nextLine();
-            validatePassword(password);
+            try {
+                System.out.println(e.getMessage());
+                System.out.print("Please re-enter password: ");
+                password = scanner.nextLine();
+                validatePassword(password);
+            } catch (ValidationException x) {
+                return;
+            }
         }
 
         switch (type) {
@@ -254,9 +266,6 @@ public class Console2 {
             System.out.println("Invalid email or password.");
         }
 
-//        userController.signIn(email, password).ifPresentOrElse(
-//                        user -> showUserMenu(user, orderController, productController, userController, offerController),
-//                        () -> System.out.println("Invalid email or password."));
     }
 
     private static void showUserMenu(User user, OrderController orderController, ProductController productController, UserController userController, OfferController offerController) {
@@ -274,28 +283,12 @@ public class Console2 {
                 case 1:
                     System.out.println("Enter location (Bucuresti, Brasov, Sighisoara):");
                     String loc = scanner.nextLine();
-//                    try {
-//                        loc = scanner.nextLine();
-//                        if(!Arrays.asList("Bucuresti", "Brasov", "Sighisoara").contains(loc)) {
-//                            throw new ValidationException("Invalid location");
-//                        }
-//                    } catch (ValidationException e) {
-//                        System.out.println(e.getMessage());
-//                        System.out.print("Please re-enter name: ");
-//                        loc = scanner.nextLine();
-//                        if(!Arrays.asList("Bucuresti", "Brasov", "Sighisoara").contains(loc)) {
-//                            throw new ValidationException("Invalid location");
-//                        }
-//                    }
                     Location location = orderController.getLocations().stream()
                             .filter(l -> l.getStoreLocation().equals(Locations.valueOf(loc)))
                             .findFirst()
                             .orElse(null);
-                    //TODO:de schimbat cu numele locatiei
-                    //TODO:valabil si pt employee
                     List<Product> productList = new ArrayList<>();
-                    System.out.println("Enter product names (comma separated):");
-//                    scanner.nextLine();
+                    System.out.println("Enter product names (comma separated) for menu simply add one Main Dish, one Side Dish and one Drink:");
                     String[] productNames = scanner.nextLine().split(",");
                     for (String productName : productNames) {
                         Product product = productController.getProduct(productName.trim());
@@ -315,7 +308,7 @@ public class Console2 {
                         System.out.print("Please re-enter option(yes/no): ");
                         applyOffer = scanner.nextLine();
                         if(!Arrays.asList("yes", "no").contains(applyOffer)) {
-                            throw new ValidationException("Invalid option");
+                            return;
                         }
                     }
                     Optional<Offer> offer = Optional.empty();
@@ -338,7 +331,7 @@ public class Console2 {
                     if(opt == 1) {
                         for(Offer o : user.getOffers()) {
                             System.out.println(o.toString());
-                        } //TODO: implementare la tostring
+                        }
                     }
                     else if(opt == 2) {
                         System.out.println("Enter product: ");
@@ -493,7 +486,7 @@ public class Console2 {
                     if (user instanceof Manager) {
                         List<Product> offerList = new ArrayList<>();
                         System.out.println("Enter product names (comma separated):");
-                        scanner.nextLine();
+//                        scanner.nextLine();
                         String[] offerProductNames = scanner.nextLine().split(",");
                         for (String productName : offerProductNames) {
                             Product product = productController.getProduct(productName.trim());
@@ -504,7 +497,17 @@ public class Console2 {
                         System.out.println("Enter new price:");
                         int newPrice = scanner.nextInt();
                         offerController.add(newPrice, offerList);
-                        //TODO assign offer to user
+                        System.out.println("Add offer to Clients:");
+                        userController.showAllClients();
+                        System.out.println("Enter client ids separated by comma:");
+                        scanner.nextLine();
+                        String[] clients = scanner.nextLine().split(",");
+                        for (String clientID : clients) {
+                            Client cl = userController.readClient(Integer.valueOf(clientID));
+                            if (cl != null){
+                                cl.addOffer(offerController.lastOffer());
+                            }
+                        }
                     }
                     else {
                         System.out.println("Invalid option!");}
@@ -570,16 +573,3 @@ public class Console2 {
         }
     }
 }
-//        IRepository<User> userRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\users.txt"));
-//        IRepository<Client> clientRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\clients.txt"));
-//        IRepository<Manager> managerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\managers.txt"));
-//        IRepository<Employee> employeeRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\employees.txt"));
-//        IRepository<Order> orderRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\orders.txt"));
-//        IRepository<Product> productRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\products.txt"));
-//        IRepository<MainDish> mainDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\mainDishes.txt"));
-//        IRepository<SideDish> sideDRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\sideDishes.txt"));
-//        IRepository<Drinks> drinkRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\drinks.txt"));
-//        IRepository<Desserts> dessertRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\desserts.txt"));
-//        IRepository<Location> locationRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\locations.txt"));
-//        IRepository<Offer> offerRepo = new CompositeRepository<>(new InMemoryRepository<>(), new FileRepository<>("src\\Files\\offers.txt"));
-

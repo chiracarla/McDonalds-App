@@ -96,7 +96,12 @@ public abstract class User implements HasId {
     }
 
     public int subtractPoints(int points) {
-        this.points -= points;
+        if(this.points - points >=0) {
+            this.points -= points;
+        }
+        else{
+            return -1;
+        }
         return this.points - points;
     }
 
@@ -127,10 +132,7 @@ public abstract class User implements HasId {
 
     public void displayOptions(){}
 
-//    @Override
-//    public String toFile(){
-//        return this.userID + "," + this.email + "," + this.name + "," + this.password;
-//    }
+
 
     public abstract String getUserType();
 

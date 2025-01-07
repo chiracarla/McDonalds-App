@@ -57,8 +57,6 @@ public class OfferService {
         return offerRepository.getAll();
     }
 
-    //TODO filterOffersByProduct
-
     /**
      * Filters the offers by product
      * @param offers
@@ -69,5 +67,8 @@ public class OfferService {
         return offers.stream()
                 .filter(offer -> offer.getProducts().contains(product))
                 .collect(Collectors.toList());
+    }
+    public Offer lastOffer(){
+        return offerRepository.getAll().get(offerRepository.getAll().size()-1);
     }
 }

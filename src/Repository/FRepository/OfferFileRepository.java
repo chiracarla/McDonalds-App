@@ -23,7 +23,6 @@ public class OfferFileRepository implements IRepository<Offer> {
         this.filePath = filePath;
         this.prodFRepo = prodFRepo;
         this.data = loadFromFile();
-        System.out.println(prodFRepo);
     }
 //    public void setProdController(ProductController pc){
 //        prodC = pc;
@@ -55,7 +54,6 @@ public class OfferFileRepository implements IRepository<Offer> {
      */
 
     protected Offer fromFile(String data) {
-        System.out.println(prodFRepo);
         String[] parts = data.split(",");
         int offerId = Integer.parseInt(parts[0]); // Offer ID
         int originalPrice = Integer.parseInt(parts[1]); // Original price of the offer

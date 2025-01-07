@@ -37,6 +37,13 @@ public class OrderService {
         int orderID = generateNewOrderID();
         double dif = 0;
         Order order = new Order(products, location, user, orderID);
+
+        long mainDishCount = products.stream().filter(product -> product instanceof MainDish).count();
+        long sideDishCount = products.stream().filter(product -> product instanceof SideDish).count();
+        long drinkCount = products.stream().filter(product -> product instanceof Drinks).count();
+        long menuCount = Math.min(mainDishCount,Math.min(sideDishCount,drinkCount));
+        dif += menuCount * 4;
+
         if(offer.isPresent()) {
             user.removeOffer(offer.get());
             for (Product prod: offer.get().getProducts()) {
@@ -46,8 +53,14 @@ public class OrderService {
         }
         double totalPrice = calculateTotalPrice(products) - dif;
         if(payWithPoints){
-            user.subtractPoints((int)(totalPrice/3*2));
+            if(user.subtractPoints((int)(totalPrice/3*2))> -1){
+                totalPrice = 0;
+            }
+            else{
+                System.out.println("Not enough points");
+            }
         }
+        user.addPoints((int) totalPrice/3*2);
         order.setTotalPrice(totalPrice);
         orderRepo.create(order);
 
@@ -192,4 +205,5 @@ public class OrderService {
                 .map(Map.Entry::getKey)
                 .orElse(null);
     }
+
 }

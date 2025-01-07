@@ -1,4 +1,3 @@
-2,chira.carla@gmail.com,Chira Carla,5678
-3,kanastef@gmail.com,AnaK,1234
-11,client122@example.com,Client Name,password
-15,jack.wolf@example.com,Jack Wolf,password15
+2,chira.carla@gmail.com,Chira Carla,5678,
+3,kanastef@gmail.com,AnaK,1234,
+11,briana@yahoo.com,Briana Stan,123a,2

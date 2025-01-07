@@ -4,54 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="small corrections">
-      <change afterPath="$PROJECT_DIR$/src/Repository/FRepository/OfferFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/FRepository/OrderFileRepository.java" afterDir="false" />
+    <list default="true" id="d42a0348-6d37-4576-af96-eea658ff4a30" name="Changes" comment="Fixed fileRepo problem --&gt; Carla">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/desserts.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drinks.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/employee.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locations.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainDishes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/mains.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/offers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prods.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/prods.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sideDishes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sides.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/sides.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Files/clients.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/clients.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/desserts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/desserts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/drinks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/drinks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/employees.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/locations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/locations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/mainDishes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/managers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/managers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Files/offers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/offers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Files/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/orders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/products.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/sideDishes.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Files/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ClientsDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DessertFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/DessertFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DrinkFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/DrinkFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/EmployeeFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LocationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/LocationFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MainsFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/MainsFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ManagerFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ManagerFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OfferFileRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OrderFileRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ProductFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SidesFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/SidesFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Desserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Desserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MainDish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MainDish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DbRepository/ConcreteUserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FRepository/OfferFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/OfferFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FRepository/OrderFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/OrderFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsoleDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" />
     </list>
     <list id="22168745-8e79-42f9-800c-c9cbb735709b" name="Changes by carlachira" comment="">
-      <change beforePath="$PROJECT_DIR$/orders.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Console2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Console2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TestConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TestConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,18 +75,41 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/UI/TestConsole.java">
+    <file path="$PROJECT_DIR$/src/UI/Console2.java">
       <ranges>
-        <range start1="7" end1="9" start2="7" end2="7" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="10" end1="11" start2="8" end2="9" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="19" end1="20" start2="17" end2="18" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="22" end1="33" start2="20" end2="29" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="36" end1="37" start2="32" end2="34" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
-        <range start1="38" end1="40" start2="35" end2="37" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
-        <range start1="62" end1="63" start2="59" end2="60" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
-        <range start1="71" end1="72" start2="68" end2="69" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
-        <range start1="86" end1="87" start2="83" end2="84" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
-        <range start1="89" end1="90" start2="86" end2="87" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="30" end1="33" start2="30" end2="31" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="117" end1="135" start2="115" end2="119" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="136" end1="136" start2="120" end2="135" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="180" end1="185" start2="179" end2="188" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="192" end1="196" start2="195" end2="203" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="197" end1="197" start2="204" end2="205" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="203" end1="207" start2="211" end2="219" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="256" end1="259" start2="268" end2="268" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="276" end1="289" start2="285" end2="285" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="293" end1="295" start2="289" end2="289" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="296" end1="298" start2="290" end2="291" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="317" end1="318" start2="310" end2="311" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="340" end1="341" start2="333" end2="334" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="495" end1="496" start2="488" end2="489" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="506" end1="507" start2="499" end2="510" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="572" end1="586" start2="575" end2="575" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Repository/FRepository/ClientFileRepository.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="4" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="3" end1="3" start2="5" end2="12" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="9" end1="9" start2="18" end2="19" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="11" end1="11" start2="21" end2="22" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="38" end1="38" start2="49" end2="50" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Service/OrderService.java">
+      <ranges>
+        <range start1="39" end1="39" start2="39" end2="46" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
+        <range start1="48" end1="49" start2="55" end2="61" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="50" end1="50" start2="62" end2="63" changelist="22168745-8e79-42f9-800c-c9cbb735709b" />
+        <range start1="194" end1="194" start2="207" end2="208" changelist="d42a0348-6d37-4576-af96-eea658ff4a30" />
       </ranges>
     </file>
   </component>
@@ -122,44 +127,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Console2.executor": "Run",
-    "Application.ConsoleApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TestConsole.executor": "Run",
-    "Application.TestConsoleDB.executor": "Run",
-    "JUnit.AppTests.executor": "Run",
-    "JUnit.UserServiceTest.crudOperations.executor": "Run",
-    "JUnit.UserServiceTest.crudOperationsOrder.executor": "Run",
-    "JUnit.UserServiceTest.crudOperationsProducts.executor": "Run",
-    "JUnit.UserServiceTest.crudOperationsUsers.executor": "Run",
-    "JUnit.UserServiceTest.employeesSortByName.executor": "Run",
-    "JUnit.UserServiceTest.executor": "Run",
-    "JUnit.UserServiceTest.filterFunctions.executor": "Run",
-    "JUnit.UserServiceTest.filterProductsByAllergens.executor": "Run",
-    "JUnit.UserServiceTest.signUpClient.executor": "Run",
-    "JUnit.UserServiceTest.sortProductsByPrice.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Project_uni/sem3/McDonalds App/src/Repository",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Console2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConsole.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConsoleDB.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.crudOperations.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.crudOperationsOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.crudOperationsProducts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.crudOperationsUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.employeesSortByName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.filterFunctions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.filterProductsByAllergens.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.signUpClient.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.sortProductsByPrice.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project_uni/sem3/metode/seminars/Seminar 4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Project_uni\sem3\McDonalds App\src\Repository" />
       <recent name="C:\Project_uni\sem3\McDonalds App\src\UI" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Project_uni\sem3\McDonalds App\src\Files" />
     </key>
   </component>
   <component name="RunManager" selected="Application.TestConsole">
@@ -235,8 +243,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestConsole" />
         <item itemvalue="Application.Console2" />
+        <item itemvalue="Application.TestConsole" />
         <item itemvalue="JUnit.AppTests" />
         <item itemvalue="Application.TestConsoleDB" />
         <item itemvalue="JUnit.AppTests.sortProductsByPrice" />
@@ -270,7 +278,9 @@
       <workItem from="1733660804475" duration="5581000" />
       <workItem from="1733996873397" duration="2000" />
       <workItem from="1735131650383" duration="490000" />
-      <workItem from="1735847089674" duration="5280000" />
+      <workItem from="1735847089674" duration="6193000" />
+      <workItem from="1735987455523" duration="58000" />
+      <workItem from="1736263694176" duration="8623000" />
     </task>
     <task id="LOCAL-00001" summary="first time running it with success!">
       <option name="closed" value="true" />
@@ -432,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733918819478</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed fileRepo problem --&gt; Carla">
+      <option name="closed" value="true" />
+      <created>1735852597773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735852597773</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,6 +488,7 @@
     <MESSAGE value="finished testing" />
     <MESSAGE value="app tests finished - code with me" />
     <MESSAGE value="small corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="small corrections" />
+    <MESSAGE value="Fixed fileRepo problem --&gt; Carla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed fileRepo problem --&gt; Carla" />
   </component>
 </project>

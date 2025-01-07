@@ -17,7 +17,7 @@
 //        String password = resultSet.getString("password");
 //        String type = resultSet.getString("userType");
 ////userID, name, email, password, points, userType
-//        return new ConcreteUser(email, name, id, password); //TODO:problem
+//        return new ConcreteUser(email, name, id, password);
 //    }
 //}
 package Repository.DbRepository;
