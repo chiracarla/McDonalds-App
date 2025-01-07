@@ -17,16 +17,12 @@ Welcome to the **McDonald's App**! Enjoy easy ordering, exclusive deals, points-
 
 ## User Types
 
-### 👥 Clients
-Clients are our regular customers who use the app to make ordering easy and to enjoy great savings. They can:
+### 👥 Clients & 🧑‍💼 Employees
+Clients&Employees are our regular customers who use the app to make ordering easy and to enjoy great savings. They can:
 - Browse the menu and place online orders
 - Earn points and unlock new deals on their purchases
 - Redeem points on future orders for discounts and rewards
-
-### 🧑‍💼 Employees
-Employees have a unique role in the app, benefiting from client features and also enjoying additional benefits, such as:
-- Employee-exclusive deals and offers
-- Access to personalized rewards based on in-store activity
+- Employees also know their way around the place they work at
 
 ### 📋 Managers
 Managers are responsible for overseeing employees and the location they work at. Their role includes:
